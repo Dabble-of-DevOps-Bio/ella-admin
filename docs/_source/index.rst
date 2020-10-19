@@ -8,18 +8,18 @@ Welcome to Ella Admin's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Ella Database Operations:
+
+   Ella-Database/Sample-Analysis.ipynb
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Included Docs:
 
    howto
    pycharm/configuration
    users
-   Ella-Database/Sample-Analysis
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Ella Database Operations:
-
-   Ella-Database/Sample-Analysis.ipynb
 
 Indices and tables
 ==================
