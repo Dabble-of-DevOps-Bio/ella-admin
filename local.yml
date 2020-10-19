@@ -1,0 +1,110 @@
+version: '3'
+
+networks:
+  app-tier:
+    driver: bridge
+
+volumes:
+  local_postgres_data: {}
+  local_postgres_data_backups: {}
+
+services:
+
+  # If you make any updates to the ella postgresql service
+  # Be sure to update the DB_URL in the ella-config/supervisor.cfg
+  # As well as the env vars in .envs/local/.postgres
+
+  postgresql:
+    image: bitnami/postgresql:12
+    networks:
+      - app-tier
+    ports:
+      - 5432:5432
+    env_file:
+      - ./.envs/.local/.postgres
+    volumes:
+      - ./data:/data
+
+  ella-web:
+    image: dabbleofdevops/ella:1.11.1
+    depends_on:
+      - postgresql
+    env_file:
+      - ./.envs/.local/.postgres
+      - ./.envs/.local/.ella
+    ports:
+      - 5001:5000
+    volumes:
+      - ./ella-config:/conf
+      - ./data:/data
+    networks:
+      - app-tier
+    command: |
+      supervisord -c /conf/supervisor.cfg
+
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    image: ella_admin_local_django
+    container_name: django
+    depends_on:
+      - postgresql
+    #      - ella-web
+    volumes:
+      - .:/app:z
+    env_file:
+      - ./.envs/.local/.django
+      - ./.envs/.local/.postgres
+    ports:
+      - "8000:8000"
+    command: /start
+    networks:
+      - app-tier
+
+  docs:
+    image: ella_admin_local_docs
+    container_name: docs
+    build:
+      context: .
+      dockerfile: ./compose/local/docs/Dockerfile
+    env_file:
+      - ./.envs/.local/.django
+    volumes:
+      - ./docs:/docs:z
+      - ./config:/app/config:z
+      - ./ella_admin:/app/ella_admin:z
+    ports:
+      - "7000:7000"
+    networks:
+      - app-tier
+
+  jupyter:
+    image: ella_admin_local_jupyter
+    container_name: jupyter
+    build:
+      context: .
+      dockerfile: ./compose/local/docs/Dockerfile
+    env_file:
+      - ./.envs/.local/.django
+      - ./.envs/.local/.postgres
+      - ./.envs/.local/.ella
+    volumes:
+      - ./docs:/docs:z
+      - ./config:/app/config:z
+      - ./ella_admin:/app/ella_admin:z
+    ports:
+      - "8888:8888"
+    networks:
+      - app-tier
+    command:
+      jupyter notebook --ip 0.0.0.0 --allow-root
+
+  adminer:
+    image: adminer:4.7.7
+    restart: always
+    networks:
+      - app-tier
+    ports:
+      - 8080:8080
+

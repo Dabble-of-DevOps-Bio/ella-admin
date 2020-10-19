@@ -1,0 +1,7 @@
+[submodule "ella"]
+	path = ella
+	url = https://gitlab.com/alleles/ella.git
+[submodule "ella-anno"]
+	path = ella-anno
+	url = https://gitlab.com/alleles/ella-anno.git
+

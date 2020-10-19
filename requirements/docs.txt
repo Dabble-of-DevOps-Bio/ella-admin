@@ -1,0 +1,4 @@
+nbsphinx
+jupyterlab
+ipython-sql
+pandas
