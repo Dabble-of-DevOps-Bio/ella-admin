@@ -1,4 +1,6 @@
-FROM python:3.8-slim-buster
+FROM dabbleofdevops/ella:1.11.1
+
+USER root
 
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -12,6 +14,7 @@ RUN apt-get update -y\
     # Translations dependencies
     # Uncomment below lines to enable Sphinx output to latex and pdf
     && apt-get install -y pandoc \
+    && apt-get install -y python3-lxml \
      && apt-get install -y gettext \
      && apt-get install -y texlive-latex-recommended \
      && apt-get install -y texlive-fonts-recommended \

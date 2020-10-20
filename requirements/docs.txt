@@ -2,3 +2,5 @@ nbsphinx
 jupyterlab
 ipython-sql
 pandas
+lxml
+sphinxawesome-theme
