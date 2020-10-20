@@ -1,6 +1,6 @@
 APP = /ella-admin
 
-.PHONY: help livehtml apidocs Makefile
+.PHONY: help Makefile
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -17,35 +17,36 @@ stop:
 
 dev:
 	docker-compose -f local.yml up -d  --remove-orphans
+	$(MAKE) help
 
-# TODO There are a lot of errors about dropping relations
-load:
+wait:
 	docker-compose -f local.yml exec ella-web \
 		bash -c \
 		"while ! pg_isready --host postgresql --dbname=postgres --username=ella; do sleep 5; done"
 
+load:
+	$(MAKE) wait
 	@echo "Loading in database dump"
 	docker-compose -f local.yml exec  \
 		ella-web \
 		bash -c "gunzip < /data/ella_db_1.sql.gz |PGPASSWORD=password123 psql -h postgresql -U postgres"
 
 dump:
+	$(MAKE) wait
 	@echo "Loading in database dump"
 	docker-compose -f local.yml exec  \
 		postgresql \
 		bash -c "PGPASSWORD=password123 pg_dump -h postgresql -U postgres postgres | gzip -9 > /data/ella_db_1.sql.gz"
 
-demo:
-	@echo "Checking to see if the database is ready"
-	docker-compose -f local.yml exec ella-web \
-		bash -c \
-		"while ! pg_isready --host postgresql --dbname=postgres --username=ella; do sleep 5; done"
+db:
+	$(MAKE) wait
 
 	@echo "Creating database"
 	docker-compose -f local.yml exec  \
 		ella-web bash -c "ella-cli database make-production -f"
 
-
+demo:
+	$(MAKE) wait
 	@echo "Create HBOC v01 gene panel"
 	docker-compose -f local.yml exec ella-web \
 		bash -c \
@@ -118,4 +119,5 @@ clean:
 ella-web-logs:
 	docker-compose -f local.yml logs ella-web
 
-
+jupyter-token:
+	docker-compose -f local.yml logs jupyter | head |grep token

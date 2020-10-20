@@ -19,7 +19,11 @@ The Ella website and docs should be considered canonical information.
 Running the Development Stack
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**TODO**
+.. toctree::
+   :maxdepth: 2
+   :caption: Docker Compose All The Things:
+
+   Run-The-Dev-Stack/Run-The-Dev-Stack.ipynb
 
 Understanding the Ella Data Model
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
