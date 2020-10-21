@@ -4,3 +4,5 @@ ipython-sql
 pandas
 lxml
 sphinxawesome-theme
+git+https://github.com/bashtage/sphinx-material.git
+sphinx-rtd-theme

@@ -1,0 +1,29 @@
+# Genepanel: test-ALL Version: v01 Date: 2020-10-21
+#gene symbol	HGNC	remove (add x)	phenotype	inheritance	omim_number	pmid	inheritance info	comment
+BRCA2	1101		{Breast cancer, male, susceptibility to}	AD, SMu	114480			
+BRCA2	1101		{Breast-ovarian cancer, familial, 2}	AD	612555			
+BRCA2	1101		{Glioblastoma 3}	AR	613029			
+BRCA2	1101		{Medulloblastoma}	AD, AR, SMu	155255			
+BRCA2	1101		{Pancreatic cancer 2}		613347			
+BRCA2	1101		{Prostate cancer}	AD, SMu	176807			
+BRCA2	1101		Fanconi anemia, complementation group D1	AR	605724			
+BRCA2	1101		Wilms tumor	AD, SMu	194070			
+HBB	4827		{Malaria, resistance to}		611162			
+HBB	4827		Delta-beta thalassemia	AD	141749			
+HBB	4827		Erythrocytosis 6		617980			
+HBB	4827		Heinz body anemia	AD	140700			
+HBB	4827		Hereditary persistence of fetal hemoglobin	AD	141749			
+HBB	4827		Methemoglobinemia, beta type		617971			
+HBB	4827		Sickle cell anemia	AR	603903			
+HBB	4827		Thalassemia-beta, dominant inclusion-body		603902			
+HBB	4827		Thalassemia, beta		613985			
+MSH6	7329		{Endometrial cancer, familial}	AD, SMu	608089			
+MSH6	7329		Colorectal cancer, hereditary nonpolyposis, type 5	AD	614350			
+MSH6	7329		Mismatch repair cancer syndrome	AR	276300			
+RET	9967		{Hirschsprung disease, protection against}	AD	142623			
+RET	9967		{Hirschsprung disease, susceptibility to, 1}	AD	142623			
+RET	9967		Central hypoventilation syndrome, congenital	AD	209880			
+RET	9967		Medullary thyroid carcinoma	AD	155240			
+RET	9967		Multiple endocrine neoplasia IIA	AD	171400			
+RET	9967		Multiple endocrine neoplasia IIB	AD	162300			
+RET	9967		Pheochromocytoma	AD	171300			
