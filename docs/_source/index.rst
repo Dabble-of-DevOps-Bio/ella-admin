@@ -74,9 +74,7 @@ Included Docs
    :maxdepth: 2
    :caption: Included Docs:
 
-   howto
    pycharm/configuration
-   users
 
 
 Indices and tables
