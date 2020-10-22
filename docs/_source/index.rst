@@ -16,6 +16,8 @@ This project is meant to be an addon to the Ella Allele Project, and the documen
 
 The Ella website and docs should be considered canonical information.
 
+All Documentation is written as a notebook and can be downloaded directly from the github repo.
+
 Running the Development Stack
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -25,16 +27,28 @@ Running the Development Stack
 
    Run-The-Dev-Stack/Run-The-Dev-Stack.ipynb
 
-Understanding the Ella Data Model
+Understanding the Ella CLI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-All Documentation is written with as a notebook and can be downloaded directly from the github repo.
 
 .. toctree::
    :maxdepth: 2
-   :caption: TODO Users, Groups, and FilterConfigs:
+   :caption: Ella CLI
 
-   Understanding-The-Ella-Datamodel/Users-UserGroups-FilterConfigs/Users-Groups-FilterConfigs.ipynb
+   Understanding-The-Ella-CLI/Understanding-The-Ella-CLI.ipynb
+
+Understanding the Ella Data Model
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 2
+   :caption: TODO User Management
+
+   Understanding-The-Ella-Datamodel/Users-Management/Users-Groups-FilterConfigs.ipynb
+
+   :maxdepth: 2
+   :caption: Filter Configs:
+
+   Understanding-The-Ella-Datamodel/FilterConfigs/Filter-Configs.ipynb
 
 .. toctree::
    :maxdepth: 2

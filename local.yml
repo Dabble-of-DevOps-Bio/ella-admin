@@ -62,6 +62,20 @@ services:
     networks:
       - app-tier
 
+  ella-anno:
+    image: dabbleofdevops/ella-anno:v2.0.3
+    environment:
+      DEBUG: "true"
+      API_PORT: 6000
+    ports:
+      - 6000:6000
+    depends_on:
+      - ella-web
+    volumes:
+      - ./data:/data:z
+    networks:
+      - app-tier
+
   docs:
     image: ella_admin_local_docs
     container_name: docs
@@ -93,12 +107,14 @@ services:
       - ./docs:/docs:z
       - ./config:/app/config:z
       - ./ella_admin:/app/ella_admin:z
+      - ./data:/data:z
     ports:
       - "8888:8888"
+    working_dir: "/"
     networks:
       - app-tier
     command:
-      jupyter notebook --ip 0.0.0.0 --allow-root
+      bash -c "jupyter notebook --ip 0.0.0.0 --allow-root"
 
   adminer:
     image: adminer:4.7.7

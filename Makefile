@@ -7,7 +7,8 @@ help:
 	@echo "View the docs at: http://localhost:7000"
 	@echo "View the Ella Web UI at : http://localhost:5001"
 	@echo "View the Ella admin Django Interface at: http://localhost:8000"
-	@echo "View JupyterLab at: http://localhost:8081"
+	@echo "View JupyterLab at: http://localhost:8888"
+	@echo "View Adminer at: http://localhost:8080"
 
 build:
 	docker-compose -f local.yml build
@@ -120,4 +121,4 @@ ella-web-logs:
 	docker-compose -f local.yml logs ella-web
 
 jupyter-token:
-	docker-compose -f local.yml logs jupyter | head |grep token
+	docker-compose -f local.yml logs jupyter | grep 127 | grep token | tail -n 5
