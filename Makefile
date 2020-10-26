@@ -47,7 +47,7 @@ db:
 		ella-web bash -c "ella-cli database make-production -f"
 
 demo:
-	$(MAKE) wait
+	$(MAKE) db
 	@echo "Create HBOC v01 gene panel"
 	docker-compose -f local.yml exec ella-web \
 		bash -c \

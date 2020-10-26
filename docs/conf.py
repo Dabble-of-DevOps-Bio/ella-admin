@@ -42,7 +42,7 @@ extensions = [
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-# templates_path = ["_templates"]
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -68,8 +68,8 @@ html_theme_options = {
 
     # Specify a base_url used to generate sitemap.xml. If not
     # specified, then no sitemap will be built.
-    'base_url': 'https://project.github.io/project',
-    # 'base_url': 'https://github.com/jerowe/ella-admin',
+    # 'base_url': 'https://ella-admin.dabbleofdevopsonaws.com/',
+    'base_url': 'https://dabble-of-devops-ella-admin-docs.s3.amazonaws.com/',
 
     # Set the color and the accent color
     # 'color_primary': 'purple',
@@ -97,4 +97,6 @@ html_sidebars = {
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-# html_static_path = ["_static"]
+html_static_path = ["_static"]
+# Create a custom landing page : https://ofosos.org/2018/12/28/landing-page-template/
+html_additional_pages = {}

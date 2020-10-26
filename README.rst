@@ -13,12 +13,15 @@ Admin Interfaces for Ella
 
 :License: MIT
 
+
 About
 -------
 
 This is a series of admin interfaces for the Ella (code https://gitlab.com/alleles/ella) Clinical Genomics Portal.
 
 This project is under development and NOT recommended for production use!
+
+`Docs <https://dabble-of-devops-ella-admin-docs.s3.amazonaws.com/index.html>`_ are a WIP and are hosted on S3.
 
 Commands
 ---------
@@ -28,9 +31,18 @@ Please see the Makefile for the full list of commands.
 Bring up the Development Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+This brings up the dev instance with an empty database. You will not be able to login to the UI until you add some users.
+
 ::
 
+    make clean
     make dev
+
+If you'd like to add in some demo gene panels + user data run the `make demo` command.
+
+::
+
+    make db
 
 Add the Demo + Analysis Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -42,7 +54,6 @@ You can login using testuser1 Password#123.
 ::
 
     make clean
-    make dev
     make load
 
 Then open up http://localhost:5001. You may have to wait a few seconds for it to load.

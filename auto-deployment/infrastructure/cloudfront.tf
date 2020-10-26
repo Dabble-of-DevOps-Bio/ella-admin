@@ -11,15 +11,15 @@ locals {
 
 variable "cloudfront_aliases" {
   description = "Aliases for cloudfront"
-  default = ["ella-admin.dabbleofdevops.com"]
+  default = ["ella-admin.dabbleofdevopsonaws.com"]
 }
 
 resource "aws_s3_bucket" "ella-admin-logs" {
-  bucket = "${local.resource_name}-logs"
+  bucket = "${local.s3}-logs"
   acl = "private"
 
   tags = merge({
-    Name = "${local.name}-logs"
+    Name = "${local.s3}-logs"
   })
 }
 
@@ -104,37 +104,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   # Cache behavior with precedence 0
   ordered_cache_behavior {
-    path_pattern = "/content/immutable/*"
-    allowed_methods = [
-      "GET",
-      "HEAD",
-      "OPTIONS"]
-    cached_methods = [
-      "GET",
-      "HEAD",
-      "OPTIONS"]
-    target_origin_id = local.s3_origin_id
-
-    forwarded_values {
-      query_string = false
-      headers = [
-        "Origin"]
-
-      cookies {
-        forward = "none"
-      }
-    }
-
-    min_ttl = 0
-    default_ttl = 86400
-    max_ttl = 31536000
-    compress = true
-    viewer_protocol_policy = "redirect-to-https"
-  }
-
-  # Cache behavior with precedence 1
-  ordered_cache_behavior {
-    path_pattern = "/content/*"
+    path_pattern = "/_static/*"
     allowed_methods = [
       "GET",
       "HEAD",
@@ -167,7 +137,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   })
 
   viewer_certificate {
-    acm_certificate_arn = "arn:aws:acm:us-east-1:018835827632:certificate/97ce0bd5-fea5-4915-8640-258bfb6695f2"
+    acm_certificate_arn = "	arn:aws:acm:us-east-1:018835827632:certificate/ef7aba2f-c03a-47da-8d02-49a73f828553"
     ssl_support_method = "sni-only"
   }
 
