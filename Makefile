@@ -122,3 +122,11 @@ ella-web-logs:
 
 jupyter-token:
 	docker-compose -f local.yml logs jupyter | grep 127 | grep token | tail -n 5
+
+# Download all the data needed for the Ella Annotation Service
+# This only needs to be run once
+download:
+	docker-compose -f local.yml exec ella-anno bash -c "python3 /anno/ops/sync_data.py --download"
+	docker-compose -f local.yml exec ella-anno bash -c "python3 /anno/ops/sync_data.py --generate"
+	docker-compose -f local.yml exec ella bash -c "ella-cli igv-download /data/igv-data"
+
