@@ -1,0 +1,11 @@
+{
+ "id": 5,
+ "first_name": "Mya",
+ "last_name": "Ferrell",
+ "username": "mya-ferrell",
+ "email": "mya-ferrell@mail.com",
+ "group": null,
+ "auth_group": 2,
+ "created_at": "2020-02-02T00:00:00Z",
+ "updated_at": "2020-02-02T00:00:00Z"
+}

@@ -46,7 +46,6 @@ services:
     build:
       context: .
       dockerfile: ./compose/local/django/Dockerfile
-    image: ella_admin_local_django
     container_name: django
     depends_on:
       - postgresql
@@ -61,6 +60,8 @@ services:
     command: /start
     networks:
       - app-tier
+    environment:
+      DJANGO_SETTINGS_MODULE: "ella-admin.settings"
 
   ella-anno:
     image: dabbleofdevops/ella-anno:v2.0.3

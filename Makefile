@@ -1,5 +1,8 @@
 APP = /ella-admin
 
+DJANGO_CONTAINER_NAME = django
+DB_CONTAINER_NAME = ella-admin_postgresql_1
+
 .PHONY: help Makefile
 
 # Put it first so that "make" without argument is like "make help".
@@ -122,3 +125,15 @@ ella-web-logs:
 
 jupyter-token:
 	docker-compose -f local.yml logs jupyter | grep 127 | grep token | tail -n 5
+
+django-shell:
+	docker exec -it $(DJANGO_CONTAINER_NAME) bash
+
+migrate-django:
+	docker exec -it $(DJANGO_CONTAINER_NAME) python manage.py migrate api
+
+make-migration-django:
+	docker exec -it $(DJANGO_CONTAINER_NAME) python manage.py makemigrations
+
+db-shell:
+	docker exec -it $(DB_CONTAINER_NAME) bash
