@@ -39,5 +39,6 @@ class User(AbstractUser, BaseModel):
     def auth_group(self):
         return self.auth_groups.first()
 
+    @property
     def is_active(self):
         return self.active
