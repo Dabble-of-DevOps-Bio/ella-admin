@@ -20,7 +20,7 @@ class AuthTest(TestCase):
 
     def _login(self):
         data = {
-            'email': 'cool.brad@gmail.com', 'password': '123456Qwe-'
+            'username': 'zaynab-barker', 'password': '123456Qwe-'
         }
         response = self.client.post(self.login_url, data)
         body = response.json()
@@ -48,7 +48,7 @@ class AuthTest(TestCase):
 
     def test_logout_refresh_token_in_blacklist(self):
         _, body = self._login()
-        response = self.client.post(self.logout_url, body)
+        self.client.post(self.logout_url, body)
         token = partial(RefreshToken, body['refresh'])
 
         self.assertRaises(TokenError, token)

@@ -1,2 +1,2 @@
 from .user import UserTest
-# from .auth import AuthTest
+from .auth import AuthTest
