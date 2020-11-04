@@ -110,6 +110,10 @@ class UserTest(TestCase):
     def get_filters_for_user_search(self):
         return (
             (
+                {'all': True},
+                '/user/get_all.json'
+            ),
+            (
                 {'sort': 'username'},
                 '/user/get_all_sorted_by_username.json'
             ),
@@ -128,19 +132,19 @@ class UserTest(TestCase):
         )
 
     @data_provider(get_filters_for_user_search)
-    def test_search_by_superuser(self, filters, fixture):
+    def test_search(self, filters, fixture):
         self.force_login_user(1)
         response = self.client.get('/api/users/', filters)
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEqualsFixture(response.data, fixture, export=True)
+        self.assertEqualsFixture(response.data, fixture)
 
-    def test_get_by_superuser(self):
+    def test_get(self):
         self.force_login_user(1)
         response = self.client.get('/api/users/1/')
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEqualsFixture(response.data, '/user/get_user.json', export=True)
+        self.assertEqualsFixture(response.data, '/user/get_user.json')
 
     def test_get_self_profile(self):
         self.force_login_user(1)
@@ -149,7 +153,7 @@ class UserTest(TestCase):
         self.assertEquals(response.status_code, status.HTTP_200_OK)
         self.assertEqualsFixture(response.data, '/user/get_user.json')
 
-    def test_get_forbidden(self):
+    def test_get_by_staff(self):
         self.force_login_user(4)
         response = self.client.get('/api/users/2/')
 

@@ -3,10 +3,11 @@ from django.urls import include, path
 from rest_framework import routers
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-from api.http.views import LogoutView, UserViewSet, ProfileViewSet
+from api.http.views import LogoutView, UserViewSet, UserGroupViewSet, ProfileViewSet
 
 router = routers.DefaultRouter()
 
+router.register(r'user-groups', UserGroupViewSet, basename='user_groups')
 router.register(r'users', UserViewSet, basename='users')
 router.register(r'', ProfileViewSet, basename='profile')
 

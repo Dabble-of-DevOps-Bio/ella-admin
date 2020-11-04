@@ -1,0 +1,24 @@
+{
+ "total_items": 4,
+ "previous_page": null,
+ "next_page": null,
+ "last_page": 1,
+ "items": [
+  {
+   "id": 1,
+   "name": "test user group 1"
+  },
+  {
+   "id": 2,
+   "name": "test user group 2"
+  },
+  {
+   "id": 3,
+   "name": "test user group 3"
+  },
+  {
+   "id": 4,
+   "name": "test user group 4"
+  }
+ ]
+}

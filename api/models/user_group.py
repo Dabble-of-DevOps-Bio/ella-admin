@@ -12,4 +12,4 @@ class UserGroup(BaseModel):
         db_table = 'usergroup'
 
     name = CharField(max_length=255, null=False, unique=True)
-    config = JSONField()
+    config = JSONField(default=dict)
