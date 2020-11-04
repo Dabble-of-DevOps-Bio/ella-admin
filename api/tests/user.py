@@ -21,9 +21,9 @@ class UserTest(TestCase):
         response = self.client.post('/api/users/', new_user)
 
         self.assertEquals(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqualsFixture(response.data, '/user/created_user.json', export=True)
-        self.assertTrue(User.objects.filter(pk=5, auth_groups__in=[2], is_superuser=False, is_staff=True).exists())
-        self.assertTrue(ResetPasswordToken.objects.filter(user_id=5).exists())
+        self.assertEqualsFixture(response.data, '/user/created_user.json')
+        self.assertTrue(User.objects.filter(pk=9, auth_groups__in=[2], is_superuser=False, is_staff=True).exists())
+        self.assertTrue(ResetPasswordToken.objects.filter(user_id=9).exists())
         self.assertEmailEquals([
             {
                 'to': ['mya-ferrell@mail.com'],

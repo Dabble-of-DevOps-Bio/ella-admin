@@ -5,7 +5,7 @@ from django.db import models
 from django.db.models import IntegerField, CharField, EmailField, DateTimeField, ForeignKey
 from safedelete import SOFT_DELETE_CASCADE
 
-from api.models.models import AbstractUser
+from api.models.abstract_user import AbstractUser
 from api.models.base_model import BaseModel
 from api.models.managers import UserManager
 
