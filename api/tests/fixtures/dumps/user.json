@@ -1,5 +1,25 @@
 [
   {
+    "model": "api.usergroup",
+    "pk": 1,
+    "fields": {
+      "name": "test user group 1",
+      "config": {"acmg": {"frequency": {"groups": {"external": {"GNOMAD_EXOMES": ["G"], "GNOMAD_GENOMES": ["G"]}, "internal": {"inDB": ["OUSWES"]}}, "thresholds": {"AD": {"external": {"hi_freq_cutoff": 0.005, "lo_freq_cutoff": 0.001}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}, "default": {"external": {"hi_freq_cutoff": 0.01, "lo_freq_cutoff": 1.0}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}}}, "disease_mode": "ANY", "last_exon_important": "LEI"}, "overview": {"views": ["analyses"]}},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.usergroup",
+    "pk": 2,
+    "fields": {
+      "name": "test user group 2",
+      "config": {"acmg": {"frequency": {"groups": {"external": {"GNOMAD_EXOMES": ["G"], "GNOMAD_GENOMES": ["G"]}, "internal": {"inDB": ["OUSWES"]}}, "thresholds": {"AD": {"external": {"hi_freq_cutoff": 0.005, "lo_freq_cutoff": 0.001}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}, "default": {"external": {"hi_freq_cutoff": 0.01, "lo_freq_cutoff": 1.0}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}}}, "disease_mode": "ANY", "last_exon_important": "LEI"}, "overview": {"views": ["analyses"]}},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
     "model": "api.user",
     "pk": 1,
     "fields": {
@@ -14,7 +34,7 @@
       "date_joined": "2020-07-30T12:21:16.129Z",
       "email": "zaynab-barker@mail.com",
       "auth_groups": [1],
-      "group_id": null,
+      "group_id": 1,
       "config": {},
       "created_at": "2020-07-30T12:21:16.129Z",
       "updated_at": "2020-07-30T12:21:16.129Z"
@@ -35,7 +55,7 @@
       "date_joined": "2020-07-30T12:21:16.129Z",
       "email": "callen-burns@mail.com",
       "auth_groups": [1],
-      "group_id": null,
+      "group_id": 1,
       "config": {},
       "created_at": "2020-07-30T12:21:16.129Z",
       "updated_at": "2020-07-30T12:21:16.129Z",
@@ -57,7 +77,7 @@
       "date_joined": "2020-07-30T12:21:16.129Z",
       "email": "bronte-mccartney@mail.com",
       "auth_groups": [1],
-      "group_id": null,
+      "group_id": 1,
       "config": {},
       "created_at": "2020-07-30T12:21:16.129Z",
       "updated_at": "2020-07-30T12:21:16.129Z",
@@ -79,7 +99,7 @@
       "date_joined": "2020-07-30T12:21:16.129Z",
       "email": "debra-ortega@mail.com",
       "auth_groups": [2],
-      "group_id": null,
+      "group_id": 1,
       "config": {},
       "created_at": "2020-07-30T12:21:16.129Z",
       "updated_at": "2020-07-30T12:21:16.129Z"
@@ -100,7 +120,7 @@
       "date_joined": "2020-07-30T12:21:16.129Z",
       "email": "rhianne-mccormick@mail.com",
       "auth_groups": [2],
-      "group_id": null,
+      "group_id": 1,
       "config": {},
       "created_at": "2020-07-30T12:21:16.129Z",
       "updated_at": "2020-07-30T12:21:16.129Z"
@@ -121,7 +141,7 @@
       "date_joined": "2020-07-30T12:21:16.129Z",
       "email": "odin-wilde@mail.com",
       "auth_groups": [2],
-      "group_id": null,
+      "group_id": 1,
       "config": {},
       "created_at": "2020-07-30T12:21:16.129Z",
       "updated_at": "2020-07-30T12:21:16.129Z"
@@ -142,7 +162,7 @@
       "date_joined": "2020-07-30T12:21:16.129Z",
       "email": "yousef-mackay@mail.com",
       "auth_groups": [2],
-      "group_id": null,
+      "group_id": 1,
       "config": {},
       "created_at": "2020-07-30T12:21:16.129Z",
       "updated_at": "2020-07-30T12:21:16.129Z"
@@ -163,7 +183,7 @@
       "date_joined": "2020-07-30T12:21:16.129Z",
       "email": "abdirahman-mckay@mail.com",
       "auth_groups": [2],
-      "group_id": null,
+      "group_id": 1,
       "config": {},
       "created_at": "2020-07-30T12:21:16.129Z",
       "updated_at": "2020-07-30T12:21:16.129Z"

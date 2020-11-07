@@ -18,7 +18,7 @@ import sphinx_rtd_theme
 sys.path.insert(0, os.path.abspath("/app"))
 os.environ.setdefault("DATABASE_URL", "")
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ella-admin.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ella-admin.settings.local")
 django.setup()
 
 # -- Project information -----------------------------------------------------

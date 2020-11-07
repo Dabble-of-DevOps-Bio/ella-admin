@@ -135,5 +135,9 @@ migrate-django:
 make-migration-django:
 	docker exec -it $(DJANGO_CONTAINER_NAME) python manage.py makemigrations
 
+# It's temp
+drop-db:
+	docker kill $(DB_CONTAINER_NAME) && docker rm $(DB_CONTAINER_NAME)
+
 db-shell:
 	docker exec -it $(DB_CONTAINER_NAME) bash

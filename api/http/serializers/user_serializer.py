@@ -1,12 +1,12 @@
 from django.contrib.auth.models import Group
 from django.contrib.auth.password_validation import validate_password
 from django.utils.translation import gettext as _
+from rest_framework import serializers
 from rest_framework.fields import CharField, EmailField
 from rest_framework.validators import UniqueValidator
 from rest_framework_simplejwt.serializers import PasswordField
 
 from api.http.serializers.base_model_serializer import BaseModelSerializer
-from api.http.serializers.user_group_serializer import UserGroupSerializer
 from api.http.serializers.fields.user_auth_group_serializer import UserAuthGroup
 from api.models import User, UserGroup
 
@@ -15,7 +15,7 @@ class UserSerializer(BaseModelSerializer):
     class Meta:
         model = User
         fields = (
-            'id', 'first_name', 'last_name', 'username', 'email', 'password', 'new_password', 'group', 'auth_group',
+            'id', 'first_name', 'last_name', 'username', 'email', 'password', 'new_password', 'group_id', 'auth_group',
             'created_at', 'updated_at',
         )
 
@@ -33,7 +33,7 @@ class UserSerializer(BaseModelSerializer):
     ])
     password = PasswordField(required=False)
     new_password = CharField(required=False)
-    group = UserGroupSerializer(required=False)
+    group_id = serializers.PrimaryKeyRelatedField(required=False, queryset=UserGroup.objects.all())
     auth_group = UserAuthGroup(required=True, queryset=Group.objects.all())
 
     default_error_messages = {
@@ -43,6 +43,8 @@ class UserSerializer(BaseModelSerializer):
     }
 
     def create(self, validated_data):
+        validated_data['group'] = validated_data.pop('group_id')
+
         user = User(**self.__exclude_fields_for_creation(validated_data))
 
         if 'password' in validated_data:
@@ -58,6 +60,9 @@ class UserSerializer(BaseModelSerializer):
     def update(self, instance, validated_data):
         self.__set_password(validated_data)
         self.__set_group(validated_data)
+
+        if 'group_id' in validated_data:
+            validated_data['group'] = validated_data.pop('group_id')
 
         return super().update(instance, validated_data)
 

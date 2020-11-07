@@ -27,7 +27,7 @@ class UserTest(TestCase):
         self.assertEmailEquals([
             {
                 'to': ['mya-ferrell@mail.com'],
-                'from_email': 'some_email@email.com',
+                'from_email': 'ella-support@mail.com',
                 'fixture': self.responses_fixtures_dir + '/user/set_password.html'
             }
         ])
@@ -78,6 +78,7 @@ class UserTest(TestCase):
 
     def test_update_self_profile(self):
         update_data = self.load_fixture('/user/update_user.json')
+        del update_data['group_id']
 
         self.force_login_user(1)
         response = self.client.put('/api/profile/', update_data)
@@ -166,7 +167,7 @@ class UserTest(TestCase):
         self.assertEquals(response.status_code, status.HTTP_200_OK)
         self.assertEmailEquals([
             {
-                'from_email': 'some_email@email.com',
+                'from_email': 'ella-support@mail.com',
                 'to': ['zaynab-barker@mail.com'],
                 'fixture': self.responses_fixtures_dir + '/user/password_reset.html'
             }
