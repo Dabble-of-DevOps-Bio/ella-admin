@@ -11,12 +11,29 @@ locals {
 
 variable "cloudfront_aliases" {
   description = "Aliases for cloudfront"
-  default = ["ella-admin.dabbleofdevopsonaws.com"]
+  default = [
+    "ella-admin.dabbleofdevopsonaws.com"]
 }
 
 resource "aws_s3_bucket" "ella-admin-logs" {
   bucket = "${local.s3}-logs"
   acl = "private"
+
+  lifecycle_rule {
+    id = "log"
+    enabled = true
+
+    //    prefix = "/"
+
+    tags = {
+      "rule" = "log"
+      "autoclean" = "true"
+    }
+
+    expiration {
+      days = 30
+    }
+  }
 
   tags = merge({
     Name = "${local.s3}-logs"
@@ -29,6 +46,8 @@ resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
 
 resource "aws_s3_bucket" "ella-admin" {
   bucket = local.s3
+
+  acl = "public-read"
 
   website {
     index_document = "index.html"
@@ -159,5 +178,7 @@ output "cloudfront" {
     id = aws_cloudfront_distribution.s3_distribution.id
     domain = aws_cloudfront_distribution.s3_distribution.domain_name
     etag = aws_cloudfront_distribution.s3_distribution.etag
+    s3_bucket_regional_domain_name = aws_s3_bucket.ella-admin.bucket_regional_domain_name
+    s3_bucket_domain_name = aws_s3_bucket.ella-admin.bucket_regional_domain_name
   }
 }

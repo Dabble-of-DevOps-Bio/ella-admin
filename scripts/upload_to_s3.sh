@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#make dev
+make dev
 
 # TODO will probably have to wait for a port or something here
 

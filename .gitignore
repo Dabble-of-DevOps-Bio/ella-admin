@@ -342,3 +342,4 @@ terraform.tfstate
 
 auto-deployment/infrastructure/terraform.tfstate.backup
 data/*vcf
+.idea
