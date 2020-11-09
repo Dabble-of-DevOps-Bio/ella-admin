@@ -69,7 +69,8 @@ html_theme_options = {
     # Specify a base_url used to generate sitemap.xml. If not
     # specified, then no sitemap will be built.
     # 'base_url': 'https://ella-admin.dabbleofdevopsonaws.com/',
-    'base_url': 'https://dabble-of-devops-ella-admin-docs.s3.amazonaws.com/',
+    # 'base_url': 'https://dabble-of-devops-ella-admin-docs.s3.amazonaws.com/',
+    'base_url': 'http://dabble-of-devops-ella-admin-docs.s3-website-us-east-1.amazonaws.com/',
 
     # Set the color and the accent color
     # 'color_primary': 'purple',
