@@ -99,8 +99,7 @@ REST_FRAMEWORK = {
 }
 
 PASSWORD_HASHERS = (
-    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
-    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'api.auth.hashers.CustomBCryptSHA256PasswordHasher',
 )
 
 SWAGGER_SETTINGS = {
