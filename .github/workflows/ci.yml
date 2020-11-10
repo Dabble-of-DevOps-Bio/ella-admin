@@ -45,13 +45,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run the postgresql
-        run:  docker-compose -f local.yml up -d postgresql
+        run:  docker-compose -f tests.yml up -d postgresql
 
       - name: Run the django
-        run:  docker-compose -f local.yml up -d django
+        run:  docker-compose -f tests.yml up -d django
 
       - name: Run Django Tests
-        run:  docker-compose -f local.yml exec -T django python manage.py test
+        run:  docker-compose -f tests.yml exec -T django python manage.py test
 
       - name: Tear down the Stack
         run:  docker-compose down
