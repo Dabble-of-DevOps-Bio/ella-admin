@@ -211,7 +211,7 @@ class UserTest(TestCase):
 
     def test_update_password_with_the_same_password(self):
         user_update = self.load_fixture('/user/update_user_password.json')
-        user_update['new_password'] = '123456Qwe-'
+        user_update['new_password'] = 'Password#123'
 
         self.force_login_user(1)
         response = self.client.put('/api/profile/', user_update)

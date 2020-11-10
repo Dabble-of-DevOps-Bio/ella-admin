@@ -20,7 +20,7 @@ class AuthTest(TestCase):
 
     def _login(self):
         data = {
-            'username': 'zaynab-barker', 'password': '123456Qwe-'
+            'username': 'zaynab-barker', 'password': 'Password#123'
         }
         response = self.client.post(self.login_url, data)
         body = response.json()
