@@ -44,17 +44,14 @@ jobs:
       - name: Checkout Code Repository
         uses: actions/checkout@v2
 
-      - name: Run the postgresql
-        run:  docker-compose -f tests.yml up -d postgresql
-
-      - name: Run the django
-        run:  docker-compose -f tests.yml up -d django
+      - name: Run django and postgresql
+        run:  docker-compose -f tests.yml up -d 
 
       - name: Run Django Tests
         run:  docker-compose -f tests.yml exec -T django python manage.py test
 
       - name: Tear down the Stack
-        run:  docker-compose down
+        run:  docker-compose -f tests.yml down
 
   # deploy:
   #   name: Deploy to staging
