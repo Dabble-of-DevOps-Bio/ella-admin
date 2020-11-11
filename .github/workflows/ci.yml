@@ -74,4 +74,8 @@ jobs:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
           rsync -av ./ ec2-user@54.161.122.188:/home/ec2-user/efs/ella_admin_stg
+      - name: restart docker-compose on server
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
           ssh ec2-user@54.161.122.188 "cd /home/ec2-user/efs/ella_admin_stg && docker-compose -f local.yml up -d --force-recreate --build django && exit"
