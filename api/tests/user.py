@@ -22,8 +22,8 @@ class UserTest(TestCase):
 
         self.assertEquals(response.status_code, status.HTTP_201_CREATED)
         self.assertEqualsFixture(response.data, '/user/created_user.json')
-        self.assertTrue(User.objects.filter(pk=9, auth_groups__in=[2], is_superuser=False, is_staff=True).exists())
-        self.assertTrue(ResetPasswordToken.objects.filter(user_id=9).exists())
+        self.assertTrue(User.objects.filter(pk=10, auth_groups__in=[2], is_superuser=False, is_staff=True).exists())
+        self.assertTrue(ResetPasswordToken.objects.filter(user_id=10).exists())
         self.assertEmailEquals([
             {
                 'to': ['mya-ferrell@mail.com'],

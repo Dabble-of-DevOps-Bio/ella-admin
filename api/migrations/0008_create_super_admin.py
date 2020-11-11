@@ -25,6 +25,7 @@ def create_superadmin(*args, **kwargs):
                     "is_staff,"
                     "active,"
                     "date_joined,"
+                    "email,"
                     "password,"
                     "password_expiry,"
                     "incorrect_logins,"
@@ -40,6 +41,7 @@ def create_superadmin(*args, **kwargs):
                     "false,"
                     "true,"
                     "'2018-09-11 08:56:27.268000',"
+                    "'superadmin@ellaadmin.com',"
                     "'$2b$12$qMyZKaxhdgtGUQTP/TKIrObQPuKVvAjR8AKnwbfUgo19e8Xid3vMO',"
                     "'2030-12-31 00:00:27.268000',"
                     "0,"
@@ -52,7 +54,7 @@ def create_superadmin(*args, **kwargs):
                     "'2018-09-11 08:57:28.479000')" % user_group_id
             )
 
-        cursor.execute("SELECT id FROM \"user\" WHERE username='superuser'")
+        cursor.execute("SELECT id FROM \"user\" WHERE email='superadmin@ellaadmin.com'")
         user_id = cursor.fetchone()[0]
 
         cursor.execute("SELECT id FROM auth_group WHERE name='admin'")
