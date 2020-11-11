@@ -3,10 +3,10 @@
 from django.db import migrations, connection
 
 
-def update_user_group_table(*args, **kwargs):
+def update_user_session_table(*args, **kwargs):
     with connection.cursor() as cursor:
         cursor.execute(
-            'alter table "usergroup" '
+            'alter table "usersession" '
                 'ADD COLUMN created_at timestamp with time zone not null default now(), '
                 'ADD COLUMN updated_at timestamp with time zone not null default now(), '
                 'ADD COLUMN deleted timestamp with time zone'
@@ -15,9 +15,9 @@ def update_user_group_table(*args, **kwargs):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('api', '0006_update_user_table'),
+        ('api', '0008_create_super_admin'),
     ]
 
     operations = [
-        migrations.RunPython(update_user_group_table),
+        migrations.RunPython(update_user_session_table),
     ]

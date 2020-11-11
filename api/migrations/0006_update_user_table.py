@@ -18,8 +18,6 @@ def update_user_table(*args, **kwargs):
 
 
 class Migration(migrations.Migration):
-    initial = True
-
     dependencies = [
         ('api', '0005_set_user_auth_group'),
     ]

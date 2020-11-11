@@ -8,7 +8,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-FRONTEND_URL = 'http://localhost'
+FRONTEND_DOMAIN = 'localhost'
+FRONTEND_URL = 'http://%s' % FRONTEND_DOMAIN
 
 DATABASES = {
     'default': {
