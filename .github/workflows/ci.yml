@@ -61,19 +61,17 @@ jobs:
       - name: Checkout development
         uses: actions/checkout@v1
       - name: Add the private SSH key to the ssh-agent
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$SSH_PRIVATE_KEY" > ../private.key
-          sudo chmod 600 ../private.key
-          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-        shell: bash
         env:
-          SSH_PRIVATE_KEY: ${{secrets.PRIVATE_KEY}}
-          SSH_KNOWN_HOSTS: ${{secrets.SSH_KNOWN_HOSTS}}
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          mkdir -p ~/.ssh
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          ssh-keyscan 54.161.122.188 >> ~/.ssh/known_hosts
+          ssh-add - <<< "${{ secrets.PRIVATE_KEY }}"
       - name: rsync code from guthub to server
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
-          echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
           rsync -av ./ ec2-user@54.161.122.188:/home/ec2-user/efs/ella_admin_stg
           ENDSSH
