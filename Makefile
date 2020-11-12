@@ -130,7 +130,9 @@ django-shell:
 	docker exec -it $(DJANGO_CONTAINER_NAME) bash
 
 migrate-django:
-	docker exec -it $(DJANGO_CONTAINER_NAME) python manage.py migrate api
+	docker-compose -f local.yml exec -T django python manage.py migrate api
+	docker-compose -f local.yml exec -T django python manage.py migrate django_cron
+	docker-compose -f local.yml exec -T django python manage.py migrate sessions
 
 make-migration-django:
 	docker exec -it $(DJANGO_CONTAINER_NAME) python manage.py makemigrations
