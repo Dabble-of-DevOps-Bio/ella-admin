@@ -34,17 +34,17 @@ jobs:
       #   run: flake8
 
 # With no caching at all the entire ci process takes 4m 30s to complete!
-  tests:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code Repository
-        uses: actions/checkout@v2
-      - name: Run django and postgresql
-        run:  docker-compose -f tests.yml up -d 
-      - name: Run Django Tests
-        run:  docker-compose -f tests.yml exec -T django python manage.py test
-      - name: Tear down the Stack
-        run:  docker-compose -f tests.yml down
+  # tests:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout Code Repository
+  #       uses: actions/checkout@v2
+  #     - name: Run django and postgresql
+  #       run:  docker-compose -f tests.yml up -d 
+  #     - name: Run Django Tests
+  #       run:  docker-compose -f tests.yml exec -T django python manage.py test
+  #     - name: Tear down the Stack
+  #       run:  docker-compose -f tests.yml down
 
   deploy:
     name: Deploy to staging
@@ -76,4 +76,4 @@ jobs:
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
-          ssh ec2-user@54.161.122.188 "cd /home/ec2-user/efs/ella_admin_stg && make migrate-django && exit"
+          ssh ec2-user@54.161.122.188 "export COMPOSE_INTERACTIVE_NO_CLI=1 && cd /home/ec2-user/efs/ella_admin_stg && make migrate-django && exit"
