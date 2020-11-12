@@ -50,6 +50,7 @@ jobs:
     name: Deploy to staging
     runs-on: ubuntu-latest
     needs: tests
+    if: github.ref == 'refs/heads/development'
     steps:
       - name: Checkout development
         uses: actions/checkout@v1
