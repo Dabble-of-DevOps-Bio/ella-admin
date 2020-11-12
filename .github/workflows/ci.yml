@@ -62,18 +62,19 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           ssh-keyscan 54.161.122.188 >> ~/.ssh/known_hosts
           ssh-add - <<< "${{ secrets.PRIVATE_KEY }}"
-      - name: rsync code from guthub to server
-        env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: |
-          rsync -av ./ ec2-user@54.161.122.188:/home/ec2-user/efs/ella_admin_stg
-      - name: restart docker-compose on server
-        env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: |
-          ssh ec2-user@54.161.122.188 "cd /home/ec2-user/efs/ella_admin_stg && docker-compose -f local.yml up -d --force-recreate --build django && exit"
+      # - name: rsync code from guthub to server
+      #   env:
+      #     SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      #   run: |
+      #     rsync -av ./ ec2-user@54.161.122.188:/home/ec2-user/efs/ella_admin_stg
+      # - name: restart docker-compose on server
+      #   env:
+      #     SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      #   run: |
+      #     ssh ec2-user@54.161.122.188 "cd /home/ec2-user/efs/ella_admin_stg && docker-compose -f local.yml up -d --force-recreate --build django && exit"
       - name: migrations
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
+          export COMPOSE_INTERACTIVE_NO_CLI=1
           ssh ec2-user@54.161.122.188 "export COMPOSE_INTERACTIVE_NO_CLI=1 && cd /home/ec2-user/efs/ella_admin_stg && make migrate-django && exit"
