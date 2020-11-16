@@ -77,4 +77,4 @@ jobs:
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
-          ssh ec2-user@54.161.122.188 "cd /home/ec2-user/efs/ella_admin_stg && make migrate-django && exit"
+          ssh ec2-user@54.161.122.188 "cd /home/ec2-user/efs/ella_admin_stg && make migrate-django-stg && exit"

@@ -35,6 +35,13 @@ load:
 		ella-web \
 		bash -c "gunzip < /data/ella_db_1.sql.gz |PGPASSWORD=password123 psql -h postgresql -U postgres"
 
+load-stg:
+	$(MAKE) wait
+	@echo "Loading in database dump"
+	docker-compose -f stg.yml exec  \
+		ella-web \
+		bash -c "gunzip < /data/ella_db_1.sql.gz |PGPASSWORD=evangelicalism620455 psql -h postgresql -U ella_api"
+
 dump:
 	$(MAKE) wait
 	@echo "Loading in database dump"
@@ -133,6 +140,11 @@ migrate-django:
 	docker-compose -f local.yml exec -T django python manage.py migrate api
 	docker-compose -f local.yml exec -T django python manage.py migrate django_cron
 	docker-compose -f local.yml exec -T django python manage.py migrate sessions
+
+migrate-django-stg:
+	docker-compose -f stg.yml exec -T django python manage.py migrate api
+	docker-compose -f stg.yml exec -T django python manage.py migrate django_cron
+	docker-compose -f stg.yml exec -T django python manage.py migrate sessions
 
 make-migration-django:
 	docker exec -it $(DJANGO_CONTAINER_NAME) python manage.py makemigrations
