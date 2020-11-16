@@ -331,6 +331,7 @@ ella_admin/media/
 .env
 .envs/*
 !.envs/.local/
+!.envs/.stg/
 
 **/.ipynb_checkpoints
 

@@ -72,7 +72,7 @@ jobs:
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
-          ssh ec2-user@54.161.122.188 "cd /home/ec2-user/efs/ella_admin_stg && docker-compose -f local.yml up -d --force-recreate --build django && exit"
+          ssh ec2-user@54.161.122.188 "cd /home/ec2-user/efs/ella_admin_stg && docker-compose -f stg.yml up -d --force-recreate --build django && exit"
       - name: migrations
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
