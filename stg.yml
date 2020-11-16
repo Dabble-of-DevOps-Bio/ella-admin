@@ -65,7 +65,7 @@ services:
     networks:
       - app-tier
     environment:
-      DJANGO_SETTINGS_MODULE: "ella-admin.settings.local"
+      DJANGO_SETTINGS_MODULE: "ella-admin.settings.staging"
 
   ella-anno:
     image: dabbleofdevops/ella-anno:v2.0.3
