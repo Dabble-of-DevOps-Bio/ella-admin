@@ -40,7 +40,7 @@ load-stg:
 	@echo "Loading in database dump"
 	docker-compose -f stg.yml exec  \
 		ella-web \
-		bash -c "gunzip < /data/ella_db_1.sql.gz |PGPASSWORD=evangelicalism620455 psql -h postgresql -U ella_api"
+		bash -c "gunzip < /data/ella_db_1.sql.gz |PGPASSWORD=evangelicalism620455 psql -h postgresql -U postgres"
 
 dump:
 	$(MAKE) wait

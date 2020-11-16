@@ -3,14 +3,14 @@
 # For Django
 POSTGRES_HOST=postgresql
 POSTGRES_PORT=5432
-POSTGRES_DB=ella_api
-POSTGRES_USER=ella_api
+POSTGRES_DB=postgres
+POSTGRES_USER=postgres
 POSTGRES_PASSWORD=evangelicalism620455
 
 # For Ella & Postgres
-DB_URL="postgresql://ella_api:evangelicalism620455@postgresql/ella_api"
+DB_URL="postgresql://postgres:evangelicalism620455@postgresql/postgres"
 POSTGRESQL_HOST=postgresql
-POSTGRESQL_USERNAME=ella_api
-POSTGRESQL_DATABASE=ella_api
+POSTGRESQL_USERNAME=postgres
+POSTGRESQL_DATABASE=postgres
 POSTGRESQL_PASSWORD=evangelicalism620455
 

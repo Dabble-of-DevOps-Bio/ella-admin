@@ -14,8 +14,8 @@ FRONTEND_URL = 'http://%s' % FRONTEND_DOMAIN
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ella_api',
-        'USER': 'ella_api',
+        'NAME': 'postgres',
+        'USER': 'postgres',
         'PASSWORD': 'evangelicalism620455',
         'HOST': 'postgresql',
         'PORT': '5432',

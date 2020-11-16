@@ -8,6 +8,11 @@ volumes:
   local_postgres_data: {}
   local_postgres_data_backups: {}
 
+x-logging: &loki-logging
+  driver: loki
+  options:
+    loki-url: "http://localhost:3100/api/prom/push"
+
 services:
 
   # If you make any updates to the ella postgresql service
@@ -16,6 +21,7 @@ services:
 
   postgresql:
     image: bitnami/postgresql:12
+    logging: *loki-logging
     networks:
       - app-tier
     ports:
@@ -27,6 +33,7 @@ services:
 
   ella-web:
     image: dabbleofdevops/ella:1.11.1
+    logging: *loki-logging
     depends_on:
       - postgresql
     env_file:
@@ -47,10 +54,7 @@ services:
       context: .
       dockerfile: ./compose/local/django/Dockerfile
     container_name: django
-    logging:
-      driver: loki
-      options:
-        loki-url: "http://host.docker.internal:3100/loki/api/v1/push"
+    logging: *loki-logging
     depends_on:
       - postgresql
     #      - ella-web
