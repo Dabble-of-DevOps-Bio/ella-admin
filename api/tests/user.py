@@ -78,7 +78,7 @@ class UserTest(TestCase):
 
     def test_update_self_profile(self):
         update_data = self.load_fixture('/user/update_user.json')
-        del update_data['group_id']
+        del update_data['group']
 
         self.force_login_user(1)
         response = self.client.put('/api/profile/', update_data)
@@ -115,6 +115,10 @@ class UserTest(TestCase):
                 '/user/get_all.json'
             ),
             (
+                {'expand': ['group']},
+                '/user/get_all_with_expand_group.json'
+            ),
+            (
                 {'sort': 'username'},
                 '/user/get_all_sorted_by_username.json'
             ),
@@ -138,14 +142,27 @@ class UserTest(TestCase):
         response = self.client.get('/api/users/', filters)
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEqualsFixture(response.data, fixture)
+        self.assertEqualsFixture(response.data, fixture, export=True)
 
-    def test_get(self):
+    def get_filters_for_test_get_user(self):
+        return (
+            (
+                {},
+                '/user/get_user.json'
+            ),
+            (
+                {'expand': ['group']},
+                '/user/get_user_with_expand_group.json'
+            ),
+        )
+
+    @data_provider(get_filters_for_test_get_user)
+    def test_get(self, filters, fixture):
         self.force_login_user(1)
-        response = self.client.get('/api/users/1/')
+        response = self.client.get('/api/users/1/', filters)
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEqualsFixture(response.data, '/user/get_user.json')
+        self.assertEqualsFixture(response.data, fixture)
 
     def test_get_self_profile(self):
         self.force_login_user(1)
