@@ -91,5 +91,16 @@
       "updated_at": "2020-07-30T12:21:16.129Z",
       "deleted": "2020-08-03T12:21:16.129Z"
     }
+  },
+  {
+    "model": "api.usergroup",
+    "pk": 6,
+    "fields": {
+      "name": "test deleted user group",
+      "config": {"acmg": {"frequency": {"groups": {"external": {"GNOMAD_EXOMES": ["G"], "GNOMAD_GENOMES": ["G"]}, "internal": {"inDB": ["OUSWES"]}}, "thresholds": {"AD": {"external": {"hi_freq_cutoff": 0.005, "lo_freq_cutoff": 0.001}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}, "default": {"external": {"hi_freq_cutoff": 0.01, "lo_freq_cutoff": 1.0}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}}}, "disease_mode": "ANY", "last_exon_important": "LEI"}, "overview": {"views": ["analyses"]}},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z",
+      "deleted": "2020-07-30T12:21:16.129Z"
+    }
   }
 ]

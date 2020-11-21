@@ -16,6 +16,22 @@ class UserGroupTest(TestCase):
         self.assertEquals(response.status_code, status.HTTP_201_CREATED)
         self.assertEqualsFixture(response.data, '/user_group/created_user_group.json')
 
+    def test_create_with_exists_name(self):
+        new_user_group = self.load_fixture('/user_group/new_user_group_with_exists_name.json')
+
+        self.force_login_user(1)
+        response = self.client.post('/api/user-groups/', new_user_group)
+
+        self.assertBadRequest(response)
+
+    def test_create_with_already_deleted_name(self):
+        new_user_group = self.load_fixture('/user_group/new_user_group_with_already_deleted_name.json')
+
+        self.force_login_user(1)
+        response = self.client.post('/api/user-groups/', new_user_group)
+
+        self.assertBadRequest(response)
+
     def test_create_by_staff(self):
         new_user_group = self.load_fixture('/user_group/new_user_group.json')
 
