@@ -58,6 +58,14 @@ class UserTest(TestCase):
 
         self.assertEquals(response.status_code, status.HTTP_403_FORBIDDEN)
 
+    def test_create_without_group(self):
+        new_user = self.load_fixture('/user/new_user_without_group.json')
+
+        self.force_login_user(1)
+        response = self.client.post('/api/users/', new_user)
+
+        self.assertBadRequest(response)
+
     @mock.patch('django_rest_passwordreset.tokens.RandomStringTokenGenerator.generate_token', mock_generate_token)
     def test_create_with_non_existing_group(self):
         new_user = self.load_fixture('/user/new_user_with_non_existing_group.json')

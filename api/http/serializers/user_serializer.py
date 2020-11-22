@@ -37,7 +37,7 @@ class UserSerializer(BaseModelSerializer):
     ])
     password = PasswordField(required=False)
     new_password = CharField(required=False)
-    group = serializers.PrimaryKeyRelatedField(required=False, queryset=UserGroup.objects.all())
+    group = serializers.PrimaryKeyRelatedField(required=True, queryset=UserGroup.objects.all())
     auth_group = UserAuthGroup(required=True, queryset=Group.objects.all())
 
     default_error_messages = {
