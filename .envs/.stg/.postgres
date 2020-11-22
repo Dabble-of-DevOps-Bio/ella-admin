@@ -5,12 +5,12 @@ POSTGRES_HOST=postgresql
 POSTGRES_PORT=5432
 POSTGRES_DB=postgres
 POSTGRES_USER=postgres
-POSTGRES_PASSWORD=evangelicalism620455
+POSTGRES_PASSWORD=password123
 
 # For Ella & Postgres
-DB_URL="postgresql://postgres:evangelicalism620455@postgresql/postgres"
+DB_URL="postgresql://postgres:password123@postgresql/postgres"
 POSTGRESQL_HOST=postgresql
 POSTGRESQL_USERNAME=postgres
 POSTGRESQL_DATABASE=postgres
-POSTGRESQL_PASSWORD=evangelicalism620455
+POSTGRESQL_PASSWORD=password123
 
