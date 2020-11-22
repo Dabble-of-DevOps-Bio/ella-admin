@@ -33,7 +33,7 @@ class User(AbstractUser, BaseModel):
     incorrect_logins = IntegerField(default=0)
     config = JSONField(default=dict)
 
-    group = ForeignKey('UserGroup', on_delete=models.CASCADE)
+    group = ForeignKey('UserGroup', on_delete=models.CASCADE, null=False)
 
     @property
     def auth_group(self):
