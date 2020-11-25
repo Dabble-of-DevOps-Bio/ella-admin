@@ -18,6 +18,6 @@ class StaffAppLoginView(GenericAPIView):
         response = HttpResponse(status=status.HTTP_302_FOUND)
         response.set_cookie(key='AuthenticationToken',
                             value=token,
-                            expires=session.expires, domain='.ronasit.', path='/', httponly=True)
+                            expires=session.expires, domain=settings.FRONTEND_DOMAIN, path='/', httponly=True)
 
         return response
