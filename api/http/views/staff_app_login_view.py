@@ -17,6 +17,6 @@ class StaffAppLoginView(GenericAPIView):
         response = HttpResponse()
         response.set_cookie(key='AuthenticationToken',
                             value=token,
-                            expires=session.expires, domain=settings.FRONTEND_DOMAIN, path='/', httponly=True)
+                            expires=session.expires, domain=settings.FRONTEND_DOMAIN, path='/', secure=True, httponly=True)
 
         return response
