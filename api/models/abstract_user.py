@@ -1,4 +1,7 @@
+import pendulum
+from django.conf import settings
 from django.contrib import auth
+from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import Permission, Group, UserManager, AbstractBaseUser
 from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.core.exceptions import PermissionDenied
@@ -206,6 +209,12 @@ class AbstractUser(AbstractBaseUser, PermissionsMixin):
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Send an email to this user."""
         send_mail(subject, message, from_email, [self.email], **kwargs)
+
+    def set_password(self, raw_password):
+        self.password = make_password(raw_password)
+        self._password = raw_password
+
+        self.password_expiry = pendulum.now().set(hour=2, minute=0, second=0, microsecond=0).add(days=1 + settings.PASSWORD['live_time_days'])
 
     def check_password(self, raw_password):
         """
