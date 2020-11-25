@@ -29,7 +29,7 @@ class User(AbstractUser, BaseModel):
     last_name = CharField(max_length=255, null=False)
     username = CharField(max_length=255, null=False, unique=True)
     email = EmailField(blank=True)
-    password_expiry = DateTimeField(null=True)
+    password_expiry = DateTimeField()
     incorrect_logins = IntegerField(default=0)
     config = JSONField(default=dict)
 
