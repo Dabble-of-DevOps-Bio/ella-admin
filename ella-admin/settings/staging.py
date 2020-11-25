@@ -8,7 +8,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-FRONTEND_DOMAIN = 'localhost'
+FRONTEND_DOMAIN = 'ella.ronasit.com'
 FRONTEND_URL = 'http://%s' % FRONTEND_DOMAIN
 
 DATABASES = {
