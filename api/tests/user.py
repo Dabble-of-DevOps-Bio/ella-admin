@@ -32,6 +32,25 @@ class UserTest(TestCase):
             }
         ])
 
+    @mock.patch('django_rest_passwordreset.tokens.RandomStringTokenGenerator.generate_token', mock_generate_token)
+    def test_create_without_password(self):
+        new_user = self.load_fixture('/user/new_user_without_password.json')
+
+        self.force_login_user(1)
+        response = self.client.post('/api/users/', new_user)
+
+        self.assertEquals(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqualsFixture(response.data, '/user/created_user_without_password.json', export=True)
+        self.assertTrue(User.objects.filter(pk=11, auth_groups__in=[2], is_superuser=False, is_staff=True).exists())
+        self.assertTrue(ResetPasswordToken.objects.filter(user_id=11).exists())
+        self.assertEmailEquals([
+            {
+                'to': ['mya-ferrell@mail.com'],
+                'from_email': 'ella-support@mail.com',
+                'fixture': self.responses_fixtures_dir + '/user/set_password.html'
+            }
+        ])
+
     def test_create_with_already_deleted_email(self):
         new_user = self.load_fixture('/user/new_user.json')
         new_user['email'] = "callen-burns@mail.com"

@@ -10,6 +10,7 @@ from api.http.serializers.base_model_serializer import BaseModelSerializer
 from api.http.serializers.fields.user_auth_group_serializer import UserAuthGroup
 from api.http.serializers.user_group_serializer import UserGroupSerializer
 from api.models import User, UserGroup
+from api.utilities.user import generate_password
 
 
 class UserSerializer(BaseModelSerializer):
@@ -49,9 +50,10 @@ class UserSerializer(BaseModelSerializer):
     def create(self, validated_data):
         user = User(**self.__exclude_fields_for_creation(validated_data))
 
-        if 'password' in validated_data:
-            user.set_password(validated_data['password'])
+        if validated_data.get('password') is None:
+            validated_data['password'] = generate_password()
 
+        user.set_password(validated_data['password'])
         self.__add_auth_group_advantages(user, validated_data['auth_group'])
 
         user.save()
