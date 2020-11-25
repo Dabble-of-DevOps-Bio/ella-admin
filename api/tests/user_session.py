@@ -16,5 +16,6 @@ class UserSessionTest(TestCase):
 
         self.assertIsNotNone(response.cookies['AuthenticationToken'])
         self.assertEqual(response.cookies['AuthenticationToken']['path'], '/')
+        self.assertEqual(response.cookies['AuthenticationToken']['domain'], 'localhost')
         self.assertTrue(response.cookies['AuthenticationToken']['httponly'])
         self.assertIsNotNone(response.cookies['AuthenticationToken']['expires'])
