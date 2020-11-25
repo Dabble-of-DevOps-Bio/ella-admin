@@ -1,6 +1,6 @@
-from django.conf import settings
 from django.http import HttpResponse
 from rest_framework import permissions
+from rest_framework import status
 from rest_framework.generics import GenericAPIView
 
 from api.http.serializers import StaffAppLoginSerializer
@@ -14,9 +14,9 @@ class StaffAppLoginView(GenericAPIView):
         serializer = self.get_serializer()
         session, token = serializer.create_staff_app_user_session(request.user)
 
-        response = HttpResponse()
+        response = HttpResponse(status=status.HTTP_302_FOUND)
         response.set_cookie(key='AuthenticationToken',
                             value=token,
-                            expires=session.expires, domain=settings.FRONTEND_DOMAIN, path='/', httponly=True)
+                            expires=session.expires, path='/', httponly=True)
 
         return response
