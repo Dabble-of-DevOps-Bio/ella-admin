@@ -4,7 +4,7 @@ import pytz
 from rest_framework import serializers
 
 from api.models import UserSession
-from api.utilities.user_session import generate_user_session_token
+from api.utilities.user import generate_user_session_token
 
 
 class StaffAppLoginSerializer(serializers.Serializer):
