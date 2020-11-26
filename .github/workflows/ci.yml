@@ -67,7 +67,7 @@ jobs:
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
-          rsync -av ./ ec2-user@54.161.122.188:/home/ec2-user/efs/ella_admin_stg
+          rsync -av ./ ec2-user@54.161.122.188:/home/ec2-user/efs/ella_admin_stg --exclude=./ella-admin/settings/staging.py
       - name: restart docker-compose on server
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
