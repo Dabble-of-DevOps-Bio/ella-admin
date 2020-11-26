@@ -6,5 +6,5 @@ from api.mails import Mail
 
 class SetPassword(Mail):
     template_name = 'emails/user/set_password.html'
-    subject = _('Your Mbuild account has been created')
+    subject = _('Your Ella account has been created')
     from_email = settings.EMAIL_SUPPORT_EMAIL
