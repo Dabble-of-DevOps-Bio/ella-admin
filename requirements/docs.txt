@@ -6,3 +6,14 @@ lxml
 sphinxawesome-theme
 git+https://github.com/bashtage/sphinx-material.git
 sphinx-rtd-theme
+pydata-sphinx-theme
+ipywidgets
+
+# Possibly changing to jupyterbook for the reporting
+jupyter-book
+pyppeteer
+watchdog[watchmedo]
+httpwatcher
+recommonmark
+#pdfhtml
+sphinx-business-theme

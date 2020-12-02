@@ -93,6 +93,8 @@ services:
       - "7000:7000"
     networks:
       - app-tier
+    command: |
+      make livehtml
 
   jupyter:
     image: ella_admin_local_jupyter
@@ -125,3 +127,19 @@ services:
     ports:
       - 8080:8080
 
+  jupyter-book:
+    build:
+      context: .
+      dockerfile: ./compose/local/docs/Dockerfile
+    env_file:
+      - ./.envs/.local/.django
+    volumes:
+      - ./docs:/docs:z
+      - ./config:/app/config:z
+      - ./ella_admin:/app/ella_admin:z
+    ports:
+      - "8001:8001"
+    networks:
+      - app-tier
+    command: |
+      python /docs/run_jupyterbook.py

@@ -5,31 +5,40 @@ USER root
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
-RUN apt-get update -y\
+COPY ./requirements /requirements
+
+# Since we're building PDFs this requires a million packages
+RUN apt-get update -y \
     && apt-get upgrade -y \
     # dependencies for building Python packages
-    && apt-get install -y build-essential \
+    && apt-get install -y  \
+    apt-utils build-essential \
     # psycopg2 dependencies
-    && apt-get install -y libpq-dev \
-    # Translations dependencies
-    # Uncomment below lines to enable Sphinx output to latex and pdf
-    && apt-get install -y pandoc \
-    && apt-get install -y python3-lxml \
-     && apt-get install -y gettext \
-     && apt-get install -y texlive-latex-recommended \
-     && apt-get install -y texlive-fonts-recommended \
-     && apt-get install -y texlive-latex-extra \
-     && apt-get install -y latexmk \
-    # cleaning up unused files
+    ca-certificates \
+    apt-transport-https \
+    curl \
+    libxslt-dev  \
+    gnupg \
+    pandoc libpangocairo-1.0-0 \
+    libcairo2  lsb-release xdg-utils  \
+    python3-lxml \
+    gettext \
+    texlive-latex-recommended \
+    texlive-fonts-recommended \
+    texlive-latex-extra \
+    latexmk \
+    texlive-xetex  \
+    chromium-chromedriver \
+    && apt-get install -y $(cat /requirements/pyppeteer_reqs.txt) \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
     && rm -rf /var/lib/apt/lists/*
 
-# Requirements are installed here to ensure they will be cached.
-COPY ./requirements /requirements
 # All imports needed for autodoc.
 RUN pip install -r /requirements/local.txt -r /requirements/production.txt
 RUN pip install -r /requirements/docs.txt
+RUN jupyter lab clean && \
+    jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 WORKDIR /docs
 
-CMD make livehtml
+#CMD make livehtml

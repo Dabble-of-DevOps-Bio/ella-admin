@@ -1,4 +1,4 @@
-# Genepanel: test-ALL Version: v01 Date: 2020-10-21
+# Genepanel: test-ALL Version: v01 Date: 2020-11-28
 #gene symbol	HGNC	remove (add x)	phenotype	inheritance	omim_number	pmid	inheritance info	comment
 BRCA2	1101		{Breast cancer, male, susceptibility to}	AD, SMu	114480			
 BRCA2	1101		{Breast-ovarian cancer, familial, 2}	AD	612555			

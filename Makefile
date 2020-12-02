@@ -39,6 +39,13 @@ dump:
 		postgresql \
 		bash -c "PGPASSWORD=password123 pg_dump -h postgresql -U postgres postgres | gzip -9 > /data/ella_db_1.sql.gz"
 
+dump_schema:
+	$(MAKE) wait
+	@echo "Dumping database schema"
+	docker-compose -f local.yml exec  \
+		postgresql \
+		bash -c "PGPASSWORD=password123 pg_dump -s -h postgresql -U postgres postgres  > /data/ella_db_schema.sql"
+
 db:
 	$(MAKE) wait
 
@@ -119,6 +126,9 @@ clean:
 
 ella-web-logs:
 	docker-compose -f local.yml logs ella-web
+
+ella-web-logs-scroll:
+	docker-compose -f local.yml logs -f ella-web
 
 jupyter-token:
 	docker-compose -f local.yml logs jupyter | grep 127 | grep token | tail -n 5

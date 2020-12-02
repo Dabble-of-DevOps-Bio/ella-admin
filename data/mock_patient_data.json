@@ -1,0 +1,31 @@
+{
+    "markdown_table_str": "| Gene   | Variant   | Zygosity     | Variant Classification   |\n|:-------|:----------|:-------------|:-------------------------|\n| BRCA2  | c.10G>T   | Heterozygous | Likely Pathogenic        |\n| BRCA2  | c.-172A>G | Heterozygous | Unknown                  |",
+    "methods": {
+        "amplicon": "AMPLICON",
+        "mlpa": "MLPA."
+    },
+    "patient_data": {
+        "patient_dob": "12/11/1977",
+        "patient_first_name": "Todd",
+        "patient_gender": "Male",
+        "patient_last_name": "Smith"
+    },
+    "report_data": {
+        "report_date": "12/9/2020"
+    },
+    "sample_data": {
+        "sample_accession": "1234567",
+        "sample_accession_date": "12/9/2020",
+        "sample_collection_date": "12/9/2020",
+        "sample_id": "1234567",
+        "sample_type": "blood"
+    },
+    "sample_name": "Sample-N",
+    "test_data": {
+        "test_accession": "BRCA122345",
+        "test_code": "ABCD",
+        "test_indication": "Patient has family history of breast cancer.",
+        "test_ordered": "BRCA2 sequencing & Deletion/Duplication analysis",
+        "test_requesting_physician": "Dr. Who"
+    }
+}

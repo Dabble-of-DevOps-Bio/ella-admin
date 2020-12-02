@@ -38,7 +38,11 @@ extensions = [
     "sphinx.ext.napoleon",
     "nbsphinx",
     "sphinx_rtd_theme",
-    "sphinx_material"
+    "sphinx_material",
+    # "pydata_sphinx_theme",
+    # 'sphinx.ext.todo',
+    # 'sphinx.ext.viewcode',
+    # 'sphinx.ext.autodoc'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -57,6 +61,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 # html_theme = "alabaster"
 # html_theme = "sphinx_rtd_theme"
 html_theme = 'sphinx_material'
+# html_theme = 'pydata_sphinx_theme'
 
 html_theme_options = {
 

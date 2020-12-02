@@ -61,6 +61,8 @@ resource "aws_s3_bucket" "ella-admin" {
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
     domain_name = aws_s3_bucket.ella-admin.bucket_regional_domain_name
+//    http://dabble-of-devops-ella-admin-docs.s3-website-us-east-1.amazonaws.com/
+//    domain_name = "dabble-of-devops-ella-admin-docs.s3-website-us-east-1.amazonaws.com"
     origin_id = local.s3_origin_id
 
     s3_origin_config {
@@ -127,10 +129,12 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     allowed_methods = [
       "GET",
       "HEAD",
-      "OPTIONS"]
+      "OPTIONS"
+    ]
     cached_methods = [
       "GET",
-      "HEAD"]
+      "HEAD"
+    ]
     target_origin_id = local.s3_origin_id
 
     forwarded_values {
@@ -162,14 +166,10 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   restrictions {
     geo_restriction {
-      restriction_type = "whitelist"
-      locations = [
-        "US",
-        "CA",
-        "GB",
-        "DE"]
+      restriction_type = "none"
     }
   }
+
 }
 
 output "cloudfront" {
@@ -180,5 +180,8 @@ output "cloudfront" {
     etag = aws_cloudfront_distribution.s3_distribution.etag
     s3_bucket_regional_domain_name = aws_s3_bucket.ella-admin.bucket_regional_domain_name
     s3_bucket_domain_name = aws_s3_bucket.ella-admin.bucket_regional_domain_name
+    s3_bucket_website_endpoint = aws_s3_bucket.ella-admin.website_endpoint
+    s3_bucket_website_domain = aws_s3_bucket.ella-admin.website_domain
+    region_url = "http://dabble-of-devops-ella-admin-docs.s3-website-us-east-1.amazonaws.com"
   }
 }

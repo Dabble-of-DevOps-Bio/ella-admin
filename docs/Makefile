@@ -4,7 +4,8 @@
 # You can set these variables from the command line, and also
 # from the environment for the first two.
 SPHINXOPTS    ?= 
-SPHINXBUILD   ?= sphinx-build -c .
+#SPHINXBUILD   ?= sphinx-build -c .
+SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = ./_source
 BUILDDIR      = ./_build
 APP = /app
@@ -26,4 +27,4 @@ apidocs:
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
-	@$(SPHINXBUILD) -b $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@$(SPHINXBUILD) -M $@ -c . "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
