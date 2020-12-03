@@ -1,12 +1,9 @@
-from safedelete import HARD_DELETE
-
 from django.db.models import CharField, DateTimeField, ForeignKey, CASCADE
+
 from api.models.base_model import BaseModel
 
 
 class UserSession(BaseModel):
-    _safedelete_policy = HARD_DELETE
-
     class Meta:
         db_table = 'usersession'
 

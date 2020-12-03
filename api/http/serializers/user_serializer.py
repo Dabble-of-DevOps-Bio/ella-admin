@@ -28,13 +28,9 @@ class UserSerializer(BaseModelSerializer):
     last_name = CharField(required=True)
     username = CharField(required=True, validators=[
         UniqueValidator(queryset=User.objects.all(), message=_('A user with this username already exists.')),
-        UniqueValidator(queryset=User.deleted_objects.all(),
-                        message=_('This account was recently deleted, please contact a company admin to restore.'))
     ])
     email = EmailField(required=True, validators=[
         UniqueValidator(queryset=User.objects.all(), message=_('A user with this email already exists.')),
-        UniqueValidator(queryset=User.deleted_objects.all(),
-                        message=_('This account was recently deleted, please contact a company admin to restore.'))
     ])
     password = PasswordField(required=False)
     new_password = CharField(required=False)

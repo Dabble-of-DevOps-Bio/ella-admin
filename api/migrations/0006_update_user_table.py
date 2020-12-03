@@ -12,8 +12,7 @@ def update_user_table(*args, **kwargs):
                 'ADD COLUMN date_joined timestamp with time zone not null default now(), '
                 'ADD COLUMN last_login timestamp with time zone, '
                 'ADD COLUMN created_at timestamp with time zone not null default now(), '
-                'ADD COLUMN updated_at timestamp with time zone not null default now(), '
-                'ADD COLUMN deleted timestamp with time zone'
+                'ADD COLUMN updated_at timestamp with time zone not null default now()'
         )
 
 

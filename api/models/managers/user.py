@@ -1,8 +1,7 @@
 from django.contrib.auth.base_user import BaseUserManager
-from safedelete.managers import SafeDeleteManager
 
 
-class UserManager(BaseUserManager, SafeDeleteManager):
+class UserManager(BaseUserManager):
     def create_user(self, email, password=None, is_superuser=False, is_staff=False, active=True):
         if not email:
             raise ValueError("User must have an email")
