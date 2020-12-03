@@ -16,7 +16,6 @@ INSTALLED_APPS = [
     'django_cron',
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
-    'safedelete',
     'drf_yasg'
 ]
 MIDDLEWARE = [

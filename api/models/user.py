@@ -3,7 +3,6 @@ from enum import Enum
 from django.contrib.postgres.fields import JSONField
 from django.db import models
 from django.db.models import IntegerField, CharField, EmailField, DateTimeField, ForeignKey
-from safedelete import SOFT_DELETE_CASCADE
 
 from api.models.abstract_user import AbstractUser
 from api.models.base_model import BaseModel
@@ -11,8 +10,6 @@ from api.models.managers import UserManager
 
 
 class User(AbstractUser, BaseModel):
-    _safedelete_policy = SOFT_DELETE_CASCADE
-
     class Group(Enum):
         ADMIN = 1
         STAFF = 2

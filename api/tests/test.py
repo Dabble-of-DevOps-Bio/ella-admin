@@ -69,9 +69,6 @@ class TestCase(APITestCase):
             self.assertEquals(sent_email.to, to_email)
             self.assertEquals(sent_email.body, rendered_email)
 
-    def assertSoftDeleted(self, model_class, pk: int):
-        self.assertTrue(model_class.deleted_objects.filter(pk=pk).exists())
-
     def assertEqualsFixture(self, data, path_to_response_fixture, export=False):
         path_to_fixture = self.responses_fixtures_dir + path_to_response_fixture
         if export:

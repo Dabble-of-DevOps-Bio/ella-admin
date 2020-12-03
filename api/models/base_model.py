@@ -1,8 +1,8 @@
+from django.db import models
 from django.db.models import DateTimeField
-from safedelete.models import SafeDeleteModel
 
 
-class BaseModel(SafeDeleteModel):
+class BaseModel(models.Model):
     class Meta:
         abstract = True
 

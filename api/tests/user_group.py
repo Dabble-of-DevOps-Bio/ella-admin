@@ -24,14 +24,6 @@ class UserGroupTest(TestCase):
 
         self.assertBadRequest(response)
 
-    def test_create_with_already_deleted_name(self):
-        new_user_group = self.load_fixture('/user_group/new_user_group_with_already_deleted_name.json')
-
-        self.force_login_user(1)
-        response = self.client.post('/api/user-groups/', new_user_group)
-
-        self.assertBadRequest(response)
-
     def test_create_by_staff(self):
         new_user_group = self.load_fixture('/user_group/new_user_group.json')
 
@@ -62,13 +54,7 @@ class UserGroupTest(TestCase):
         response = self.client.delete('/api/user-groups/1/')
 
         self.assertEquals(response.status_code, status.HTTP_204_NO_CONTENT)
-        self.assertSoftDeleted(UserGroup, 1)
-
-    def test_delete_already_deleted(self):
-        self.force_login_user(1)
-        response = self.client.delete('/api/user-groups/5/')
-
-        self.assertEquals(response.status_code, status.HTTP_404_NOT_FOUND)
+        self.assertFalse(UserGroup.objects.filter(pk=1).exists())
 
     def test_delete_by_staff(self):
         self.force_login_user(2)

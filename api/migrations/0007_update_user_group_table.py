@@ -8,8 +8,7 @@ def update_user_group_table(*args, **kwargs):
         cursor.execute(
             'alter table "usergroup" '
                 'ADD COLUMN created_at timestamp with time zone not null default now(), '
-                'ADD COLUMN updated_at timestamp with time zone not null default now(), '
-                'ADD COLUMN deleted timestamp with time zone'
+                'ADD COLUMN updated_at timestamp with time zone not null default now()'
         )
 
 

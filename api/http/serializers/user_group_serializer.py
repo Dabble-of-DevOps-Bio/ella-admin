@@ -12,7 +12,5 @@ class UserGroupSerializer(BaseModelSerializer):
 
     id = fields.ReadOnlyField()
     name = fields.CharField(required=True, max_length=255, validators=[
-        UniqueValidator(queryset=UserGroup.objects.all(), message=_('A group with current name already exists.')),
-        UniqueValidator(queryset=UserGroup.deleted_objects.all(),
-                        message=_('Current group was deleted.'))
+        UniqueValidator(queryset=UserGroup.objects.all(), message=_('A group with current name already exists.'))
     ])

@@ -40,7 +40,7 @@ class UserTest(TestCase):
         response = self.client.post('/api/users/', new_user)
 
         self.assertEquals(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqualsFixture(response.data, '/user/created_user_without_password.json', export=True)
+        self.assertEqualsFixture(response.data, '/user/created_user_without_password.json')
         self.assertTrue(User.objects.filter(pk=11, auth_groups__in=[2], is_superuser=False, is_staff=True).exists())
         self.assertTrue(ResetPasswordToken.objects.filter(user_id=11).exists())
         self.assertEmailEquals([
@@ -50,24 +50,6 @@ class UserTest(TestCase):
                 'fixture': self.responses_fixtures_dir + '/user/set_password.html'
             }
         ])
-
-    def test_create_with_already_deleted_email(self):
-        new_user = self.load_fixture('/user/new_user.json')
-        new_user['email'] = "callen-burns@mail.com"
-
-        self.force_login_user(1)
-        response = self.client.post('/api/users/', new_user)
-
-        self.assertBadRequest(response)
-
-    def test_create_with_already_deleted_username(self):
-        new_user = self.load_fixture('/user/new_user.json')
-        new_user['username'] = "bronte-mccartney"
-
-        self.force_login_user(1)
-        response = self.client.post('/api/users/', new_user)
-
-        self.assertBadRequest(response)
 
     def test_create_by_staff(self):
         new_user = self.load_fixture('/user/new_user.json')
@@ -127,7 +109,7 @@ class UserTest(TestCase):
         response = self.client.delete('/api/users/4/')
 
         self.assertEquals(response.status_code, status.HTTP_204_NO_CONTENT)
-        self.assertSoftDeleted(User, 4)
+        self.assertFalse(User.objects.filter(pk=4).exists())
 
     def test_delete_by_staff(self):
         self.force_login_user(4)
@@ -169,7 +151,7 @@ class UserTest(TestCase):
         response = self.client.get('/api/users/', filters)
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEqualsFixture(response.data, fixture, export=True)
+        self.assertEqualsFixture(response.data, fixture)
 
     def get_filters_for_test_get_user(self):
         return (

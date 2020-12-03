@@ -1,13 +1,10 @@
-from safedelete import SOFT_DELETE_CASCADE
-
 from django.contrib.postgres.fields import JSONField
 from django.db.models import CharField
+
 from api.models.base_model import BaseModel
 
 
 class UserGroup(BaseModel):
-    _safedelete_policy = SOFT_DELETE_CASCADE
-
     class Meta:
         db_table = 'usergroup'
 
