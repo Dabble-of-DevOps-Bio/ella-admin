@@ -1,0 +1,128 @@
+[
+  {
+    "model": "api.usergroup",
+    "pk": 1,
+    "fields": {
+      "name": "test user group 1",
+      "config": {"acmg": {"frequency": {"groups": {"external": {"GNOMAD_EXOMES": ["G"], "GNOMAD_GENOMES": ["G"]}, "internal": {"inDB": ["OUSWES"]}}, "thresholds": {"AD": {"external": {"hi_freq_cutoff": 0.005, "lo_freq_cutoff": 0.001}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}, "default": {"external": {"hi_freq_cutoff": 0.01, "lo_freq_cutoff": 1.0}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}}}, "disease_mode": "ANY", "last_exon_important": "LEI"}, "overview": {"views": ["analyses"]}},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.usergroup",
+    "pk": 2,
+    "fields": {
+      "name": "test user group 2",
+      "config": {"acmg": {"frequency": {"groups": {"external": {"GNOMAD_EXOMES": ["G"], "GNOMAD_GENOMES": ["G"]}, "internal": {"inDB": ["OUSWES"]}}, "thresholds": {"AD": {"external": {"hi_freq_cutoff": 0.005, "lo_freq_cutoff": 0.001}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}, "default": {"external": {"hi_freq_cutoff": 0.01, "lo_freq_cutoff": 1.0}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}}}, "disease_mode": "ANY", "last_exon_important": "LEI"}, "overview": {"views": ["analyses"]}},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.usergroup",
+    "pk": 3,
+    "fields": {
+      "name": "test user group 3",
+      "config": {"acmg": {"frequency": {"groups": {"external": {"GNOMAD_EXOMES": ["G"], "GNOMAD_GENOMES": ["G"]}, "internal": {"inDB": ["OUSWES"]}}, "thresholds": {"AD": {"external": {"hi_freq_cutoff": 0.005, "lo_freq_cutoff": 0.001}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}, "default": {"external": {"hi_freq_cutoff": 0.01, "lo_freq_cutoff": 1.0}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}}}, "disease_mode": "ANY", "last_exon_important": "LEI"}, "overview": {"views": ["analyses"]}},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 1,
+    "fields": {
+      "password": "$2b$12$qMyZKaxhdgtGUQTP/TKIrObQPuKVvAjR8AKnwbfUgo19e8Xid3vMO",
+      "last_login": null,
+      "is_superuser": true,
+      "first_name": "Zaynab",
+      "last_name": "Barker",
+      "username": "zaynab-barker",
+      "is_staff": true,
+      "active": true,
+      "date_joined": "2020-07-30T12:21:16.129Z",
+      "email": "zaynab-barker@mail.com",
+      "auth_groups": [1],
+      "group_id": 1,
+      "config": {},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.genepanel",
+    "pk": 1,
+    "fields": {
+      "name": "HBOC",
+      "version": "v01",
+      "genome_reference": "GRCh37",
+      "official": true,
+      "date_created": "2020-07-30T12:21:16.129Z",
+      "user_id": 1,
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.genepanel",
+    "pk": 2,
+    "fields": {
+      "name": "HBOC",
+      "version": "v02",
+      "genome_reference": "GRCh37",
+      "official": true,
+      "date_created": "2020-07-30T12:21:16.129Z",
+      "user_id": 1,
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.genepanel",
+    "pk": 3,
+    "fields": {
+      "name": "HBAC",
+      "version": "v01",
+      "genome_reference": "GRCh39",
+      "official": true,
+      "date_created": "2020-07-30T12:21:16.129Z",
+      "user_id": 1,
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.usergroupgenepanel",
+    "pk": 1,
+    "fields": {
+      "group_id": 1,
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v01",
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.usergroupgenepanel",
+    "pk": 2,
+    "fields": {
+      "group_id": 2,
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v01",
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.usergroupgenepanel",
+    "pk": 3,
+    "fields": {
+      "group_id": 2,
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v02",
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  }
+]
