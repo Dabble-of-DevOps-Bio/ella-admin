@@ -1,3 +1,4 @@
+from .analysis_serializer import AnalysisSerializer
 from .base_model_serializer import BaseModelSerializer
 from .fields import UserAuthGroup
 from .gene_panel_serializer import GenePanelSerializer
