@@ -120,11 +120,11 @@ class UserTest(TestCase):
     def get_filters_for_user_search(self):
         return (
             (
-                {'all': True},
+                {'all': True, 'sort': 'username'},
                 '/user/get_all.json'
             ),
             (
-                {'expand': ['group']},
+                {'expand': ['group'], 'sort': 'username'},
                 '/user/get_all_with_expand_group.json'
             ),
             (

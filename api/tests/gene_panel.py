@@ -16,6 +16,18 @@ class GenePanelTest(TestCase):
                 {'expand': ['groups']},
                 '/gene_panel/get_all_with_expand_groups.json'
             ),
+            (
+                {'sort': ['name']},
+                '/gene_panel/get_all_with_name_sort.json'
+            ),
+            (
+                {'sort': ['version']},
+                '/gene_panel/get_all_with_version_sort.json'
+            ),
+            (
+                {'search': ['v01']},
+                '/gene_panel/get_all_searched.json'
+            ),
         )
 
     @data_provider(get_filters_for_user_search)

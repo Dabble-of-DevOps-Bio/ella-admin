@@ -1,0 +1,43 @@
+{
+ "total_items": 3,
+ "previous_page": null,
+ "next_page": null,
+ "last_page": 1,
+ "items": [
+  {
+   "id": 1,
+   "name": "HBOC",
+   "version": "v01",
+   "genome_reference": "GRCh37",
+   "official": true,
+   "date_created": "2020-07-30T12:21:16.129000Z",
+   "user": 1,
+   "groups": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": 3,
+   "name": "HBAC",
+   "version": "v01",
+   "genome_reference": "GRCh39",
+   "official": true,
+   "date_created": "2020-07-30T12:21:16.129000Z",
+   "user": 1,
+   "groups": []
+  },
+  {
+   "id": 2,
+   "name": "HBOC",
+   "version": "v02",
+   "genome_reference": "GRCh37",
+   "official": true,
+   "date_created": "2020-07-30T12:21:16.129000Z",
+   "user": 1,
+   "groups": [
+    2
+   ]
+  }
+ ]
+}
