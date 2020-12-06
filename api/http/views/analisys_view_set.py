@@ -17,4 +17,7 @@ class AnalysisViewSet(BaseViewSet, mixins.ListModelMixin, mixins.RetrieveModelMi
     serializer_class = AnalysisSerializer
     queryset = Analysis.objects.all()
     filterset_class = AnalysisFilter
-    search_fields = ['name', 'gene_panel_name', 'gene_panel_version',]
+    search_fields = ['name', 'gene_panel_name', 'gene_panel_version', ]
+
+    def get_queryset(self):
+        return super().get_queryset().filter(gene_panel__groups__pk=self.request.user.group_id)

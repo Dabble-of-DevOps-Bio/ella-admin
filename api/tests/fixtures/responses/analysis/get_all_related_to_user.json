@@ -1,29 +1,9 @@
 {
- "total_items": 6,
+ "total_items": 3,
  "previous_page": null,
  "next_page": null,
  "last_page": 1,
  "items": [
-  {
-   "id": 3,
-   "name": "brca_sample_3.HBOCUTV_v01",
-   "gene_panel_name": "HBAC",
-   "gene_panel_version": "v01",
-   "warnings": "",
-   "report": "",
-   "date_deposited": "2020-07-30T12:21:16.129000Z",
-   "date_requested": null
-  },
-  {
-   "id": 6,
-   "name": "brca_sample_master.HBOCUTV_v01",
-   "gene_panel_name": "HBAC",
-   "gene_panel_version": "v01",
-   "warnings": "",
-   "report": "",
-   "date_deposited": "2020-07-30T12:21:16.129000Z",
-   "date_requested": null
-  },
   {
    "id": 1,
    "name": "brca_sample_allfiltered.HBOC_v01",
@@ -49,16 +29,6 @@
    "name": "brca_sample_1.HBOC_v01",
    "gene_panel_name": "HBOC",
    "gene_panel_version": "v01",
-   "warnings": "",
-   "report": "",
-   "date_deposited": "2020-07-30T12:21:16.129000Z",
-   "date_requested": null
-  },
-  {
-   "id": 5,
-   "name": "brca_long_variants.HBOCUTV_v01",
-   "gene_panel_name": "HBOC",
-   "gene_panel_version": "v02",
    "warnings": "",
    "report": "",
    "date_deposited": "2020-07-30T12:21:16.129000Z",
