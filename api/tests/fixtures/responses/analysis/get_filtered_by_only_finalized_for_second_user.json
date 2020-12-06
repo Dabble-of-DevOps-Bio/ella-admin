@@ -5,14 +5,14 @@
  "last_page": 1,
  "items": [
   {
-   "id": 5,
-   "name": "brca_long_variants.HBOCUTV_v01",
+   "id": 1,
+   "name": "brca_sample_allfiltered.HBOC_v01",
    "gene_panel_name": "HBOC",
-   "gene_panel_version": "v02",
+   "gene_panel_version": "v01",
    "warnings": "",
    "report": "",
    "date_deposited": "2020-07-30T12:21:16.129000Z",
-   "date_requested": null
+   "date_requested": "2020-07-30T12:21:16.129000Z"
   }
  ]
 }

@@ -6,42 +6,84 @@ from api.tests.test import TestCase, data_provider
 class AnalysisTest(TestCase):
     fixtures = ['api/tests/fixtures/dumps/analysis.json']
 
-    def get_filters_for_analysis_search(self):
+    def get_filters_for_test_search(self):
         return (
             (
-                {'all': True},
+                {
+                    'filters': {'all': True},
+                    'user_id': 2
+                },
                 '/analysis/get_all.json'
             ),
             (
-                {'sort': 'name'},
+                {
+                    'filters': {'sort': 'name'},
+                    'user_id': 2
+                },
                 '/analysis/get_all_sorted_by_name.json'
             ),
             (
-                {'sort': 'gene_panel_name'},
+                {
+                    'filters': {'sort': 'gene_panel_name'},
+                    'user_id': 2
+                },
                 '/analysis/get_all_sorted_by_gene_panel_name.json'
             ),
             (
-                {'sort': 'gene_panel_version'},
+                {
+                    'filters': {'sort': 'gene_panel_version'},
+                    'user_id': 2
+                },
                 '/analysis/get_all_sorted_by_gene_panel_version.json'
             ),
             (
-                {'search': 'brca_long'},
+                {
+                    'filters': {'search': 'brca_long'},
+                    'user_id': 2
+                },
                 '/analysis/get_all_search_by_name.json'
             ),
             (
-                {'search': 'HBOC'},
+                {
+                    'filters': {'search': 'HBOC'},
+                    'user_id': 2
+                },
                 '/analysis/get_all_search_by_gene_panel_name.json'
             ),
             (
-                {'search': 'v02'},
+                {
+                    'filters': {'search': 'v02'},
+                    'user_id': 2
+                },
                 '/analysis/get_all_search_by_gene_panel_version.json'
+            ),
+            (
+                {
+                    'filters': {'all': True},
+                    'user_id': 1
+                },
+                '/analysis/get_all_related_to_user.json'
+            ),
+            (
+                {
+                    'filters': {'all': True, 'only_finalized': True},
+                    'user_id': 1
+                },
+                '/analysis/get_filtered_by_only_finalized.json'
+            ),
+            (
+                {
+                    'filters': {'all': True, 'only_finalized': True},
+                    'user_id': 2
+                },
+                '/analysis/get_filtered_by_only_finalized_for_second_user.json'
             ),
         )
 
-    @data_provider(get_filters_for_analysis_search)
-    def test_search(self, filters, fixture):
-        self.force_login_user(1)
-        response = self.client.get('/api/analysis/', filters)
+    @data_provider(get_filters_for_test_search)
+    def test_search(self, update_date, fixture):
+        self.force_login_user(update_date['user_id'])
+        response = self.client.get('/api/analysis/', update_date['filters'])
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
         self.assertEqualsFixture(response.data, fixture)

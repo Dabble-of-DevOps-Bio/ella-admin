@@ -12,6 +12,13 @@ class AnalysisFilter(rest_framework.FilterSet):
         )
     )
 
+    only_finalized = rest_framework.BooleanFilter(method='filter_by_only_finalized')
+
+    def filter_by_only_finalized(self, queryset, value, name):
+        if value:
+            return queryset.filter(analysisinterpretation__finalized=True)
+
+        return queryset
 
     class Meta:
         model = Analysis

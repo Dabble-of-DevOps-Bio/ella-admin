@@ -51,6 +51,27 @@
     }
   },
   {
+    "model": "api.user",
+    "pk": 2,
+    "fields": {
+      "password": "$2b$12$qMyZKaxhdgtGUQTP/TKIrObQPuKVvAjR8AKnwbfUgo19e8Xid3vMO",
+      "last_login": null,
+      "is_superuser": true,
+      "first_name": "Toby",
+      "last_name": "Seymour",
+      "username": "toby-seymour",
+      "is_staff": true,
+      "active": true,
+      "date_joined": "2020-07-30T12:21:16.129Z",
+      "email": "toby-seymour@mail.com",
+      "auth_groups": [1],
+      "group_id": 3,
+      "config": {},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
     "model": "api.genepanel",
     "pk": 1,
     "fields": {
@@ -126,6 +147,39 @@
     }
   },
   {
+    "model": "api.usergroupgenepanel",
+    "pk": 4,
+    "fields": {
+      "group_id": 3,
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v01",
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.usergroupgenepanel",
+    "pk": 5,
+    "fields": {
+      "group_id": 3,
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v02",
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.usergroupgenepanel",
+    "pk": 6,
+    "fields": {
+      "group_id": 3,
+      "gene_panel_name": "HBAC",
+      "gene_panel_version": "v01",
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
     "model": "api.analysis",
     "pk": 1,
     "fields": {
@@ -142,7 +196,7 @@
     "fields": {
       "name": "brca_sample_1.HBOCUTV_v01",
       "gene_panel_name": "HBOC",
-      "gene_panel_version": "v02",
+      "gene_panel_version": "v01",
       "date_deposited": "2020-07-30T12:21:16.129Z"
     }
   },
@@ -184,6 +238,40 @@
       "gene_panel_name": "HBAC",
       "gene_panel_version": "v01",
       "date_deposited": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.analysisinterpretation",
+    "pk": 1,
+    "fields": {
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v01",
+      "status": "Done",
+      "date_last_update": "2020-07-30T12:21:16.129Z",
+      "date_created": "2020-07-30T12:21:16.129Z",
+      "analysis_id": 1,
+      "user_id": 1,
+      "finalized": true,
+      "workflow_status": "Interpretation",
+      "user_state": {"allele": {"7": {"sections": {}, "allele_id": 7, "showExcludedReferences": false}, "13": {"sections": {}, "allele_id": 13, "showExcludedReferences": false}, "19": {"sections": {}, "allele_id": 19, "showExcludedReferences": false}, "20": {"sections": {}, "allele_id": 20, "showExcludedReferences": false}, "21": {"sections": {}, "allele_id": 21, "showExcludedReferences": false}, "22": {"sections": {}, "allele_id": 22, "showExcludedReferences": false}, "23": {"sections": {}, "allele_id": 23, "showExcludedReferences": false}, "24": {"sections": {}, "allele_id": 24, "showExcludedReferences": false}}},
+      "state": {"allele": {"7": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": false}, "allele_id": 7, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 5}, "alleleassessment": {"reuse": true, "allele_id": 7, "reuseCheckedId": 5}, "referenceassessments": []}, "13": {"report": {"included": false}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 13, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 8}, "alleleassessment": {"reuse": true, "allele_id": 13, "reuseCheckedId": 8}, "referenceassessments": []}, "19": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 19, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 10}, "alleleassessment": {"reuse": true, "allele_id": 19, "reuseCheckedId": 10}, "referenceassessments": []}, "20": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 20, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 11}, "alleleassessment": {"reuse": true, "allele_id": 20, "reuseCheckedId": 11}, "referenceassessments": []}, "21": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 21, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 12}, "alleleassessment": {"reuse": true, "allele_id": 21, "reuseCheckedId": 12}, "referenceassessments": []}, "22": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 22, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 13}, "alleleassessment": {"reuse": true, "allele_id": 22, "reuseCheckedId": 13}, "referenceassessments": []}, "23": {"report": {"included": false}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 23, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 7}, "alleleassessment": {"reuse": true, "allele_id": 23, "reuseCheckedId": 7}, "referenceassessments": []}, "24": {"report": {"included": false}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 24, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 9}, "alleleassessment": {"reuse": true, "allele_id": 24, "reuseCheckedId": 9}, "referenceassessments": []}}, "filterconfigId": 1, "manuallyAddedAlleles": []}
+    }
+  },
+  {
+    "model": "api.analysisinterpretation",
+    "pk": 2,
+    "fields": {
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v02",
+      "status": "Not started",
+      "date_last_update": "2020-07-30T12:21:16.129Z",
+      "date_created": "2020-07-30T12:21:16.129Z",
+      "analysis_id": 2,
+      "user_id": 1,
+      "finalized": false,
+      "workflow_status": "Interpretation",
+      "user_state": {},
+      "state": {}
     }
   }
 ]
