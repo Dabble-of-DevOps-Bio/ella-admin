@@ -1,7 +1,8 @@
+from rest_framework import mixins
 from rest_framework import status
-from rest_framework.response import Response
+from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.response import Response
 
 from api.http.filters.user_filter import UserFilter
 from api.http.serializers import UserSerializer
@@ -10,14 +11,15 @@ from api.models import User, UserGroup
 from api.permissions import IsSuperuser
 
 
-class UserViewSet(BaseViewSet, ModelViewSet):
+class UserViewSet(BaseViewSet, mixins.CreateModelMixin, mixins.UpdateModelMixin, mixins.RetrieveModelMixin,
+                  mixins.ListModelMixin):
     _request_permissions = {
         'update': (IsAuthenticated, IsSuperuser,),
         'partial_update': (IsAuthenticated, IsSuperuser,),
         'create': (IsAuthenticated, IsSuperuser),
         'retrieve': (IsAuthenticated, IsSuperuser),
         'list': (IsAuthenticated, IsSuperuser),
-        'destroy': (IsAuthenticated, IsSuperuser),
+        'move_to_inactive_group': (IsAuthenticated, IsSuperuser),
     }
 
     serializer_class = UserSerializer
@@ -31,11 +33,11 @@ class UserViewSet(BaseViewSet, ModelViewSet):
 
         return super().get_serializer(*args, **kwargs)
 
-    def destroy(self, request, *args, **kwargs):
-        instance: User = self.get_object()
+    @action(methods=['POST'], detail=False)
+    def move_to_inactive_group(self, request, *args, **kwargs):
+        user_id = kwargs.get('user_pk', None)
 
         user_group = UserGroup.objects.get(name='inactive')
-        instance.group_id = user_group.pk
-        instance.save()
+        User.objects.filter(pk=user_id).update(group_id=user_group.pk)
 
         return Response(status=status.HTTP_204_NO_CONTENT)
