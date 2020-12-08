@@ -4,8 +4,7 @@ from rest_framework import routers
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from api.http.views import LogoutView, UserViewSet, AnalysisViewSet, VariantReportViewSet, GenePanelViewSet, \
-    UserGroupViewSet, ProfileViewSet, \
-    StaffAppLoginView
+    UserGroupViewSet, ProfileViewSet, StaffAppLoginView
 
 router = routers.DefaultRouter()
 
@@ -23,6 +22,8 @@ urlpatterns = [
 
     path('analysis/<int:analysis_pk>/variant-report/',
          VariantReportViewSet.as_view({'get': 'retrieve', 'put': 'update'}), name='analysis_variant_report'),
+    path('analysis/<int:analysis_pk>/patient-data/', AnalysisViewSet.as_view({'get': 'get_patient_data'}),
+         name='analysis_patient_data'),
 
     url(r'^', include(router.urls)),
     path('password-reset/', include('django_rest_passwordreset.urls', namespace='user')),

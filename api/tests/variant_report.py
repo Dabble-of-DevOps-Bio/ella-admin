@@ -48,3 +48,10 @@ class VariantReportTest(TestCase):
         response = self.client.put('/api/analysis/7/variant-report/', data)
 
         self.assertEquals(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_get_patient_data(self):
+        self.force_login_user(1)
+        response = self.client.get('/api/analysis/7/patient-data/')
+
+        self.assertEquals(response.status_code, status.HTTP_200_OK)
+        self.assertEqualsFixture(response.data, '/variant_report/get_patient_data.json')
