@@ -8,7 +8,7 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from api.http.serializers import StaffAppLoginSerializer, VariantReportSerializer
+from api.http.serializers import StaffAppLoginSerializer, VariantReportSerializer, VariantReportDataSerializer
 from api.http.views.view import BaseViewSet
 from api.models import AnalysisInterpretation, VariantReport
 from api.permissions import IsSuperuser
@@ -61,6 +61,11 @@ class VariantReportViewSet(BaseViewSet, mixins.RetrieveModelMixin, mixins.Update
 
         serializer = self.get_serializer(variant_report, data=request.data)
         serializer.is_valid(raise_exception=True)
+
+        report_data = json.loads(request.data['data'])
+        variant_report_data_serializer = VariantReportDataSerializer(data=report_data, many=True)
+        variant_report_data_serializer.is_valid(raise_exception=True)
+
         self.perform_update(serializer)
 
         return Response(serializer.data)
