@@ -37,6 +37,8 @@ class AnalysisEllaAppService:
                 'variant_classification': row['Variant Classification'],
             })
 
+        variant_report_data.sort(key=lambda data: data['variant'])
+
         return variant_report_data
 
     def __get_parsed_analysis_data(self, analysis_id, interpretation_id):
