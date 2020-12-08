@@ -1,10 +1,12 @@
+from rest_framework import status
+from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
 from api.http.filters.user_filter import UserFilter
 from api.http.serializers import UserSerializer
 from api.http.views.view import BaseViewSet
-from api.models import User
+from api.models import User, UserGroup
 from api.permissions import IsSuperuser
 
 
@@ -28,3 +30,12 @@ class UserViewSet(BaseViewSet, ModelViewSet):
         kwargs['context'] = {**kwargs['context'], **action} if 'context' in kwargs else action
 
         return super().get_serializer(*args, **kwargs)
+
+    def destroy(self, request, *args, **kwargs):
+        instance: User = self.get_object()
+
+        user_group = UserGroup.objects.get(name='inactive')
+        instance.group_id = user_group.pk
+        instance.save()
+
+        return Response(status=status.HTTP_204_NO_CONTENT)

@@ -109,7 +109,9 @@ class UserTest(TestCase):
         response = self.client.delete('/api/users/4/')
 
         self.assertEquals(response.status_code, status.HTTP_204_NO_CONTENT)
-        self.assertFalse(User.objects.filter(pk=4).exists())
+
+        user = User.objects.get(pk=4)
+        self.assertEquals(user.group.name, 'inactive')
 
     def test_delete_by_staff(self):
         self.force_login_user(4)
