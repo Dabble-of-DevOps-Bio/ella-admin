@@ -8,6 +8,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+ELLA_APP_URL = 'mock://ella-web:5000'
+
 FRONTEND_DOMAIN = 'localhost'
 FRONTEND_ADMIN_ROUTE = ''
 FRONTEND_ADMIN_RESET_PASSWORD_ROUTE = 'reset-password'

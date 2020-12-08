@@ -7,6 +7,15 @@ class Analysis(models.Model):
     class Meta:
         db_table = 'analysis'
 
+    ACMG_CODES = {
+        '1': 'Benign',
+        '2': 'Likely Benign',
+        '3': 'Variant of Uncertain Significance',
+        '4': 'Likely Pathogenic',
+        '5': 'Pathogenic',
+        'U': 'Unknown'
+    }
+
     name = models.CharField(max_length=255, unique=True, blank=False)
 
     gene_panel_name = models.CharField(max_length=255, db_column='genepanel_name', blank=False)

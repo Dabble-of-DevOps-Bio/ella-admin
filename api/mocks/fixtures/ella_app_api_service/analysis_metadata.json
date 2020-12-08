@@ -1,0 +1,71 @@
+{
+  "id": 7,
+  "samples": [
+    {
+      "id": 7,
+      "mother_id": null,
+      "sample_type": "HTS",
+      "father_id": null,
+      "proband": true,
+      "family_id": null,
+      "sex": null,
+      "affected": true,
+      "sibling_id": null,
+      "identifier": "brca_sample_master",
+      "date_deposited": "2020-10-19T10:46:54.988033+00:00"
+    }
+  ],
+  "report": null,
+  "warnings": null,
+  "genepanel": {
+    "version": "v01",
+    "name": "HBOCUTV"
+  },
+  "date_requested": null,
+  "interpretations": [
+    {
+      "finalized": true,
+      "analysis_id": 7,
+      "id": 7,
+      "genepanel_version": "v01",
+      "date_last_update": "2020-12-06T16:45:36.192000+00:00",
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "genepanel_name": "HBOCUTV",
+      "user_id": 9,
+      "status": "Done",
+      "workflow_status": "Interpretation"
+    },
+    {
+      "finalized": true,
+      "analysis_id": 7,
+      "id": 8,
+      "genepanel_version": "v01",
+      "date_last_update": "2019-12-08T02:41:17.420000+00:00",
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "genepanel_name": "HBOCUTV",
+      "user_id": 9,
+      "status": "Done",
+      "workflow_status": "Interpretation"
+    }
+  ],
+  "name": "brca_sample_master.HBOCUTV_v01",
+  "date_deposited": "2020-10-19T10:46:54.974494+00:00"
+}

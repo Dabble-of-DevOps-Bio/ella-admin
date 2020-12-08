@@ -8,6 +8,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+ELLA_APP_URL = 'http://ella-web:5000'
+
 FRONTEND_DOMAIN = 'ella.ronasit.com'
 FRONTEND_ADMIN_ROUTE = 'admin'
 FRONTEND_ADMIN_RESET_PASSWORD_ROUTE = 'reset-password'

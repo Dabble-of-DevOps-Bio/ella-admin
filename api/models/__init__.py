@@ -6,3 +6,4 @@ from .user import User
 from .user_group import UserGroup
 from .user_group_gene_panel import UserGroupGenePanel
 from .user_session import UserSession
+from .variant_report import VariantReport
