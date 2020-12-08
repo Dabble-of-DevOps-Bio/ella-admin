@@ -6,3 +6,4 @@ from .logout_serializer import LogoutSerializer
 from .staff_app_login_serializer import StaffAppLoginSerializer
 from .user_group_serializer import UserGroupSerializer
 from .user_serializer import UserSerializer
+from .variant_report_serializer import VariantReportSerializer

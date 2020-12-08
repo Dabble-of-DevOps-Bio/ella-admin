@@ -15,7 +15,7 @@ django-environ==0.4.5  # https://github.com/joke2k/django-environ
 django-cron==0.5.1
 django-filter==2.3.0
 django-composite-foreignkey==1.1.0
-
+pandas==1.1.5
 
 # Django REST Framework
 # ------------------------------------------------------------------------------

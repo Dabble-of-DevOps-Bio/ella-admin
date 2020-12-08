@@ -1,0 +1,1 @@
+from .expedia_api_service_mocks import get_adapter_with_mocked_urls

@@ -3,7 +3,8 @@ from django.urls import include, path
 from rest_framework import routers
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-from api.http.views import LogoutView, UserViewSet, AnalysisViewSet, GenePanelViewSet, UserGroupViewSet, ProfileViewSet, \
+from api.http.views import LogoutView, UserViewSet, AnalysisViewSet, VariantReportViewSet, GenePanelViewSet, \
+    UserGroupViewSet, ProfileViewSet, \
     StaffAppLoginView
 
 router = routers.DefaultRouter()
@@ -19,6 +20,9 @@ urlpatterns = [
     path('staff-app-login/', StaffAppLoginView.as_view(), name='staff_app_login'),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
+    path('analysis/<int:analysis_pk>/variant-report/',
+         VariantReportViewSet.as_view({'get': 'retrieve', 'put': 'update'}), name='analysis_variant_report'),
 
     url(r'^', include(router.urls)),
     path('password-reset/', include('django_rest_passwordreset.urls', namespace='user')),
