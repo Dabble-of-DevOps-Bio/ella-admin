@@ -1,6 +1,7 @@
 import json
 
 import pendulum
+from django.http import Http404
 from rest_framework import mixins
 from rest_framework import status
 from rest_framework.generics import get_object_or_404
@@ -26,8 +27,13 @@ class VariantReportViewSet(BaseViewSet, mixins.RetrieveModelMixin, mixins.Update
     def retrieve(self, request, *args, **kwargs):
         user = request.user
         analysis_id = kwargs.get('analysis_pk')
-        interpretation_id = AnalysisInterpretation.objects.filter(analysis_id=analysis_id, finalized=True).order_by(
-            '-date_last_update').first().pk
+        interpretation = AnalysisInterpretation.objects.filter(analysis_id=analysis_id, finalized=True).order_by(
+            '-date_last_update').first()
+
+        if interpretation is None:
+            raise Http404
+
+        interpretation_id = interpretation.pk
 
         variant_report = VariantReport.objects.filter(analysis_id=analysis_id,
                                                       analysis_interpretation_id=interpretation_id,
@@ -52,7 +58,6 @@ class VariantReportViewSet(BaseViewSet, mixins.RetrieveModelMixin, mixins.Update
 
         variant_report = get_object_or_404(queryset=VariantReport.objects.all(), user_id=user.pk,
                                            analysis_interpretation_id=interpretation_id, analysis_id=analysis_id)
-
 
         serializer = self.get_serializer(variant_report, data=request.data)
         serializer.is_valid(raise_exception=True)

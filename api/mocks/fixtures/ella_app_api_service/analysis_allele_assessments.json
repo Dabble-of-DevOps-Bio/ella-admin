@@ -1,0 +1,2332 @@
+[
+  {
+    "id": 7,
+    "change_to": "T",
+    "open_end_position": 32893243,
+    "vcf_alt": "T",
+    "chromosome": "13",
+    "change_type": "SNP",
+    "vcf_pos": 32893243,
+    "vcf_ref": "G",
+    "start_position": 32893242,
+    "genome_reference": "GRCh37",
+    "change_from": "G",
+    "samples": [
+      {
+        "id": 7,
+        "mother_id": null,
+        "sample_type": "HTS",
+        "father_id": null,
+        "proband": true,
+        "family_id": null,
+        "sex": null,
+        "affected": true,
+        "sibling_id": null,
+        "identifier": "brca_sample_master",
+        "date_deposited": "2020-10-19T10:46:54.988033+00:00",
+        "genotype": {
+          "filter_status": "PASS",
+          "id": 29,
+          "variant_quality": 5000,
+          "sequencing_depth": 187,
+          "genotype_quality": 99,
+          "allele_depth": {
+            "T": 80,
+            "REF (G)": 107
+          },
+          "type": "Heterozygous",
+          "multiallelic": false,
+          "allele_ratio": 0.42780748663101603,
+          "needs_verification": false,
+          "needs_verification_checks": {
+            "snp": true,
+            "pass": true,
+            "dp": true,
+            "allele_ratio": true,
+            "hts": true
+          },
+          "formatted": "G/T"
+        }
+      }
+    ],
+    "allele_assessment": {
+      "date_created": "2020-10-19T10:50:38.883637+00:00",
+      "analysis_id": 2,
+      "id": 5,
+      "usergroup_id": 1,
+      "genepanel_version": "v01",
+      "classification": "4",
+      "seconds_since_update": 4295921.648139,
+      "previous_assessment_id": null,
+      "allele_id": 7,
+      "custom_annotation_id": null,
+      "date_superceeded": null,
+      "genepanel_name": "HBOCUTV",
+      "user_id": 1,
+      "annotation_id": 7,
+      "user": {
+        "username": "testuser1",
+        "id": 1,
+        "user_group_name": "testgroup01",
+        "full_name": "Henrik Ibsen",
+        "active": true,
+        "first_name": "Henrik",
+        "abbrev_name": "H. Ibsen",
+        "last_name": "Ibsen"
+      },
+      "evaluation": {
+        "acmg": {
+          "included": [
+            {
+              "op": null,
+              "code": "PVS1",
+              "uuid": "6fb71fb5-b847-49c4-b787-f51f9a5a4aaf",
+              "match": null,
+              "source": "suggested",
+              "comment": ""
+            },
+            {
+              "op": null,
+              "code": "PPxPM2",
+              "uuid": "3cfaf648-2f7b-4863-b85f-884ac4bb3f99",
+              "match": null,
+              "source": "suggested",
+              "comment": ""
+            }
+          ],
+          "suggested": [
+            {
+              "op": "$in",
+              "code": "REQ_GP_last_exon_not_important",
+              "match": [
+                "LENI"
+              ],
+              "source": "genepanel.last_exon_important"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_GP_LOF_missense",
+              "match": [
+                "ANY"
+              ],
+              "source": "genepanel.disease_mode"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_not_in_last_exon",
+              "match": [
+                "no"
+              ],
+              "source": "transcript.in_last_exon"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_null_variant",
+              "match": [
+                "stop_gained"
+              ],
+              "source": "transcript.consequences"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_no_freq",
+              "match": [
+                "null_freq"
+              ],
+              "source": "frequencies.commonness"
+            },
+            {
+              "op": null,
+              "code": "PVS1",
+              "match": null,
+              "source": null
+            },
+            {
+              "op": null,
+              "code": "PPxPM2",
+              "match": null,
+              "source": null
+            }
+          ],
+          "suggested_classification": 4
+        },
+        "external": {
+          "comment": ""
+        },
+        "frequency": {
+          "comment": ""
+        },
+        "reference": {
+          "comment": ""
+        },
+        "prediction": {
+          "comment": ""
+        },
+        "classification": {
+          "comment": ""
+        }
+      },
+      "attachment_ids": [],
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "allele_report": {
+      "date_created": "2020-10-19T10:50:38.892853+00:00",
+      "analysis_id": 2,
+      "id": 5,
+      "usergroup_id": 1,
+      "seconds_since_update": 4295921.674341,
+      "allele_id": 7,
+      "date_superceeded": null,
+      "previous_report_id": null,
+      "user_id": 1,
+      "user": {
+        "username": "testuser1",
+        "id": 1,
+        "user_group_name": "testgroup01",
+        "full_name": "Henrik Ibsen",
+        "active": true,
+        "first_name": "Henrik",
+        "abbrev_name": "H. Ibsen",
+        "last_name": "Ibsen"
+      },
+      "evaluation": {
+        "comment": ""
+      },
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "annotation": {
+      "external": {
+        "HGMD": {
+          "tag": "DM",
+          "codon": 33,
+          "acc_num": "CM067653",
+          "disease": "Breast and/or ovarian cancer"
+        },
+        "CLINVAR": {
+          "items": [
+            {
+              "rcv": "SCV000324794",
+              "submitter": "ENIGMA",
+              "traitnames": "",
+              "variant_id": "",
+              "last_evaluated": "18/10/2016",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "RCV000256555",
+              "submitter": "",
+              "traitnames": "Breast-ovarian cancer, familial 2",
+              "variant_id": "52900",
+              "last_evaluated": "18/10/2016",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000328170",
+              "submitter": "CIMBA",
+              "traitnames": "",
+              "variant_id": "",
+              "last_evaluated": "02/10/2015",
+              "clinical_significance_descr": "Pathogenic"
+            }
+          ],
+          "variant_id": 52900,
+          "variant_description": "reviewed by expert panel"
+        }
+      },
+      "prediction": {},
+      "references": [
+        {
+          "sources": [
+            "HGMD"
+          ],
+          "pubmed_id": 16760289,
+          "source_info": {
+            "HGMD": "Primary literature report. No comments."
+          }
+        },
+        {
+          "sources": [
+            "HGMD"
+          ],
+          "pubmed_id": 16847550,
+          "source_info": {
+            "HGMD": "Additional report. No comments."
+          }
+        },
+        {
+          "sources": [
+            "HGMD"
+          ],
+          "pubmed_id": 25525159,
+          "source_info": {
+            "HGMD": "Additional report. predicted to induce a large splicing change - Table S4."
+          }
+        }
+      ],
+      "frequencies": {},
+      "transcripts": [
+        {
+          "exon": "3/27",
+          "HGVSc": "c.97G>T",
+          "HGVSp": "p.Glu33Ter",
+          "dbsnp": [
+            "rs397508065"
+          ],
+          "codons": "Gaa/Taa",
+          "strand": 1,
+          "symbol": "BRCA2",
+          "hgnc_id": 1101,
+          "protein": "NP_000050.2",
+          "transcript": "NM_000059.3",
+          "HGVSc_short": "c.97G>T",
+          "amino_acids": "E/*",
+          "consequences": [
+            "stop_gained"
+          ],
+          "in_last_exon": "no",
+          "is_canonical": true,
+          "exon_distance": 0,
+          "coding_region_distance": 0
+        }
+      ],
+      "worst_consequence": [
+        "NM_000059.3"
+      ],
+      "filtered_transcripts": [
+        "NM_000059.3"
+      ],
+      "annotation_id": 7,
+      "schema_version": 1
+    },
+    "tags": [
+      "has_references"
+    ]
+  },
+  {
+    "id": 13,
+    "change_to": "G",
+    "open_end_position": 32900290,
+    "vcf_alt": "G",
+    "chromosome": "13",
+    "change_type": "SNP",
+    "vcf_pos": 32900290,
+    "vcf_ref": "A",
+    "start_position": 32900289,
+    "genome_reference": "GRCh37",
+    "change_from": "A",
+    "samples": [
+      {
+        "id": 7,
+        "mother_id": null,
+        "sample_type": "HTS",
+        "father_id": null,
+        "proband": true,
+        "family_id": null,
+        "sex": null,
+        "affected": true,
+        "sibling_id": null,
+        "identifier": "brca_sample_master",
+        "date_deposited": "2020-10-19T10:46:54.988033+00:00",
+        "genotype": {
+          "filter_status": "PASS",
+          "id": 31,
+          "variant_quality": 5000,
+          "sequencing_depth": 187,
+          "genotype_quality": 99,
+          "allele_depth": {
+            "G": 80,
+            "REF (A)": 107
+          },
+          "type": "Heterozygous",
+          "multiallelic": false,
+          "allele_ratio": 0.42780748663101603,
+          "needs_verification": false,
+          "needs_verification_checks": {
+            "snp": true,
+            "pass": true,
+            "dp": true,
+            "allele_ratio": true,
+            "hts": true
+          },
+          "formatted": "A/G"
+        }
+      }
+    ],
+    "allele_assessment": {
+      "date_created": "2020-12-06T16:45:10.987072+00:00",
+      "analysis_id": 7,
+      "id": 8,
+      "usergroup_id": 1,
+      "genepanel_version": "v01",
+      "classification": "1",
+      "seconds_since_update": 127449.560794,
+      "previous_assessment_id": null,
+      "allele_id": 13,
+      "custom_annotation_id": null,
+      "date_superceeded": null,
+      "genepanel_name": "HBOCUTV",
+      "user_id": 9,
+      "annotation_id": 13,
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "evaluation": {
+        "acmg": {
+          "included": [],
+          "suggested": [
+            {
+              "op": "$in",
+              "code": "REQ_GP_last_exon_not_important",
+              "match": [
+                "LENI"
+              ],
+              "source": "genepanel.last_exon_important"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_GP_LOF_missense",
+              "match": [
+                "ANY"
+              ],
+              "source": "genepanel.disease_mode"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_not_in_last_exon",
+              "match": [
+                "no"
+              ],
+              "source": "transcript.in_last_exon"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_no_freq",
+              "match": [
+                "null_freq"
+              ],
+              "source": "frequencies.commonness"
+            },
+            {
+              "op": null,
+              "code": "PPxPM2",
+              "match": null,
+              "source": null
+            }
+          ],
+          "suggested_classification": null
+        },
+        "external": {
+          "comment": ""
+        },
+        "frequency": {
+          "comment": ""
+        },
+        "reference": {
+          "comment": ""
+        },
+        "prediction": {
+          "comment": ""
+        },
+        "classification": {
+          "comment": ""
+        }
+      },
+      "attachment_ids": [],
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "allele_report": {
+      "date_created": "2020-12-06T16:45:10.993727+00:00",
+      "analysis_id": 7,
+      "id": 8,
+      "usergroup_id": 1,
+      "seconds_since_update": 127449.576789,
+      "allele_id": 13,
+      "date_superceeded": null,
+      "previous_report_id": null,
+      "user_id": 9,
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "evaluation": {
+        "comment": ""
+      },
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "annotation": {
+      "external": {
+        "HGMD": {
+          "tag": "DM",
+          "acc_num": "CS994297",
+          "disease": "Breast and/or ovarian cancer"
+        },
+        "CLINVAR": {
+          "items": [
+            {
+              "rcv": "SCV000568447",
+              "submitter": "GeneDx",
+              "traitnames": "not specified",
+              "variant_id": "",
+              "last_evaluated": "11/10/2016",
+              "clinical_significance_descr": "Uncertain significance"
+            },
+            {
+              "rcv": "RCV000479466",
+              "submitter": "",
+              "traitnames": "not specified",
+              "variant_id": "51710",
+              "last_evaluated": "11/10/2016",
+              "clinical_significance_descr": "Uncertain significance"
+            },
+            {
+              "rcv": "SCV000538192",
+              "submitter": "Laboratoire de Biologie et G\u00e9n\u00e9tique du Cancer,Centre Fran\u00e7ois Baclesse",
+              "traitnames": "",
+              "variant_id": "",
+              "last_evaluated": "",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "RCV000258385",
+              "submitter": "",
+              "traitnames": "Breast-ovarian cancer, familial 2",
+              "variant_id": "51710",
+              "last_evaluated": "02/10/2015",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000327081",
+              "submitter": "CIMBA",
+              "traitnames": "",
+              "variant_id": "",
+              "last_evaluated": "02/10/2015",
+              "clinical_significance_descr": "Pathogenic"
+            }
+          ],
+          "variant_id": 51710,
+          "variant_description": "criteria provided, conflicting interpretations"
+        }
+      },
+      "prediction": {},
+      "references": [
+        {
+          "sources": [
+            "HGMD",
+            "CLINVAR"
+          ],
+          "pubmed_id": 28905878,
+          "source_info": {
+            "HGMD": "Functional characterisation. No comments."
+          }
+        },
+        {
+          "sources": [
+            "HGMD"
+          ],
+          "pubmed_id": 9971877,
+          "source_info": {
+            "HGMD": "Primary literature report. No comments."
+          }
+        },
+        {
+          "sources": [
+            "HGMD"
+          ],
+          "pubmed_id": 25525159,
+          "source_info": {
+            "HGMD": "Additional report. predicted to induce a large splicing change - Table S4."
+          }
+        }
+      ],
+      "frequencies": {},
+      "transcripts": [
+        {
+          "HGVSc": "c.475+3A>G",
+          "dbsnp": [
+            "rs81002795"
+          ],
+          "intron": "5/26",
+          "strand": 1,
+          "symbol": "BRCA2",
+          "hgnc_id": 1101,
+          "transcript": "NM_000059.3",
+          "HGVSc_short": "c.475+3A>G",
+          "consequences": [
+            "intron_variant",
+            "splice_region_variant"
+          ],
+          "in_last_exon": "no",
+          "is_canonical": true,
+          "exon_distance": 3,
+          "coding_region_distance": null
+        }
+      ],
+      "worst_consequence": [
+        "NM_000059.3"
+      ],
+      "filtered_transcripts": [
+        "NM_000059.3"
+      ],
+      "annotation_id": 13,
+      "schema_version": 1
+    },
+    "tags": [
+      "has_references"
+    ]
+  },
+  {
+    "id": 19,
+    "change_to": "C",
+    "open_end_position": 32905054,
+    "vcf_alt": "C",
+    "chromosome": "13",
+    "change_type": "SNP",
+    "vcf_pos": 32905054,
+    "vcf_ref": "A",
+    "start_position": 32905053,
+    "genome_reference": "GRCh37",
+    "change_from": "A",
+    "samples": [
+      {
+        "id": 7,
+        "mother_id": null,
+        "sample_type": "HTS",
+        "father_id": null,
+        "proband": true,
+        "family_id": null,
+        "sex": null,
+        "affected": true,
+        "sibling_id": null,
+        "identifier": "brca_sample_master",
+        "date_deposited": "2020-10-19T10:46:54.988033+00:00",
+        "genotype": {
+          "filter_status": "PASS",
+          "id": 33,
+          "variant_quality": 5000,
+          "sequencing_depth": 187,
+          "genotype_quality": 99,
+          "allele_depth": {
+            "C": 80,
+            "REF (A)": 107
+          },
+          "type": "Heterozygous",
+          "multiallelic": false,
+          "allele_ratio": 0.42780748663101603,
+          "needs_verification": false,
+          "needs_verification_checks": {
+            "snp": true,
+            "pass": true,
+            "dp": true,
+            "allele_ratio": true,
+            "hts": true
+          },
+          "formatted": "A/C"
+        }
+      }
+    ],
+    "allele_assessment": {
+      "date_created": "2020-12-06T16:45:19.707888+00:00",
+      "analysis_id": 7,
+      "id": 10,
+      "usergroup_id": 1,
+      "genepanel_version": "v01",
+      "classification": "3",
+      "seconds_since_update": 127440.845832,
+      "previous_assessment_id": null,
+      "allele_id": 19,
+      "custom_annotation_id": null,
+      "date_superceeded": null,
+      "genepanel_name": "HBOCUTV",
+      "user_id": 9,
+      "annotation_id": 19,
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "evaluation": {
+        "acmg": {
+          "included": [],
+          "suggested": [
+            {
+              "op": "$in",
+              "code": "REQ_GP_last_exon_not_important",
+              "match": [
+                "LENI"
+              ],
+              "source": "genepanel.last_exon_important"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_GP_LOF_missense",
+              "match": [
+                "ANY"
+              ],
+              "source": "genepanel.disease_mode"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_not_in_last_exon",
+              "match": [
+                "no"
+              ],
+              "source": "transcript.in_last_exon"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_null_variant",
+              "match": [
+                "splice_acceptor_variant"
+              ],
+              "source": "transcript.consequences"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_no_freq",
+              "match": [
+                "null_freq"
+              ],
+              "source": "frequencies.commonness"
+            },
+            {
+              "op": null,
+              "code": "PVS1",
+              "match": null,
+              "source": null
+            },
+            {
+              "op": null,
+              "code": "PPxPM2",
+              "match": null,
+              "source": null
+            }
+          ],
+          "suggested_classification": null
+        },
+        "external": {
+          "comment": ""
+        },
+        "frequency": {
+          "comment": ""
+        },
+        "reference": {
+          "comment": ""
+        },
+        "prediction": {
+          "comment": ""
+        },
+        "classification": {
+          "comment": ""
+        }
+      },
+      "attachment_ids": [],
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "allele_report": {
+      "date_created": "2020-12-06T16:45:19.715324+00:00",
+      "analysis_id": 7,
+      "id": 10,
+      "usergroup_id": 1,
+      "seconds_since_update": 127440.857309,
+      "allele_id": 19,
+      "date_superceeded": null,
+      "previous_report_id": null,
+      "user_id": 9,
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "evaluation": {
+        "comment": ""
+      },
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "annotation": {
+      "external": {
+        "HGMD": {
+          "tag": "DM",
+          "acc_num": "CS144707",
+          "disease": "Breast and/or ovarian cancer"
+        },
+        "CLINVAR": {
+          "items": [
+            {
+              "rcv": "RCV000258313",
+              "submitter": "",
+              "traitnames": "Breast-ovarian cancer, familial 2",
+              "variant_id": "267659",
+              "last_evaluated": "02/10/2015",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000327527",
+              "submitter": "CIMBA",
+              "traitnames": "",
+              "variant_id": "",
+              "last_evaluated": "02/10/2015",
+              "clinical_significance_descr": "Pathogenic"
+            }
+          ],
+          "variant_id": 267659,
+          "variant_description": "criteria provided, single submitter"
+        }
+      },
+      "prediction": {},
+      "references": [
+        {
+          "sources": [
+            "HGMD"
+          ],
+          "pubmed_id": 24607278,
+          "source_info": {
+            "HGMD": "Primary literature report. Aberrant splicing. functional."
+          }
+        }
+      ],
+      "frequencies": {},
+      "transcripts": [
+        {
+          "HGVSc": "c.682-2A>C",
+          "intron": "8/26",
+          "strand": 1,
+          "symbol": "BRCA2",
+          "hgnc_id": 1101,
+          "transcript": "NM_000059.3",
+          "HGVSc_short": "c.682-2A>C",
+          "consequences": [
+            "splice_acceptor_variant"
+          ],
+          "in_last_exon": "no",
+          "is_canonical": true,
+          "exon_distance": -2,
+          "coding_region_distance": null
+        }
+      ],
+      "worst_consequence": [
+        "NM_000059.3"
+      ],
+      "filtered_transcripts": [
+        "NM_000059.3"
+      ],
+      "annotation_id": 19,
+      "schema_version": 1
+    },
+    "tags": [
+      "has_references"
+    ]
+  },
+  {
+    "id": 20,
+    "change_to": "T",
+    "open_end_position": 32906535,
+    "vcf_alt": "GT",
+    "chromosome": "13",
+    "change_type": "ins",
+    "vcf_pos": 32906535,
+    "vcf_ref": "G",
+    "start_position": 32906534,
+    "genome_reference": "GRCh37",
+    "change_from": "",
+    "samples": [
+      {
+        "id": 7,
+        "mother_id": null,
+        "sample_type": "HTS",
+        "father_id": null,
+        "proband": true,
+        "family_id": null,
+        "sex": null,
+        "affected": true,
+        "sibling_id": null,
+        "identifier": "brca_sample_master",
+        "date_deposited": "2020-10-19T10:46:54.988033+00:00",
+        "genotype": {
+          "filter_status": "PASS",
+          "id": 34,
+          "variant_quality": 5000,
+          "sequencing_depth": 187,
+          "genotype_quality": 99,
+          "allele_depth": {
+            "GT": 80,
+            "REF (G)": 107
+          },
+          "type": "Heterozygous",
+          "multiallelic": false,
+          "allele_ratio": 0.42780748663101603,
+          "needs_verification": true,
+          "needs_verification_checks": {
+            "snp": false,
+            "pass": true,
+            "dp": true,
+            "allele_ratio": true,
+            "hts": true
+          },
+          "formatted": "-/T"
+        }
+      }
+    ],
+    "allele_assessment": {
+      "date_created": "2020-12-06T16:45:23.268002+00:00",
+      "analysis_id": 7,
+      "id": 11,
+      "usergroup_id": 1,
+      "genepanel_version": "v01",
+      "classification": "3",
+      "seconds_since_update": 127437.288946,
+      "previous_assessment_id": null,
+      "allele_id": 20,
+      "custom_annotation_id": null,
+      "date_superceeded": null,
+      "genepanel_name": "HBOCUTV",
+      "user_id": 9,
+      "annotation_id": 20,
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "evaluation": {
+        "acmg": {
+          "included": [],
+          "suggested": [
+            {
+              "op": "$in",
+              "code": "REQ_GP_last_exon_not_important",
+              "match": [
+                "LENI"
+              ],
+              "source": "genepanel.last_exon_important"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_GP_LOF_missense",
+              "match": [
+                "ANY"
+              ],
+              "source": "genepanel.disease_mode"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_not_in_last_exon",
+              "match": [
+                "no"
+              ],
+              "source": "transcript.in_last_exon"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_null_variant",
+              "match": [
+                "frameshift_variant"
+              ],
+              "source": "transcript.consequences"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_no_freq",
+              "match": [
+                "null_freq"
+              ],
+              "source": "frequencies.commonness"
+            },
+            {
+              "op": null,
+              "code": "PVS1",
+              "match": null,
+              "source": null
+            },
+            {
+              "op": null,
+              "code": "PPxPM2",
+              "match": null,
+              "source": null
+            }
+          ],
+          "suggested_classification": null
+        },
+        "external": {
+          "comment": ""
+        },
+        "frequency": {
+          "comment": ""
+        },
+        "reference": {
+          "comment": ""
+        },
+        "prediction": {
+          "comment": ""
+        },
+        "classification": {
+          "comment": ""
+        }
+      },
+      "attachment_ids": [],
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "allele_report": {
+      "date_created": "2020-12-06T16:45:23.275829+00:00",
+      "analysis_id": 7,
+      "id": 11,
+      "usergroup_id": 1,
+      "seconds_since_update": 127437.297776,
+      "allele_id": 20,
+      "date_superceeded": null,
+      "previous_report_id": null,
+      "user_id": 9,
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "evaluation": {
+        "comment": ""
+      },
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "annotation": {
+      "external": {
+        "HGMD": {
+          "tag": "DM",
+          "codon": 308,
+          "acc_num": "CI1111183",
+          "disease": "Breast cancer"
+        },
+        "CLINVAR": {
+          "items": [
+            {
+              "rcv": "SCV000300371",
+              "submitter": "ENIGMA",
+              "traitnames": "",
+              "variant_id": "",
+              "last_evaluated": "08/09/2016",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "RCV000241166",
+              "submitter": "",
+              "traitnames": "Breast-ovarian cancer, familial 2",
+              "variant_id": "254484",
+              "last_evaluated": "08/09/2016",
+              "clinical_significance_descr": "Pathogenic"
+            }
+          ],
+          "variant_id": 254484,
+          "variant_description": "reviewed by expert panel"
+        }
+      },
+      "prediction": {},
+      "references": [
+        {
+          "sources": [
+            "HGMD"
+          ],
+          "pubmed_id": 21613821,
+          "source_info": {
+            "HGMD": "Primary literature report. Descr. as 1153insertionT, posn. conf. by PC <1353>."
+          }
+        }
+      ],
+      "frequencies": {},
+      "transcripts": [
+        {
+          "exon": "10/27",
+          "HGVSc": "c.925dupT",
+          "HGVSp": "p.Ser309PhefsTer6",
+          "codons": "agt/agTt",
+          "strand": 1,
+          "symbol": "BRCA2",
+          "hgnc_id": 1101,
+          "protein": "NP_000050.2",
+          "transcript": "NM_000059.3",
+          "HGVSc_short": "c.925dupT",
+          "amino_acids": "S/SX",
+          "consequences": [
+            "frameshift_variant"
+          ],
+          "in_last_exon": "no",
+          "is_canonical": true,
+          "exon_distance": 0,
+          "coding_region_distance": 0
+        }
+      ],
+      "worst_consequence": [
+        "NM_000059.3"
+      ],
+      "filtered_transcripts": [
+        "NM_000059.3"
+      ],
+      "annotation_id": 20,
+      "schema_version": 1
+    },
+    "tags": [
+      "has_references"
+    ]
+  },
+  {
+    "id": 21,
+    "change_to": "A",
+    "open_end_position": 32906847,
+    "vcf_alt": "TA",
+    "chromosome": "13",
+    "change_type": "ins",
+    "vcf_pos": 32906847,
+    "vcf_ref": "T",
+    "start_position": 32906846,
+    "genome_reference": "GRCh37",
+    "change_from": "",
+    "samples": [
+      {
+        "id": 7,
+        "mother_id": null,
+        "sample_type": "HTS",
+        "father_id": null,
+        "proband": true,
+        "family_id": null,
+        "sex": null,
+        "affected": true,
+        "sibling_id": null,
+        "identifier": "brca_sample_master",
+        "date_deposited": "2020-10-19T10:46:54.988033+00:00",
+        "genotype": {
+          "filter_status": "PASS",
+          "id": 35,
+          "variant_quality": 5000,
+          "sequencing_depth": 187,
+          "genotype_quality": 99,
+          "allele_depth": {
+            "TA": 80,
+            "REF (T)": 107
+          },
+          "type": "Heterozygous",
+          "multiallelic": false,
+          "allele_ratio": 0.42780748663101603,
+          "needs_verification": true,
+          "needs_verification_checks": {
+            "snp": false,
+            "pass": true,
+            "dp": true,
+            "allele_ratio": true,
+            "hts": true
+          },
+          "formatted": "-/A"
+        }
+      }
+    ],
+    "allele_assessment": {
+      "date_created": "2020-12-06T16:45:26.535630+00:00",
+      "analysis_id": 7,
+      "id": 12,
+      "usergroup_id": 1,
+      "genepanel_version": "v01",
+      "classification": "4",
+      "seconds_since_update": 127434.024317,
+      "previous_assessment_id": null,
+      "allele_id": 21,
+      "custom_annotation_id": null,
+      "date_superceeded": null,
+      "genepanel_name": "HBOCUTV",
+      "user_id": 9,
+      "annotation_id": 21,
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "evaluation": {
+        "acmg": {
+          "included": [],
+          "suggested": [
+            {
+              "op": "$in",
+              "code": "REQ_GP_last_exon_not_important",
+              "match": [
+                "LENI"
+              ],
+              "source": "genepanel.last_exon_important"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_GP_LOF_missense",
+              "match": [
+                "ANY"
+              ],
+              "source": "genepanel.disease_mode"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_not_in_last_exon",
+              "match": [
+                "no"
+              ],
+              "source": "transcript.in_last_exon"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_null_variant",
+              "match": [
+                "frameshift_variant"
+              ],
+              "source": "transcript.consequences"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_no_freq",
+              "match": [
+                "null_freq"
+              ],
+              "source": "frequencies.commonness"
+            },
+            {
+              "op": null,
+              "code": "PVS1",
+              "match": null,
+              "source": null
+            },
+            {
+              "op": null,
+              "code": "PPxPM2",
+              "match": null,
+              "source": null
+            }
+          ],
+          "suggested_classification": null
+        },
+        "external": {
+          "comment": ""
+        },
+        "frequency": {
+          "comment": ""
+        },
+        "reference": {
+          "comment": ""
+        },
+        "prediction": {
+          "comment": ""
+        },
+        "classification": {
+          "comment": ""
+        }
+      },
+      "attachment_ids": [],
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "allele_report": {
+      "date_created": "2020-12-06T16:45:26.545317+00:00",
+      "analysis_id": 7,
+      "id": 12,
+      "usergroup_id": 1,
+      "seconds_since_update": 127434.029284,
+      "allele_id": 21,
+      "date_superceeded": null,
+      "previous_report_id": null,
+      "user_id": 9,
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "evaluation": {
+        "comment": ""
+      },
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "annotation": {
+      "external": {
+        "HGMD": {
+          "tag": "DM",
+          "codon": 411,
+          "acc_num": "CI101425",
+          "disease": "Breast cancer"
+        },
+        "CLINVAR": {
+          "items": [
+            {
+              "rcv": "SCV000145837",
+              "submitter": "BIC (BRCA2)",
+              "traitnames": "Breast-ovarian cancer, familial 2",
+              "variant_id": "",
+              "last_evaluated": "",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000326521",
+              "submitter": "CIMBA",
+              "traitnames": "",
+              "variant_id": "",
+              "last_evaluated": "02/10/2015",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "RCV000112898",
+              "submitter": "",
+              "traitnames": "Breast-ovarian cancer, familial 2",
+              "variant_id": "51088",
+              "last_evaluated": "08/09/2016",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000300410",
+              "submitter": "ENIGMA",
+              "traitnames": "",
+              "variant_id": "",
+              "last_evaluated": "08/09/2016",
+              "clinical_significance_descr": "Pathogenic"
+            }
+          ],
+          "variant_id": 51088,
+          "variant_description": "reviewed by expert panel"
+        }
+      },
+      "prediction": {},
+      "references": [
+        {
+          "sources": [
+            "HGMD"
+          ],
+          "pubmed_id": 20104584,
+          "source_info": {
+            "HGMD": "Primary literature report. No comments."
+          }
+        }
+      ],
+      "frequencies": {},
+      "transcripts": [
+        {
+          "exon": "10/27",
+          "HGVSc": "c.1233dupA",
+          "HGVSp": "p.Pro412ThrfsTer9",
+          "dbsnp": [],
+          "codons": "ata/atAa",
+          "strand": 1,
+          "symbol": "BRCA2",
+          "hgnc_id": 1101,
+          "protein": "NP_000050.2",
+          "transcript": "NM_000059.3",
+          "HGVSc_short": "c.1233dupA",
+          "amino_acids": "I/IX",
+          "consequences": [
+            "frameshift_variant"
+          ],
+          "in_last_exon": "no",
+          "is_canonical": true,
+          "exon_distance": 0,
+          "coding_region_distance": 0
+        }
+      ],
+      "worst_consequence": [
+        "NM_000059.3"
+      ],
+      "filtered_transcripts": [
+        "NM_000059.3"
+      ],
+      "annotation_id": 21,
+      "schema_version": 1
+    },
+    "tags": [
+      "has_references"
+    ]
+  },
+  {
+    "id": 22,
+    "change_to": "",
+    "open_end_position": 32907059,
+    "vcf_alt": "T",
+    "chromosome": "13",
+    "change_type": "del",
+    "vcf_pos": 32907058,
+    "vcf_ref": "TC",
+    "start_position": 32907058,
+    "genome_reference": "GRCh37",
+    "change_from": "C",
+    "samples": [
+      {
+        "id": 7,
+        "mother_id": null,
+        "sample_type": "HTS",
+        "father_id": null,
+        "proband": true,
+        "family_id": null,
+        "sex": null,
+        "affected": true,
+        "sibling_id": null,
+        "identifier": "brca_sample_master",
+        "date_deposited": "2020-10-19T10:46:54.988033+00:00",
+        "genotype": {
+          "filter_status": "PASS",
+          "id": 36,
+          "variant_quality": 5000,
+          "sequencing_depth": 187,
+          "genotype_quality": 99,
+          "allele_depth": {
+            "T": 80,
+            "REF (TC)": 107
+          },
+          "type": "Heterozygous",
+          "multiallelic": false,
+          "allele_ratio": 0.42780748663101603,
+          "needs_verification": true,
+          "needs_verification_checks": {
+            "snp": false,
+            "pass": true,
+            "dp": true,
+            "allele_ratio": true,
+            "hts": true
+          },
+          "formatted": "C/-"
+        }
+      }
+    ],
+    "allele_assessment": {
+      "date_created": "2020-12-06T16:45:29.950926+00:00",
+      "analysis_id": 7,
+      "id": 13,
+      "usergroup_id": 1,
+      "genepanel_version": "v01",
+      "classification": "5",
+      "seconds_since_update": 127430.611523,
+      "previous_assessment_id": null,
+      "allele_id": 22,
+      "custom_annotation_id": null,
+      "date_superceeded": null,
+      "genepanel_name": "HBOCUTV",
+      "user_id": 9,
+      "annotation_id": 22,
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "evaluation": {
+        "acmg": {
+          "included": [],
+          "suggested": [
+            {
+              "op": "$in",
+              "code": "REQ_GP_last_exon_not_important",
+              "match": [
+                "LENI"
+              ],
+              "source": "genepanel.last_exon_important"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_GP_LOF_missense",
+              "match": [
+                "ANY"
+              ],
+              "source": "genepanel.disease_mode"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_not_in_last_exon",
+              "match": [
+                "no"
+              ],
+              "source": "transcript.in_last_exon"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_null_variant",
+              "match": [
+                "frameshift_variant"
+              ],
+              "source": "transcript.consequences"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_no_freq",
+              "match": [
+                "null_freq"
+              ],
+              "source": "frequencies.commonness"
+            },
+            {
+              "op": null,
+              "code": "PVS1",
+              "match": null,
+              "source": null
+            },
+            {
+              "op": null,
+              "code": "PPxPM2",
+              "match": null,
+              "source": null
+            }
+          ],
+          "suggested_classification": null
+        },
+        "external": {
+          "comment": ""
+        },
+        "frequency": {
+          "comment": ""
+        },
+        "reference": {
+          "comment": ""
+        },
+        "prediction": {
+          "comment": ""
+        },
+        "classification": {
+          "comment": ""
+        }
+      },
+      "attachment_ids": [],
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "allele_report": {
+      "date_created": "2020-12-06T16:45:29.958593+00:00",
+      "analysis_id": 7,
+      "id": 13,
+      "usergroup_id": 1,
+      "seconds_since_update": 127430.617016,
+      "allele_id": 22,
+      "date_superceeded": null,
+      "previous_report_id": null,
+      "user_id": 9,
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "evaluation": {
+        "comment": ""
+      },
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "annotation": {
+      "external": {
+        "HGMD": {
+          "tag": "DM",
+          "codon": 481,
+          "acc_num": "CD114478",
+          "disease": "Ovarian cancer"
+        },
+        "CLINVAR": {
+          "items": [
+            {
+              "rcv": "SCV000600479",
+              "submitter": "Quest Diagnostics Nichols Institute San Juan Capistrano",
+              "traitnames": "not provided",
+              "variant_id": "",
+              "last_evaluated": "08/06/2017",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "RCV000508477",
+              "submitter": "",
+              "traitnames": "not provided",
+              "variant_id": "51124",
+              "last_evaluated": "08/06/2017",
+              "clinical_significance_descr": "Pathogenic"
+            }
+          ],
+          "variant_id": 51124,
+          "variant_description": "criteria provided, single submitter"
+        }
+      },
+      "prediction": {},
+      "references": [
+        {
+          "sources": [
+            "HGMD",
+            "CLINVAR"
+          ],
+          "pubmed_id": 21607582,
+          "source_info": {
+            "HGMD": "Primary literature report. Descr. as 1672delC."
+          }
+        },
+        {
+          "sources": [
+            "CLINVAR"
+          ],
+          "pubmed_id": 26467025,
+          "source_info": {}
+        }
+      ],
+      "frequencies": {},
+      "transcripts": [
+        {
+          "exon": "10/27",
+          "HGVSc": "c.1444delC",
+          "HGVSp": "p.Ala483GlnfsTer2",
+          "dbsnp": [
+            "rs397507588",
+            "rs587776460"
+          ],
+          "codons": "Ctt/tt",
+          "strand": 1,
+          "symbol": "BRCA2",
+          "hgnc_id": 1101,
+          "protein": "NP_000050.2",
+          "transcript": "NM_000059.3",
+          "HGVSc_short": "c.1444delC",
+          "amino_acids": "L/X",
+          "consequences": [
+            "frameshift_variant"
+          ],
+          "in_last_exon": "no",
+          "is_canonical": true,
+          "exon_distance": 0,
+          "coding_region_distance": 0
+        }
+      ],
+      "worst_consequence": [
+        "NM_000059.3"
+      ],
+      "filtered_transcripts": [
+        "NM_000059.3"
+      ],
+      "annotation_id": 22,
+      "schema_version": 1
+    },
+    "tags": [
+      "has_references"
+    ]
+  },
+  {
+    "id": 23,
+    "change_to": "T",
+    "open_end_position": 32893435,
+    "vcf_alt": "T",
+    "chromosome": "13",
+    "change_type": "SNP",
+    "vcf_pos": 32893435,
+    "vcf_ref": "G",
+    "start_position": 32893434,
+    "genome_reference": "GRCh37",
+    "change_from": "G",
+    "samples": [
+      {
+        "id": 7,
+        "mother_id": null,
+        "sample_type": "HTS",
+        "father_id": null,
+        "proband": true,
+        "family_id": null,
+        "sex": null,
+        "affected": true,
+        "sibling_id": null,
+        "identifier": "brca_sample_master",
+        "date_deposited": "2020-10-19T10:46:54.988033+00:00",
+        "genotype": {
+          "filter_status": "PASS",
+          "id": 30,
+          "variant_quality": 5000,
+          "sequencing_depth": 187,
+          "genotype_quality": 99,
+          "allele_depth": {
+            "T": 80,
+            "REF (G)": 107
+          },
+          "type": "Heterozygous",
+          "multiallelic": false,
+          "allele_ratio": 0.42780748663101603,
+          "needs_verification": false,
+          "needs_verification_checks": {
+            "snp": true,
+            "pass": true,
+            "dp": true,
+            "allele_ratio": true,
+            "hts": true
+          },
+          "formatted": "G/T"
+        }
+      }
+    ],
+    "allele_assessment": {
+      "date_created": "2020-12-06T16:45:00.337706+00:00",
+      "analysis_id": 7,
+      "id": 7,
+      "usergroup_id": 1,
+      "genepanel_version": "v01",
+      "classification": "U",
+      "seconds_since_update": 127460.207086,
+      "previous_assessment_id": null,
+      "allele_id": 23,
+      "custom_annotation_id": null,
+      "date_superceeded": null,
+      "genepanel_name": "HBOCUTV",
+      "user_id": 9,
+      "annotation_id": 23,
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "evaluation": {
+        "acmg": {
+          "included": [],
+          "suggested": [
+            {
+              "op": "$in",
+              "code": "REQ_GP_last_exon_not_important",
+              "match": [
+                "LENI"
+              ],
+              "source": "genepanel.last_exon_important"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_GP_LOF_missense",
+              "match": [
+                "ANY"
+              ],
+              "source": "genepanel.disease_mode"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_not_in_last_exon",
+              "match": [
+                "no"
+              ],
+              "source": "transcript.in_last_exon"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_null_variant",
+              "match": [
+                "stop_gained"
+              ],
+              "source": "transcript.consequences"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_no_freq",
+              "match": [
+                "null_freq"
+              ],
+              "source": "frequencies.commonness"
+            },
+            {
+              "op": null,
+              "code": "PVS1",
+              "match": null,
+              "source": null
+            },
+            {
+              "op": null,
+              "code": "PPxPM2",
+              "match": null,
+              "source": null
+            }
+          ],
+          "suggested_classification": null
+        },
+        "external": {
+          "comment": ""
+        },
+        "frequency": {
+          "comment": ""
+        },
+        "reference": {
+          "comment": ""
+        },
+        "prediction": {
+          "comment": ""
+        },
+        "classification": {
+          "comment": ""
+        }
+      },
+      "attachment_ids": [],
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "allele_report": {
+      "date_created": "2020-12-06T16:45:00.348371+00:00",
+      "analysis_id": 7,
+      "id": 7,
+      "usergroup_id": 1,
+      "seconds_since_update": 127460.220983,
+      "allele_id": 23,
+      "date_superceeded": null,
+      "previous_report_id": null,
+      "user_id": 9,
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "evaluation": {
+        "comment": ""
+      },
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "annotation": {
+      "external": {
+        "HGMD": {
+          "tag": "DM",
+          "codon": 97,
+          "acc_num": "CM062477",
+          "disease": "Breast cancer"
+        },
+        "CLINVAR": {
+          "items": [
+            {
+              "rcv": "RCV000083095",
+              "submitter": "",
+              "traitnames": "Breast-ovarian cancer, familial 2",
+              "variant_id": "51368",
+              "last_evaluated": "08/09/2016",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000217715",
+              "submitter": "Ambry Genetics",
+              "traitnames": "Hereditary cancer-predisposing syndrome",
+              "variant_id": "",
+              "last_evaluated": "20/11/2014",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000326785",
+              "submitter": "CIMBA",
+              "traitnames": "",
+              "variant_id": "",
+              "last_evaluated": "02/10/2015",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "RCV000214710",
+              "submitter": "",
+              "traitnames": "not provided",
+              "variant_id": "51368",
+              "last_evaluated": "24/02/2017",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "RCV000166898",
+              "submitter": "",
+              "traitnames": "Hereditary cancer-predisposing syndrome",
+              "variant_id": "51368",
+              "last_evaluated": "22/05/2017",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000300315",
+              "submitter": "ENIGMA",
+              "traitnames": "",
+              "variant_id": "",
+              "last_evaluated": "08/09/2016",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000115169",
+              "submitter": "SCRP",
+              "traitnames": "Breast-ovarian cancer, familial 2",
+              "variant_id": "",
+              "last_evaluated": "01/05/2012",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000279386",
+              "submitter": "GeneDx",
+              "traitnames": "Not Provided",
+              "variant_id": "",
+              "last_evaluated": "24/02/2017",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000683509",
+              "submitter": "Color Genomics, Inc.",
+              "traitnames": "",
+              "variant_id": "",
+              "last_evaluated": "22/05/2017",
+              "clinical_significance_descr": "Pathogenic"
+            }
+          ],
+          "variant_id": 51368,
+          "variant_description": "reviewed by expert panel"
+        }
+      },
+      "prediction": {},
+      "references": [
+        {
+          "sources": [
+            "HGMD"
+          ],
+          "pubmed_id": 16683254,
+          "source_info": {
+            "HGMD": "Primary literature report. No comments."
+          }
+        }
+      ],
+      "frequencies": {},
+      "transcripts": [
+        {
+          "exon": "3/27",
+          "HGVSc": "c.289G>T",
+          "HGVSp": "p.Glu97Ter",
+          "dbsnp": [
+            "rs397507646"
+          ],
+          "codons": "Gaa/Taa",
+          "strand": 1,
+          "symbol": "BRCA2",
+          "hgnc_id": 1101,
+          "protein": "NP_000050.2",
+          "transcript": "NM_000059.3",
+          "HGVSc_short": "c.289G>T",
+          "amino_acids": "E/*",
+          "consequences": [
+            "stop_gained"
+          ],
+          "in_last_exon": "no",
+          "is_canonical": true,
+          "exon_distance": 0,
+          "coding_region_distance": 0
+        }
+      ],
+      "worst_consequence": [
+        "NM_000059.3"
+      ],
+      "filtered_transcripts": [
+        "NM_000059.3"
+      ],
+      "annotation_id": 23,
+      "schema_version": 1
+    },
+    "tags": [
+      "has_references"
+    ]
+  },
+  {
+    "id": 24,
+    "change_to": "A",
+    "open_end_position": 32900700,
+    "vcf_alt": "A",
+    "chromosome": "13",
+    "change_type": "SNP",
+    "vcf_pos": 32900700,
+    "vcf_ref": "G",
+    "start_position": 32900699,
+    "genome_reference": "GRCh37",
+    "change_from": "G",
+    "samples": [
+      {
+        "id": 7,
+        "mother_id": null,
+        "sample_type": "HTS",
+        "father_id": null,
+        "proband": true,
+        "family_id": null,
+        "sex": null,
+        "affected": true,
+        "sibling_id": null,
+        "identifier": "brca_sample_master",
+        "date_deposited": "2020-10-19T10:46:54.988033+00:00",
+        "genotype": {
+          "filter_status": "PASS",
+          "id": 32,
+          "variant_quality": 5000,
+          "sequencing_depth": 187,
+          "genotype_quality": 99,
+          "allele_depth": {
+            "A": 80,
+            "REF (G)": 107
+          },
+          "type": "Heterozygous",
+          "multiallelic": false,
+          "allele_ratio": 0.42780748663101603,
+          "needs_verification": false,
+          "needs_verification_checks": {
+            "snp": true,
+            "pass": true,
+            "dp": true,
+            "allele_ratio": true,
+            "hts": true
+          },
+          "formatted": "G/A"
+        }
+      }
+    ],
+    "allele_assessment": {
+      "date_created": "2020-12-06T16:45:15.319135+00:00",
+      "analysis_id": 7,
+      "id": 9,
+      "usergroup_id": 1,
+      "genepanel_version": "v01",
+      "classification": "2",
+      "seconds_since_update": 127445.231426,
+      "previous_assessment_id": null,
+      "allele_id": 24,
+      "custom_annotation_id": null,
+      "date_superceeded": null,
+      "genepanel_name": "HBOCUTV",
+      "user_id": 9,
+      "annotation_id": 24,
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "evaluation": {
+        "acmg": {
+          "included": [],
+          "suggested": [
+            {
+              "op": "$in",
+              "code": "REQ_GP_last_exon_not_important",
+              "match": [
+                "LENI"
+              ],
+              "source": "genepanel.last_exon_important"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_GP_LOF_missense",
+              "match": [
+                "ANY"
+              ],
+              "source": "genepanel.disease_mode"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_not_in_last_exon",
+              "match": [
+                "no"
+              ],
+              "source": "transcript.in_last_exon"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_null_variant",
+              "match": [
+                "stop_gained"
+              ],
+              "source": "transcript.consequences"
+            },
+            {
+              "op": "$in",
+              "code": "REQ_no_freq",
+              "match": [
+                "null_freq"
+              ],
+              "source": "frequencies.commonness"
+            },
+            {
+              "op": null,
+              "code": "PVS1",
+              "match": null,
+              "source": null
+            },
+            {
+              "op": null,
+              "code": "PPxPM2",
+              "match": null,
+              "source": null
+            }
+          ],
+          "suggested_classification": null
+        },
+        "external": {
+          "comment": ""
+        },
+        "frequency": {
+          "comment": ""
+        },
+        "reference": {
+          "comment": ""
+        },
+        "prediction": {
+          "comment": ""
+        },
+        "classification": {
+          "comment": ""
+        }
+      },
+      "attachment_ids": [],
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "allele_report": {
+      "date_created": "2020-12-06T16:45:15.327296+00:00",
+      "analysis_id": 7,
+      "id": 9,
+      "usergroup_id": 1,
+      "seconds_since_update": 127445.244305,
+      "allele_id": 24,
+      "date_superceeded": null,
+      "previous_report_id": null,
+      "user_id": 9,
+      "user": {
+        "username": "superuser",
+        "id": 9,
+        "user_group_name": "testgroup01",
+        "full_name": "Super Admin",
+        "active": true,
+        "first_name": "Super",
+        "abbrev_name": "S. Admin",
+        "last_name": "Admin"
+      },
+      "evaluation": {
+        "comment": ""
+      },
+      "usergroup": {
+        "name": "testgroup01",
+        "id": 1
+      }
+    },
+    "annotation": {
+      "external": {
+        "HGMD": {
+          "tag": "DM",
+          "codon": 194,
+          "acc_num": "CM960192",
+          "disease": "Breast cancer"
+        },
+        "CLINVAR": {
+          "items": [
+            {
+              "rcv": "SCV000147206",
+              "submitter": "BIC (BRCA2)",
+              "traitnames": "Breast-ovarian cancer, familial 2",
+              "variant_id": "",
+              "last_evaluated": "20/02/2004",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "RCV000044763",
+              "submitter": "",
+              "traitnames": "Hereditary breast and ovarian cancer syndrome",
+              "variant_id": "51943",
+              "last_evaluated": "08/11/2016",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000072776",
+              "submitter": "Invitae",
+              "traitnames": "",
+              "variant_id": "",
+              "last_evaluated": "08/11/2016",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000327289",
+              "submitter": "CIMBA",
+              "traitnames": "",
+              "variant_id": "",
+              "last_evaluated": "02/10/2015",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "RCV000077362",
+              "submitter": "",
+              "traitnames": "Breast-ovarian cancer, familial 2",
+              "variant_id": "51943",
+              "last_evaluated": "08/09/2016",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000300335",
+              "submitter": "ENIGMA",
+              "traitnames": "",
+              "variant_id": "",
+              "last_evaluated": "08/09/2016",
+              "clinical_significance_descr": "Pathogenic"
+            },
+            {
+              "rcv": "SCV000109159",
+              "submitter": "SCRP",
+              "traitnames": "Breast-ovarian cancer, familial 2",
+              "variant_id": "",
+              "last_evaluated": "11/10/2010",
+              "clinical_significance_descr": "Pathogenic"
+            }
+          ],
+          "variant_id": 51943,
+          "variant_description": "reviewed by expert panel"
+        }
+      },
+      "prediction": {},
+      "references": [
+        {
+          "sources": [
+            "HGMD",
+            "CLINVAR"
+          ],
+          "pubmed_id": 8673091,
+          "source_info": {
+            "HGMD": "Primary literature report. No comments."
+          }
+        },
+        {
+          "sources": [
+            "HGMD"
+          ],
+          "pubmed_id": 23983145,
+          "source_info": {
+            "HGMD": "Functional characterisation. Increased exon skipping."
+          }
+        },
+        {
+          "sources": [
+            "CLINVAR"
+          ],
+          "pubmed_id": 28492532,
+          "source_info": {}
+        },
+        {
+          "sources": [
+            "HGMD"
+          ],
+          "pubmed_id": 25525159,
+          "source_info": {
+            "HGMD": "Additional report. predicted to induce a large splicing change - Table S4."
+          }
+        }
+      ],
+      "frequencies": {},
+      "transcripts": [
+        {
+          "exon": "7/27",
+          "HGVSc": "c.581G>A",
+          "HGVSp": "p.Trp194Ter",
+          "dbsnp": [
+            "rs80358809"
+          ],
+          "codons": "tGg/tAg",
+          "strand": 1,
+          "symbol": "BRCA2",
+          "hgnc_id": 1101,
+          "protein": "NP_000050.2",
+          "transcript": "NM_000059.3",
+          "HGVSc_short": "c.581G>A",
+          "amino_acids": "W/*",
+          "consequences": [
+            "stop_gained"
+          ],
+          "in_last_exon": "no",
+          "is_canonical": true,
+          "exon_distance": 0,
+          "coding_region_distance": 0
+        }
+      ],
+      "worst_consequence": [
+        "NM_000059.3"
+      ],
+      "filtered_transcripts": [
+        "NM_000059.3"
+      ],
+      "annotation_id": 24,
+      "schema_version": 1
+    },
+    "tags": [
+      "has_references"
+    ]
+  }
+]

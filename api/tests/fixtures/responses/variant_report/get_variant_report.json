@@ -1,0 +1,7 @@
+{
+ "data": "[{\"gene\": \"BRCA2\", \"variant\": \"c.581G>A\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}, {\"gene\": \"BRCA2\", \"variant\": \"c.475+3A>G\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}, {\"gene\": \"BRCA2\", \"variant\": \"c.1444delC\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}, {\"gene\": \"BRCA2\", \"variant\": \"c.97G>T\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}, {\"gene\": \"BRCA2\", \"variant\": \"c.682-2A>C\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}, {\"gene\": \"BRCA2\", \"variant\": \"c.925dupT\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}, {\"gene\": \"BRCA2\", \"variant\": \"c.289G>T\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}, {\"gene\": \"BRCA2\", \"variant\": \"c.1233dupA\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}]",
+ "comment": "",
+ "literature": "",
+ "created_at": "2020-02-02T00:00:00Z",
+ "updated_at": "2020-02-02T00:00:00Z"
+}

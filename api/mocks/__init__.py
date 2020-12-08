@@ -1,1 +1,1 @@
-from .expedia_api_service_mocks import get_adapter_with_mocked_urls
+from .ella_app_api_service_mocks import get_adapter_with_mocked_urls
