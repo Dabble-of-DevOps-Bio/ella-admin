@@ -1,5 +1,11 @@
 {
- "data": "[{\"variant\": \"c.97G>T\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}]",
+"data": [
+  {
+   "variant": "c.1233dupA",
+   "zygosity": "Heterozygous",
+   "variant_classification": "Benign"
+  }
+ ],
  "comment": "comment11",
  "literature": "literature11"
 }

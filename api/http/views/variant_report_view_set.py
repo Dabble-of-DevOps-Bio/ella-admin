@@ -62,9 +62,11 @@ class VariantReportViewSet(BaseViewSet, mixins.RetrieveModelMixin, mixins.Update
         serializer = self.get_serializer(variant_report, data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        report_data = json.loads(request.data['data'])
+        report_data = request.data['data']
         variant_report_data_serializer = VariantReportDataSerializer(data=report_data, many=True)
         variant_report_data_serializer.is_valid(raise_exception=True)
+
+        serializer.set_report_data_from_validated_data()
 
         self.perform_update(serializer)
 
