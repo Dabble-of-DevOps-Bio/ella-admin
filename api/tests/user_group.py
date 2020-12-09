@@ -49,12 +49,18 @@ class UserGroupTest(TestCase):
 
         self.assertEquals(response.status_code, status.HTTP_403_FORBIDDEN)
 
-    def test_delete(self):
+    def test_delete_with_users_and_gene_panels(self):
         self.force_login_user(1)
         response = self.client.delete('/api/user-groups/1/')
 
+        self.assertEquals(response.status_code, status.HTTP_403_FORBIDDEN)
+
+    def test_delete(self):
+        self.force_login_user(1)
+        response = self.client.delete('/api/user-groups/2/')
+
         self.assertEquals(response.status_code, status.HTTP_204_NO_CONTENT)
-        self.assertFalse(UserGroup.objects.filter(pk=1).exists())
+        self.assertFalse(UserGroup.objects.filter(pk=2).exists())
 
     def test_delete_by_staff(self):
         self.force_login_user(2)
@@ -71,6 +77,10 @@ class UserGroupTest(TestCase):
             (
                 {'sort': 'name'},
                 '/user_group/get_all_sorted_by_name.json'
+            ),
+            (
+                {'all': True, 'expand': ['users_count', 'gene_panels_count']},
+                '/user_group/get_all_with_expand.json.json'
             ),
         )
 

@@ -80,5 +80,55 @@
       "created_at": "2020-07-30T12:21:16.129Z",
       "updated_at": "2020-07-30T12:21:16.129Z"
     }
+  },
+  {
+    "model": "api.genepanel",
+    "pk": 1,
+    "fields": {
+      "name": "HBOC",
+      "version": "v01",
+      "genome_reference": "GRCh37",
+      "official": true,
+      "date_created": "2020-07-30T12:21:16.129Z",
+      "user_id": 1,
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.genepanel",
+    "pk": 2,
+    "fields": {
+      "name": "HBOC",
+      "version": "v02",
+      "genome_reference": "GRCh37",
+      "official": true,
+      "date_created": "2020-07-30T12:21:16.129Z",
+      "user_id": 1,
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.usergroupgenepanel",
+    "pk": 1,
+    "fields": {
+      "group_id": 1,
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v01",
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.usergroupgenepanel",
+    "pk": 2,
+    "fields": {
+      "group_id": 1,
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v02",
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
   }
 ]
