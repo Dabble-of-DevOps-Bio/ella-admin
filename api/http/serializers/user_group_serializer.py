@@ -1,8 +1,9 @@
-from rest_framework import fields
 from django.utils.translation import gettext as _
+from rest_framework import fields
 from rest_framework.validators import UniqueValidator
+
 from api.http.serializers.base_model_serializer import BaseModelSerializer
-from api.models import User, UserGroup
+from api.models import UserGroup
 
 
 class UserGroupSerializer(BaseModelSerializer):
