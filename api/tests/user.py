@@ -104,18 +104,14 @@ class UserTest(TestCase):
 
         self.assertEquals(response.status_code, status.HTTP_403_FORBIDDEN)
 
-    def test_delete(self):
+    def test_move_to_inactive(self):
         self.force_login_user(1)
-        response = self.client.delete('/api/users/4/')
+        response = self.client.post('/api/users/4/move-to-inactive/')
 
         self.assertEquals(response.status_code, status.HTTP_204_NO_CONTENT)
-        self.assertFalse(User.objects.filter(pk=4).exists())
 
-    def test_delete_by_staff(self):
-        self.force_login_user(4)
-        response = self.client.delete('/api/users/1/')
-
-        self.assertEquals(response.status_code, status.HTTP_403_FORBIDDEN)
+        user = User.objects.get(pk=4)
+        self.assertEquals(user.group.name, 'inactive')
 
     def get_filters_for_user_search(self):
         return (

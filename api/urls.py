@@ -20,6 +20,9 @@ urlpatterns = [
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
+    path('users/<int:user_pk>/move-to-inactive/',
+         UserViewSet.as_view({'post': 'move_to_inactive_group',}), name='move_user_to_inactive_group'),
+
     path('analysis/<int:analysis_pk>/variant-report/',
          VariantReportViewSet.as_view({'get': 'retrieve', 'put': 'update'}), name='analysis_variant_report'),
     path('analysis/<int:analysis_pk>/patient-data/', AnalysisViewSet.as_view({'get': 'get_patient_data'}),
