@@ -5,7 +5,7 @@ from api.http.filters import UserGroupFilter
 from api.http.serializers import UserGroupSerializer
 from api.http.views.view import BaseViewSet
 from api.models import UserGroup
-from api.permissions import IsSuperuser
+from api.permissions import IsSuperuser, CanDelete
 
 
 class UserGroupViewSet(BaseViewSet, ModelViewSet):
@@ -15,7 +15,7 @@ class UserGroupViewSet(BaseViewSet, ModelViewSet):
         'create': (IsAuthenticated, IsSuperuser),
         'retrieve': (IsAuthenticated, IsSuperuser),
         'list': (IsAuthenticated, IsSuperuser),
-        'destroy': (IsAuthenticated, IsSuperuser),
+        'destroy': (IsAuthenticated, IsSuperuser, CanDelete),
     }
 
     serializer_class = UserGroupSerializer
