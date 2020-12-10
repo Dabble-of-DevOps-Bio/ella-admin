@@ -20,6 +20,9 @@ dev:
 	docker-compose -f local.yml up -d  --remove-orphans
 	$(MAKE) help
 
+up:
+	$(MAKE) dev
+
 wait:
 	docker-compose -f local.yml exec ella-web \
 		bash -c \

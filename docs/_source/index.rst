@@ -75,6 +75,7 @@ Understanding the Ella Data Model
   Creating-Custom-Reports/Parse-Ella-Analysis-From-Database.ipynb
   Creating-Custom-Reports/Parse-Analysis-From-REST-API.ipynb
   Creating-Custom-Reports/Generate-Report-From-The-ELLA-REST-API.ipynb
+   Creating-Custom-Reports/Reporting-Data-Model.ipynb
 
 Understanding the Ella REST API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
