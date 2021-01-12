@@ -1,0 +1,43 @@
+{
+ "id": 1,
+ "name": "Updated CustomReportTest1",
+ "type": "NGS",
+ "method": "Updated method",
+ "disclaimer": "Updated disclaimer",
+ "custom_report_genes": [
+  {
+   "id": 1,
+   "name": "Updated CustomReportGene1",
+   "custom_report_variations": [
+    {
+     "id": 1,
+     "variation": "Updated CustomReportVariation1",
+     "custom_report_result": {
+      "id": 1,
+      "result": "Updated CustomReportResult1",
+      "custom_report_interpretation": {
+       "id": 1,
+       "interpretations": "Updated CustomReportInterpretation1"
+      }
+     }
+    },
+    {
+     "id": 4,
+     "variation": "New CustomReportVariation2",
+     "custom_report_result": null
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "name": "New CustomReportGene2",
+   "custom_report_variations": []
+  }
+ ],
+ "custom_report_full_report": {
+  "id": 2,
+  "patient_id": 101,
+  "report_text": "Updated Report",
+  "time_submitted": "2020-02-02T00:00:00Z"
+ }
+}

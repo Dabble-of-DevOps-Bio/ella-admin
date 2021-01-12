@@ -1,0 +1,17 @@
+{
+ "total_items": 1,
+ "previous_page": null,
+ "next_page": null,
+ "last_page": 1,
+ "items": [
+  {
+   "id": 2,
+   "name": "CustomReportTest2",
+   "type": "MLPA",
+   "method": "method",
+   "disclaimer": "disclaimer",
+   "custom_report_genes": [],
+   "custom_report_full_report": null
+  }
+ ]
+}

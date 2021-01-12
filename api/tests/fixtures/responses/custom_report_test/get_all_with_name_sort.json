@@ -1,0 +1,62 @@
+{
+ "total_items": 2,
+ "previous_page": null,
+ "next_page": null,
+ "last_page": 1,
+ "items": [
+  {
+   "id": 1,
+   "name": "CustomReportTest1",
+   "type": "MLPA",
+   "method": "method",
+   "disclaimer": "disclaimer",
+   "custom_report_genes": [
+    {
+     "id": 1,
+     "name": "CustomReportGene1",
+     "custom_report_variations": [
+      {
+       "id": 1,
+       "variation": "CustomReportVariation1",
+       "custom_report_result": {
+        "id": 1,
+        "result": "CustomReportResult1",
+        "custom_report_interpretation": {
+         "id": 1,
+         "interpretations": "CustomReportInterpretation1"
+        }
+       }
+      },
+      {
+       "id": 2,
+       "variation": "CustomReportVariation2",
+       "custom_report_result": {
+        "id": 2,
+        "result": "CustomReportResult2",
+        "custom_report_interpretation": {
+         "id": 2,
+         "interpretations": "CustomReportInterpretation2"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": 3,
+     "name": "CustomReportGene1",
+     "custom_report_variations": []
+    }
+   ],
+   "custom_report_full_report": null
+  },
+  {
+   "id": 2,
+   "name": "CustomReportTest2",
+   "type": "MLPA",
+   "method": "method",
+   "disclaimer": "disclaimer",
+   "custom_report_genes": [],
+   "custom_report_full_report": null
+  }
+ ]
+}

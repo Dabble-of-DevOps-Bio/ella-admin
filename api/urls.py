@@ -4,7 +4,7 @@ from rest_framework import routers
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from api.http.views import LogoutView, UserViewSet, AnalysisViewSet, VariantReportViewSet, GenePanelViewSet, \
-    UserGroupViewSet, ProfileViewSet, StaffAppLoginView
+    UserGroupViewSet, ProfileViewSet, StaffAppLoginView, CustomReportTestViewSet
 
 router = routers.DefaultRouter()
 
@@ -12,6 +12,7 @@ router.register(r'user-groups', UserGroupViewSet, basename='user_groups')
 router.register(r'users', UserViewSet, basename='users')
 router.register(r'analysis', AnalysisViewSet, basename='analysis')
 router.register(r'gene-panels', GenePanelViewSet, basename='gene_panels')
+router.register(r'custom-report-tests', CustomReportTestViewSet, basename='custom_report_tests')
 router.register(r'', ProfileViewSet, basename='profile')
 
 urlpatterns = [
