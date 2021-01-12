@@ -6,3 +6,4 @@ from .staff_app_login_view import StaffAppLoginView
 from .user_group_view_set import UserGroupViewSet
 from .user_view_set import UserViewSet
 from .variant_report_view_set import VariantReportViewSet
+from .custom_report_test_view_set import CustomReportTestViewSet

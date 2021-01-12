@@ -1,0 +1,22 @@
+{
+  "name": "CustomReportTest3",
+  "type": "MLPA",
+  "method": "method",
+  "disclaimer": "disclaimer",
+  "custom_report_genes": [
+    {
+      "name": "CustomReportGene2",
+      "custom_report_variations": [
+        {
+          "variation": "CustomReportVariation3",
+          "custom_report_result": {
+            "result": "CustomReportResult3",
+            "custom_report_interpretation": {
+              "interpretations": "CustomReportInterpretation3"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

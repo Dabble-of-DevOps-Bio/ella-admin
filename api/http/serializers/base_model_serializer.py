@@ -13,3 +13,15 @@ class BaseModelSerializer(FlexFieldsModelSerializer):
         message = self.default_error_messages[error_key]
 
         raise ValidationError({name: message})
+
+    def _divide_data(self, data):
+        existing_entities_data = list()
+        new_entities_data = list()
+
+        for elem in data:
+            if 'id' in elem and elem['id'] is not None:
+                existing_entities_data.append(elem)
+            else:
+                new_entities_data.append(elem)
+
+        return new_entities_data, existing_entities_data
