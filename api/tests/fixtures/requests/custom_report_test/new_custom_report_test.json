@@ -3,6 +3,10 @@
   "type": "MLPA",
   "method": "method",
   "disclaimer": "disclaimer",
+  "custom_report_full_report": {
+    "patient_id": 100,
+    "report_text": "Report"
+  },
   "custom_report_genes": [
     {
       "name": "CustomReportGene2",

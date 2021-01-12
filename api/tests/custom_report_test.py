@@ -23,8 +23,6 @@ class CustomReportTest(TestCase):
         response = self.client.put('/api/custom-report-tests/1/', update_data)
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-
-        response = self.client.get('/api/custom-report-tests/1/')
         self.assertEqualsFixture(response.data, '/custom_report_test/updated_custom_report_test.json')
 
     def test_delete(self):

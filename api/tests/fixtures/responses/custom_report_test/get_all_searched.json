@@ -10,7 +10,8 @@
    "type": "MLPA",
    "method": "method",
    "disclaimer": "disclaimer",
-   "custom_report_genes": []
+   "custom_report_genes": [],
+   "custom_report_full_report": null
   }
  ]
 }

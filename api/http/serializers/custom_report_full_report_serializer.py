@@ -1,12 +1,14 @@
+import pendulum
+
 from rest_framework.fields import ReadOnlyField, CharField, IntegerField, DateTimeField
 
 from api.http.serializers.base_model_serializer import BaseModelSerializer
-from api.models import CustomReportTest
+from api.models import CustomReportFullReport
 
 
 class CustomReportFullReportSerializer(BaseModelSerializer):
     class Meta:
-        model = CustomReportTest
+        model = CustomReportFullReport
         fields = (
             'id', 'patient_id', 'report_text', 'time_submitted',
         )
@@ -17,10 +19,19 @@ class CustomReportFullReportSerializer(BaseModelSerializer):
     time_submitted = DateTimeField(read_only=True)
 
     def create(self, validated_data):
-        pass
+        validated_data = self.__set_time_submitted(validated_data)
 
-    def update(self, instance: CustomReportTest, validated_data):
-        pass
+        custom_report_test = CustomReportFullReport(**validated_data)
+        custom_report_test.save()
 
-    def delete(self, instance, validated_data):
-        pass
+        return custom_report_test
+
+    def update(self, instance: CustomReportFullReport, validated_data):
+        validated_data = self.__set_time_submitted(validated_data)
+
+        return super().update(instance, validated_data)
+
+    def __set_time_submitted(self, validated_data):
+        validated_data['time_submitted'] = pendulum.now()
+
+        return validated_data

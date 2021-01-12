@@ -46,7 +46,8 @@
      "name": "CustomReportGene1",
      "custom_report_variations": []
     }
-   ]
+   ],
+   "custom_report_full_report": null
   },
   {
    "id": 2,
@@ -54,7 +55,8 @@
    "type": "MLPA",
    "method": "method",
    "disclaimer": "disclaimer",
-   "custom_report_genes": []
+   "custom_report_genes": [],
+   "custom_report_full_report": null
   }
  ]
 }
