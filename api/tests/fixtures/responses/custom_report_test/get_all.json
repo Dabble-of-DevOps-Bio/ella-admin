@@ -47,7 +47,12 @@
      "custom_report_variations": []
     }
    ],
-   "custom_report_full_report": null
+   "custom_report_full_report": {
+    "id": 1,
+    "patient_id": 101,
+    "report_text": "Report text",
+    "time_submitted": "2020-07-30T12:21:16.129000Z"
+   }
   },
   {
    "id": 2,

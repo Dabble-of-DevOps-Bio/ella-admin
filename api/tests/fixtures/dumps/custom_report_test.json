@@ -105,6 +105,16 @@
     }
   },
   {
+    "model": "api.customreportfullreport",
+    "pk": 1,
+    "fields": {
+      "patient_id": 101,
+      "report_text": "Report text",
+      "time_submitted": "2020-07-30T12:21:16.129Z",
+      "custom_report_test_id": 1
+    }
+  },
+  {
     "model": "api.customreporttest",
     "pk": 2,
     "fields": {

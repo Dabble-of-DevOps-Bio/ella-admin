@@ -4,6 +4,7 @@
  "method": "Updated method",
  "disclaimer": "Updated disclaimer",
   "custom_report_full_report": {
+    "id": 1,
     "patient_id": 101,
     "report_text": "Updated Report"
   },
