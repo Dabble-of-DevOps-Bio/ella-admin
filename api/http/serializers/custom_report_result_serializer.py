@@ -1,3 +1,5 @@
+import pydash
+
 from rest_framework.fields import IntegerField, CharField
 
 from api.http.serializers.base_model_serializer import BaseModelSerializer
@@ -43,6 +45,9 @@ class CustomReportResultSerializer(BaseModelSerializer):
         return super().update(instance, validated_data)
 
     def __create_custom_report_interpretation(self, custom_report_interpretation, custom_report_result: CustomReportResult) -> None:
+        if pydash.get(custom_report_result, 'customreportinterpretation') is not None:
+            custom_report_result.customreportinterpretation.delete()
+
         custom_report_interpretation_serializer = CustomReportInterpretationSerializer()
         custom_report_interpretation['custom_report_result'] = custom_report_result
 

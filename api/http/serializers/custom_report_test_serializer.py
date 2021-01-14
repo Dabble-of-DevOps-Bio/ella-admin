@@ -1,3 +1,5 @@
+import pydash
+
 from rest_framework.fields import ReadOnlyField, CharField
 
 from api.http.serializers.base_model_serializer import BaseModelSerializer
@@ -71,6 +73,9 @@ class CustomReportTestSerializer(BaseModelSerializer):
             custom_report_gene_serializer.bulk_update(custom_report_genes)
 
     def __create_custom_report_full_report(self, custom_report_full_report, custom_report_test) -> None:
+        if pydash.get(custom_report_test, 'customreportfullreport') is not None:
+            custom_report_test.customreportfullreport.delete()
+
         custom_report_full_report_serializer = CustomReportFullReportSerializer()
         custom_report_full_report['custom_report_test'] = custom_report_test
 
