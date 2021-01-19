@@ -24,8 +24,6 @@ services:
     logging: *loki-logging
     networks:
       - app-tier
-    ports:
-      - 5432:5432
     env_file:
       - ./.envs/.stg/.postgres
     volumes:
