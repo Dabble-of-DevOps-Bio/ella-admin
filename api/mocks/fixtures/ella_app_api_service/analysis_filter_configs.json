@@ -1,0 +1,147 @@
+[
+  {
+    "filterconfig": {
+      "filters": [
+        {
+          "name": "frequency",
+          "config": {
+            "groups": {
+              "external": {
+                "GNOMAD_EXOMES": [
+                  "G",
+                  "AFR",
+                  "AMR",
+                  "EAS",
+                  "FIN",
+                  "NFE",
+                  "OTH",
+                  "SAS"
+                ],
+                "GNOMAD_GENOMES": [
+                  "G",
+                  "AFR",
+                  "AMR",
+                  "EAS",
+                  "FIN",
+                  "NFE",
+                  "OTH",
+                  "SAS"
+                ]
+              },
+              "internal": {
+                "inDB": [
+                  "OUSWES"
+                ]
+              }
+            },
+            "thresholds": {
+              "AD": {
+                "external": 0.005,
+                "internal": 0.05
+              },
+              "default": {
+                "external": 0.01,
+                "internal": 0.05
+              }
+            },
+            "num_thresholds": {
+              "GNOMAD_EXOMES": {
+                "G": 5000,
+                "AFR": 5000,
+                "AMR": 5000,
+                "EAS": 5000,
+                "FIN": 5000,
+                "NFE": 5000,
+                "OTH": 5000,
+                "SAS": 5000
+              },
+              "GNOMAD_GENOMES": {
+                "G": 5000,
+                "AFR": 5000,
+                "AMR": 5000,
+                "EAS": 5000,
+                "FIN": 5000,
+                "NFE": 5000,
+                "OTH": 5000,
+                "SAS": 5000
+              }
+            }
+          },
+          "exceptions": [
+            {
+              "name": "classification",
+              "config": {
+                "classes": [
+                  "3",
+                  "4",
+                  "5"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "region",
+          "config": {
+            "utr_region": [
+              0,
+              0
+            ],
+            "splice_region": [
+              -20,
+              6
+            ]
+          },
+          "exceptions": [
+            {
+              "name": "classification",
+              "config": {
+                "classes": [
+                  "3",
+                  "4",
+                  "5"
+                ]
+              }
+            },
+            {
+              "name": "consequence",
+              "config": {
+                "consequences": [
+                  "transcript_ablation",
+                  "splice_donor_variant",
+                  "splice_acceptor_variant",
+                  "stop_gained",
+                  "frameshift_variant",
+                  "start_lost",
+                  "initiator_codon_variant",
+                  "stop_lost",
+                  "inframe_insertion",
+                  "inframe_deletion",
+                  "missense_variant",
+                  "protein_altering_variant",
+                  "transcript_amplification",
+                  "incomplete_terminal_codon_variant",
+                  "synonymous_variant",
+                  "start_retained_variant",
+                  "stop_retained_variant",
+                  "coding_sequence_variant"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "id": 1,
+    "requirements": [
+      {
+        "params": {
+          "name": "^(?!HG002|NA12878).*"
+        },
+        "function": "analysis"
+      }
+    ],
+    "active": true,
+    "name": "Default"
+  }
+]

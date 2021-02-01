@@ -1,0 +1,18 @@
+{
+ "total_items": 1,
+ "previous_page": null,
+ "next_page": null,
+ "last_page": 1,
+ "items": [
+  {
+   "id": 5,
+   "name": "brca_long_variants.HBOCUTV_v01",
+   "gene_panel_name": "HBOC",
+   "gene_panel_version": "v02",
+   "warnings": "",
+   "report": "",
+   "date_deposited": "2020-07-30T12:21:16.129000Z",
+   "date_requested": null
+  }
+ ]
+}

@@ -1,0 +1,168 @@
+[
+  {
+    "model": "api.usergroup",
+    "pk": 1,
+    "fields": {
+      "name": "test user group 1",
+      "config": {"acmg": {"frequency": {"groups": {"external": {"GNOMAD_EXOMES": ["G"], "GNOMAD_GENOMES": ["G"]}, "internal": {"inDB": ["OUSWES"]}}, "thresholds": {"AD": {"external": {"hi_freq_cutoff": 0.005, "lo_freq_cutoff": 0.001}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}, "default": {"external": {"hi_freq_cutoff": 0.01, "lo_freq_cutoff": 1.0}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}}}, "disease_mode": "ANY", "last_exon_important": "LEI"}, "overview": {"views": ["analyses"]}},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 1,
+    "fields": {
+      "password": "$2b$12$qMyZKaxhdgtGUQTP/TKIrObQPuKVvAjR8AKnwbfUgo19e8Xid3vMO",
+      "last_login": null,
+      "is_superuser": true,
+      "first_name": "Zaynab",
+      "last_name": "Barker",
+      "username": "zaynab-barker",
+      "is_staff": true,
+      "active": true,
+      "date_joined": "2020-07-30T12:21:16.129Z",
+      "email": "zaynab-barker@mail.com",
+      "auth_groups": [1],
+      "group_id": 1,
+      "config": {},
+      "password_expiry": "2022-07-30T12:21:16.129Z",
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.genepanel",
+    "pk": 1,
+    "fields": {
+      "name": "HBOC",
+      "version": "v01",
+      "genome_reference": "GRCh37",
+      "official": true,
+      "date_created": "2020-07-30T12:21:16.129Z",
+      "user_id": 1,
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.usergroupgenepanel",
+    "pk": 1,
+    "fields": {
+      "group_id": 1,
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v01",
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.analysis",
+    "pk": 1,
+    "fields": {
+      "name": "brca_sample.HBOC_v01",
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v01",
+      "date_deposited": "2020-07-30T12:21:16.129Z",
+      "date_requested": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.analysis",
+    "pk": 2,
+    "fields": {
+      "name": "brca.HBOC_v01",
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v01",
+      "date_deposited": "2020-07-30T12:21:16.129Z",
+      "date_requested": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.analysis",
+    "pk": 3,
+    "fields": {
+      "name": "brcw.HBOC_v01",
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v01",
+      "date_deposited": "2020-07-30T12:21:16.129Z",
+      "date_requested": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.analysis",
+    "pk": 7,
+    "fields": {
+      "name": "brca_sample_allfiltered.HBOC_v01",
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v01",
+      "date_deposited": "2020-07-30T12:21:16.129Z",
+      "date_requested": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.analysisinterpretation",
+    "pk": 1,
+    "fields": {
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v01",
+      "status": "Done",
+      "date_last_update": "2020-07-30T12:21:16.129Z",
+      "date_created": "2020-07-30T12:21:16.129Z",
+      "analysis_id": 1,
+      "user_id": 1,
+      "finalized": true,
+      "workflow_status": "Interpretation",
+      "user_state": {"allele": {"7": {"sections": {}, "allele_id": 7, "showExcludedReferences": false}, "13": {"sections": {}, "allele_id": 13, "showExcludedReferences": false}, "19": {"sections": {}, "allele_id": 19, "showExcludedReferences": false}, "20": {"sections": {}, "allele_id": 20, "showExcludedReferences": false}, "21": {"sections": {}, "allele_id": 21, "showExcludedReferences": false}, "22": {"sections": {}, "allele_id": 22, "showExcludedReferences": false}, "23": {"sections": {}, "allele_id": 23, "showExcludedReferences": false}, "24": {"sections": {}, "allele_id": 24, "showExcludedReferences": false}}},
+      "state": {"allele": {"7": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": false}, "allele_id": 7, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 5}, "alleleassessment": {"reuse": true, "allele_id": 7, "reuseCheckedId": 5}, "referenceassessments": []}, "13": {"report": {"included": false}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 13, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 8}, "alleleassessment": {"reuse": true, "allele_id": 13, "reuseCheckedId": 8}, "referenceassessments": []}, "19": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 19, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 10}, "alleleassessment": {"reuse": true, "allele_id": 19, "reuseCheckedId": 10}, "referenceassessments": []}, "20": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 20, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 11}, "alleleassessment": {"reuse": true, "allele_id": 20, "reuseCheckedId": 11}, "referenceassessments": []}, "21": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 21, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 12}, "alleleassessment": {"reuse": true, "allele_id": 21, "reuseCheckedId": 12}, "referenceassessments": []}, "22": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 22, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 13}, "alleleassessment": {"reuse": true, "allele_id": 22, "reuseCheckedId": 13}, "referenceassessments": []}, "23": {"report": {"included": false}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 23, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 7}, "alleleassessment": {"reuse": true, "allele_id": 23, "reuseCheckedId": 7}, "referenceassessments": []}, "24": {"report": {"included": false}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 24, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 9}, "alleleassessment": {"reuse": true, "allele_id": 24, "reuseCheckedId": 9}, "referenceassessments": []}}, "filterconfigId": 1, "manuallyAddedAlleles": []}
+    }
+  },
+  {
+    "model": "api.analysisinterpretation",
+    "pk": 2,
+    "fields": {
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v01",
+      "status": "Ongoing",
+      "date_last_update": "2020-07-30T12:21:16.129Z",
+      "date_created": "2020-07-30T12:21:16.129Z",
+      "analysis_id": 3,
+      "user_id": 1,
+      "finalized": false,
+      "workflow_status": "Interpretation",
+      "user_state": {"allele": {"7": {"sections": {}, "allele_id": 7, "showExcludedReferences": false}, "13": {"sections": {}, "allele_id": 13, "showExcludedReferences": false}, "19": {"sections": {}, "allele_id": 19, "showExcludedReferences": false}, "20": {"sections": {}, "allele_id": 20, "showExcludedReferences": false}, "21": {"sections": {}, "allele_id": 21, "showExcludedReferences": false}, "22": {"sections": {}, "allele_id": 22, "showExcludedReferences": false}, "23": {"sections": {}, "allele_id": 23, "showExcludedReferences": false}, "24": {"sections": {}, "allele_id": 24, "showExcludedReferences": false}}},
+      "state": {"allele": {"7": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": false}, "allele_id": 7, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 5}, "alleleassessment": {"reuse": true, "allele_id": 7, "reuseCheckedId": 5}, "referenceassessments": []}, "13": {"report": {"included": false}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 13, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 8}, "alleleassessment": {"reuse": true, "allele_id": 13, "reuseCheckedId": 8}, "referenceassessments": []}, "19": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 19, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 10}, "alleleassessment": {"reuse": true, "allele_id": 19, "reuseCheckedId": 10}, "referenceassessments": []}, "20": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 20, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 11}, "alleleassessment": {"reuse": true, "allele_id": 20, "reuseCheckedId": 11}, "referenceassessments": []}, "21": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 21, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 12}, "alleleassessment": {"reuse": true, "allele_id": 21, "reuseCheckedId": 12}, "referenceassessments": []}, "22": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 22, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 13}, "alleleassessment": {"reuse": true, "allele_id": 22, "reuseCheckedId": 13}, "referenceassessments": []}, "23": {"report": {"included": false}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 23, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 7}, "alleleassessment": {"reuse": true, "allele_id": 23, "reuseCheckedId": 7}, "referenceassessments": []}, "24": {"report": {"included": false}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 24, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 9}, "alleleassessment": {"reuse": true, "allele_id": 24, "reuseCheckedId": 9}, "referenceassessments": []}}, "filterconfigId": 1, "manuallyAddedAlleles": []}
+    }
+  },
+  {
+    "model": "api.analysisinterpretation",
+    "pk": 7,
+    "fields": {
+      "gene_panel_name": "HBOC",
+      "gene_panel_version": "v01",
+      "status": "Done",
+      "date_last_update": "2020-07-30T12:21:16.129Z",
+      "date_created": "2020-07-30T12:21:16.129Z",
+      "analysis_id": 7,
+      "user_id": 1,
+      "finalized": true,
+      "workflow_status": "Interpretation",
+      "user_state": {"allele": {"7": {"sections": {}, "allele_id": 7, "showExcludedReferences": false}, "13": {"sections": {}, "allele_id": 13, "showExcludedReferences": false}, "19": {"sections": {}, "allele_id": 19, "showExcludedReferences": false}, "20": {"sections": {}, "allele_id": 20, "showExcludedReferences": false}, "21": {"sections": {}, "allele_id": 21, "showExcludedReferences": false}, "22": {"sections": {}, "allele_id": 22, "showExcludedReferences": false}, "23": {"sections": {}, "allele_id": 23, "showExcludedReferences": false}, "24": {"sections": {}, "allele_id": 24, "showExcludedReferences": false}}},
+      "state": {"allele": {"7": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": false}, "allele_id": 7, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 5}, "alleleassessment": {"reuse": true, "allele_id": 7, "reuseCheckedId": 5}, "referenceassessments": []}, "13": {"report": {"included": false}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 13, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 8}, "alleleassessment": {"reuse": true, "allele_id": 13, "reuseCheckedId": 8}, "referenceassessments": []}, "19": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 19, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 10}, "alleleassessment": {"reuse": true, "allele_id": 19, "reuseCheckedId": 10}, "referenceassessments": []}, "20": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 20, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 11}, "alleleassessment": {"reuse": true, "allele_id": 20, "reuseCheckedId": 11}, "referenceassessments": []}, "21": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 21, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 12}, "alleleassessment": {"reuse": true, "allele_id": 21, "reuseCheckedId": 12}, "referenceassessments": []}, "22": {"report": {"included": true}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 22, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 13}, "alleleassessment": {"reuse": true, "allele_id": 22, "reuseCheckedId": 13}, "referenceassessments": []}, "23": {"report": {"included": false}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 23, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 7}, "alleleassessment": {"reuse": true, "allele_id": 23, "reuseCheckedId": 7}, "referenceassessments": []}, "24": {"report": {"included": false}, "analysis": {"comment": "", "notrelevant": null, "verification": null}, "workflow": {"reviewed": true}, "allele_id": 24, "allelereport": {"evaluation": {"comment": ""}, "copiedFromId": 9}, "alleleassessment": {"reuse": true, "allele_id": 24, "reuseCheckedId": 9}, "referenceassessments": []}}, "filterconfigId": 1, "manuallyAddedAlleles": []}
+    }
+  },
+  {
+    "model": "api.variantreport",
+    "pk": 1,
+    "fields": {
+      "data": "[{\"gene\": \"BRCA2\", \"variant\": \"c.97G>T\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}, {\"gene\": \"BRCA2\", \"variant\": \"c.1233dupA\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}, {\"gene\": \"BRCA2\", \"variant\": \"c.289G>T\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}, {\"gene\": \"BRCA2\", \"variant\": \"c.682-2A>C\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}, {\"gene\": \"BRCA2\", \"variant\": \"c.925dupT\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}, {\"gene\": \"BRCA2\", \"variant\": \"c.581G>A\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}, {\"gene\": \"BRCA2\", \"variant\": \"c.1444delC\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}, {\"gene\": \"BRCA2\", \"variant\": \"c.475+3A>G\", \"zygosity\": \"Heterozygous\", \"variant_classification\": \"Benign\"}]",
+      "comment": "comment",
+      "literature": "literature",
+      "user_id": 1,
+      "analysis_id": 1,
+      "analysis_interpretation_id": 1,
+      "created_at": "2020-02-02T00:00:00Z",
+      "updated_at": "2020-02-02T00:00:00Z"
+    }
+  }
+]

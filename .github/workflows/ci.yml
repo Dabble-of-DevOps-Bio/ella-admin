@@ -7,53 +7,74 @@ env:
 
 on:
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "development" ]
     paths-ignore: [ "docs/**" ]
 
   push:
-    branches: [ "master" ]
+    branches: [ "master", "development" ]
     paths-ignore: [ "docs/**" ]
 
 
 jobs:
-  flake8:
+  lint:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout Code Repository
         uses: actions/checkout@v2
-
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
-
       - name: Install flake8
         run: |
           python -m pip install --upgrade pip
           pip install flake8
 
-      - name: Lint with flake8
-        run: flake8
+      # - name: Lint with flake8
+      #   run: flake8
 
 # With no caching at all the entire ci process takes 4m 30s to complete!
-  pytest:
+  tests:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout Code Repository
         uses: actions/checkout@v2
-      - name: Build the Stack
-        run:  docker-compose -f local.yml build
-
-      - name: Make DB Migrations
-        run:  docker-compose -f local.yml run --rm django python manage.py migrate
-
-      - name: Run the Stack
-        run:  docker-compose -f local.yml up -d
-
+      - name: Run django and postgresql
+        run:  docker-compose -f tests.yml up -d 
       - name: Run Django Tests
-        run:  docker-compose -f local.yml exec -T django pytest
-
+        run:  docker-compose -f tests.yml exec -T django python manage.py test
       - name: Tear down the Stack
-        run:  docker-compose down
+        run:  docker-compose -f tests.yml down
+
+  deploy:
+    name: Deploy to staging
+    runs-on: ubuntu-latest
+    needs: tests
+    if: github.ref == 'refs/heads/development'
+    steps:
+      - name: Checkout development
+        uses: actions/checkout@v1
+      - name: Add the private SSH key to the ssh-agent
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          mkdir -p ~/.ssh
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          ssh-keyscan 54.161.122.188 >> ~/.ssh/known_hosts
+          ssh-add - <<< "${{ secrets.PRIVATE_KEY }}"
+      - name: rsync code from guthub to server
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          rsync -av ./ ec2-user@54.161.122.188:/home/ec2-user/efs/ella_admin_stg --exclude=ella-admin/settings/staging.py
+      - name: restart docker-compose on server
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          ssh ec2-user@54.161.122.188 "cd /home/ec2-user/efs/ella_admin_stg && docker-compose -f stg.yml up -d --force-recreate --build django && exit"
+      - name: migrations
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          ssh ec2-user@54.161.122.188 "cd /home/ec2-user/efs/ella_admin_stg && make migrate-django-stg && exit"

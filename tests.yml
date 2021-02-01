@@ -1,0 +1,47 @@
+version: '3'
+
+networks:
+  app-tier:
+    driver: bridge
+
+volumes:
+  local_postgres_data: {}
+  local_postgres_data_backups: {}
+
+services:
+
+  # If you make any updates to the ella postgresql service
+  # Be sure to update the DB_URL in the ella-config/supervisor.cfg
+  # As well as the env vars in .envs/local/.postgres
+
+  postgresql:
+    image: bitnami/postgresql:12
+    networks:
+      - app-tier
+    ports:
+      - 5432:5432
+    env_file:
+      - ./.envs/.local/.postgres
+    volumes:
+      - ./data:/data
+
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    container_name: django
+    depends_on:
+      - postgresql
+    #      - ella-web
+    volumes:
+      - .:/app:z
+    env_file:
+      - ./.envs/.local/.django
+      - ./.envs/.local/.postgres
+    ports:
+      - "8000:8000"
+    command: /start
+    networks:
+      - app-tier
+    environment:
+      DJANGO_SETTINGS_MODULE: "ella-admin.settings.testing"

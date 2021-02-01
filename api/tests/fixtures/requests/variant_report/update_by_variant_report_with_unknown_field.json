@@ -1,0 +1,13 @@
+{
+ "data": [
+  {
+   "field_not_from_here": "BRCA1",
+   "gene": "BRCA1",
+   "variant": "c.1233dupA",
+   "zygosity": "Heterozygous",
+   "variant_classification": "Benign"
+  }
+ ],
+ "comment": "comment11",
+ "literature": "literature11"
+}

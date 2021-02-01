@@ -1,5 +1,8 @@
 APP = /ella-admin
 
+DJANGO_CONTAINER_NAME = django
+DB_CONTAINER_NAME = ella-admin_postgresql_1
+
 .PHONY: help Makefile
 
 # Put it first so that "make" without argument is like "make help".
@@ -34,6 +37,13 @@ load:
 	docker-compose -f local.yml exec  \
 		ella-web \
 		bash -c "gunzip < /data/ella_db_1.sql.gz |PGPASSWORD=password123 psql -h postgresql -U postgres"
+
+load-stg:
+	$(MAKE) wait
+	@echo "Loading in database dump"
+	docker-compose -f stg.yml exec  \
+		ella-web \
+		bash -c "gunzip < /data/ella_db_1.sql.gz |PGPASSWORD=evangelicalism620455 psql -h postgresql -U postgres"
 
 dump:
 	$(MAKE) wait
@@ -143,3 +153,25 @@ download:
 	docker-compose -f local.yml exec ella-anno bash -c "python3 /anno/ops/sync_data.py --generate"
 	docker-compose -f local.yml exec ella bash -c "ella-cli igv-download /data/igv-data"
 
+django-shell:
+	docker exec -it $(DJANGO_CONTAINER_NAME) bash
+
+migrate-django:
+	docker-compose -f local.yml exec -T django python manage.py migrate api
+	docker-compose -f local.yml exec -T django python manage.py migrate django_cron
+	docker-compose -f local.yml exec -T django python manage.py migrate sessions
+
+migrate-django-stg:
+	docker-compose -f stg.yml exec -T django python manage.py migrate api
+	docker-compose -f stg.yml exec -T django python manage.py migrate django_cron
+	docker-compose -f stg.yml exec -T django python manage.py migrate sessions
+
+make-migration-django:
+	docker exec -it $(DJANGO_CONTAINER_NAME) python manage.py makemigrations
+
+# It's temp
+drop-db:
+	docker kill $(DB_CONTAINER_NAME) && docker rm $(DB_CONTAINER_NAME)
+
+db-shell:
+	docker exec -it $(DB_CONTAINER_NAME) bash

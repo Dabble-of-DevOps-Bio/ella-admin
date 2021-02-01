@@ -1,0 +1,148 @@
+[
+  {
+    "model": "api.usergroup",
+    "pk": 1,
+    "fields": {
+      "name": "test user group 1",
+      "config": {"acmg": {"frequency": {"groups": {"external": {"GNOMAD_EXOMES": ["G"], "GNOMAD_GENOMES": ["G"]}, "internal": {"inDB": ["OUSWES"]}}, "thresholds": {"AD": {"external": {"hi_freq_cutoff": 0.005, "lo_freq_cutoff": 0.001}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}, "default": {"external": {"hi_freq_cutoff": 0.01, "lo_freq_cutoff": 1.0}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}}}, "disease_mode": "ANY", "last_exon_important": "LEI"}, "overview": {"views": ["analyses"]}},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.usergroup",
+    "pk": 2,
+    "fields": {
+      "name": "test user group 2",
+      "config": {"acmg": {"frequency": {"groups": {"external": {"GNOMAD_EXOMES": ["G"], "GNOMAD_GENOMES": ["G"]}, "internal": {"inDB": ["OUSWES"]}}, "thresholds": {"AD": {"external": {"hi_freq_cutoff": 0.005, "lo_freq_cutoff": 0.001}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}, "default": {"external": {"hi_freq_cutoff": 0.01, "lo_freq_cutoff": 1.0}, "internal": {"hi_freq_cutoff": 0.05, "lo_freq_cutoff": 1.0}}}}, "disease_mode": "ANY", "last_exon_important": "LEI"}, "overview": {"views": ["analyses"]}},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 1,
+    "fields": {
+      "password": "$2b$12$qMyZKaxhdgtGUQTP/TKIrObQPuKVvAjR8AKnwbfUgo19e8Xid3vMO",
+      "last_login": null,
+      "is_superuser": true,
+      "first_name": "Zaynab",
+      "last_name": "Barker",
+      "username": "zaynab-barker",
+      "is_staff": true,
+      "active": true,
+      "date_joined": "2020-07-30T12:21:16.129Z",
+      "email": "zaynab-barker@mail.com",
+      "auth_groups": [1],
+      "group_id": 1,
+      "config": {},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 4,
+    "fields": {
+      "password": "$2b$12$qMyZKaxhdgtGUQTP/TKIrObQPuKVvAjR8AKnwbfUgo19e8Xid3vMO",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Debra",
+      "last_name": "Ortega",
+      "username": "debra-ortega",
+      "is_staff": true,
+      "active": true,
+      "date_joined": "2020-07-30T12:21:16.129Z",
+      "email": "debra-ortega@mail.com",
+      "auth_groups": [2],
+      "group_id": 1,
+      "config": {},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 5,
+    "fields": {
+      "password": "$2b$12$qMyZKaxhdgtGUQTP/TKIrObQPuKVvAjR8AKnwbfUgo19e8Xid3vMO",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Rhianne",
+      "last_name": "Mccormick",
+      "username": "rhianne-mccormick",
+      "is_staff": true,
+      "active": true,
+      "date_joined": "2020-07-30T12:21:16.129Z",
+      "email": "rhianne-mccormick@mail.com",
+      "auth_groups": [2],
+      "group_id": 1,
+      "config": {},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 6,
+    "fields": {
+      "password": "$2b$12$qMyZKaxhdgtGUQTP/TKIrObQPuKVvAjR8AKnwbfUgo19e8Xid3vMO",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Odin",
+      "last_name": "Wilde",
+      "username": "odin-wilde",
+      "is_staff": true,
+      "active": true,
+      "date_joined": "2020-07-30T12:21:16.129Z",
+      "email": "odin-wilde@mail.com",
+      "auth_groups": [2],
+      "group_id": 1,
+      "config": {},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 7,
+    "fields": {
+      "password": "$2b$12$qMyZKaxhdgtGUQTP/TKIrObQPuKVvAjR8AKnwbfUgo19e8Xid3vMO",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Yousef",
+      "last_name": "Mackay",
+      "username": "yousef-mackay",
+      "is_staff": true,
+      "active": true,
+      "date_joined": "2020-07-30T12:21:16.129Z",
+      "email": "yousef-mackay@mail.com",
+      "auth_groups": [2],
+      "group_id": 1,
+      "config": {},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.user",
+    "pk": 8,
+    "fields": {
+      "password": "$2b$12$qMyZKaxhdgtGUQTP/TKIrObQPuKVvAjR8AKnwbfUgo19e8Xid3vMO",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Abdirahman",
+      "last_name": "Mckay",
+      "username": "abdirahman-mckay",
+      "is_staff": true,
+      "active": true,
+      "date_joined": "2020-07-30T12:21:16.129Z",
+      "email": "abdirahman-mckay@mail.com",
+      "auth_groups": [2],
+      "group_id": 1,
+      "config": {},
+      "created_at": "2020-07-30T12:21:16.129Z",
+      "updated_at": "2020-07-30T12:21:16.129Z"
+    }
+  }
+]

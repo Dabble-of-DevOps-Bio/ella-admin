@@ -16,6 +16,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/data" />
     </content>
+    <orderEntry type="jdk" jdkName="Remote Python 3.7.5 Docker Compose (django at [/home/oleg/Projects/ella-admin/local.yml])" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="R User Library" level="project" />
     <orderEntry type="library" name="R Skeletons" level="application" />
@@ -27,7 +28,6 @@
     <option name="renderExternalDocumentation" value="true" />
   </component>
   <component name="ReSTService">
-    <option name="workdir" value="$MODULE_DIR$/docs" />
     <option name="DOC_DIR" value="$MODULE_DIR$/docs" />
   </component>
   <component name="TemplatesService">
@@ -39,7 +39,6 @@
     </option>
   </component>
   <component name="TestRunnerService">
-    <option name="projectConfiguration" value="pytest" />
     <option name="PROJECT_TEST_RUNNER" value="pytest" />
   </component>
 </module>
