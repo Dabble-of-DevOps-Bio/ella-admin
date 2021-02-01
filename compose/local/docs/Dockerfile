@@ -2,6 +2,7 @@ FROM dabbleofdevops/ella:1.11.1
 
 USER root
 
+ARG RSTUDIO_VERSION=1.3.1073
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
@@ -30,14 +31,14 @@ RUN apt-get update -y \
     texlive-xetex  \
     chromium-chromedriver \
     && apt-get install -y $(cat /requirements/pyppeteer_reqs.txt) \
+    && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
+    && apt-get install -y nodejs \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
     && rm -rf /var/lib/apt/lists/*
 
 # All imports needed for autodoc.
 RUN pip install -r /requirements/local.txt -r /requirements/production.txt
 RUN pip install -r /requirements/docs.txt
-RUN jupyter lab clean && \
-    jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 WORKDIR /docs
 
