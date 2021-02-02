@@ -1,5 +1,5 @@
 import pydash
-from rest_framework.fields import IntegerField, CharField
+from rest_framework.fields import IntegerField, CharField, ChoiceField
 
 from api.http.serializers.base_model_serializer import BaseModelSerializer
 from api.http.serializers.custom_report_result_serializer import CustomReportResultSerializer
@@ -11,11 +11,14 @@ class CustomReportVariationSerializer(BaseModelSerializer):
     class Meta:
         model = CustomReportVariation
         fields = (
-            'id', 'variation', 'custom_report_result'
+            'id', 'variation', 'description', 'classification', 'zygosity', 'custom_report_result'
         )
 
     id = IntegerField(required=False, validators=[ExistsValidator(queryset=CustomReportVariation.objects.all())])
     variation = CharField()
+    description = CharField()
+    classification = ChoiceField(choices=CustomReportVariation.Classification.choices)
+    zygosity = ChoiceField(choices=CustomReportVariation.Zygosity.choices)
     custom_report_result = CustomReportResultSerializer(source='customreportresult', required=False)
 
     def create(self, validated_data):

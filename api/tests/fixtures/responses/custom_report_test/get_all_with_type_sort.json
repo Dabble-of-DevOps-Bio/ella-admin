@@ -20,6 +20,9 @@
       {
        "id": 1,
        "variation": "CustomReportVariation1",
+       "description": "Description1",
+       "classification": "BENIGN",
+       "zygosity": "HOMOZYGOUS_REFERENCE",
        "custom_report_result": {
         "id": 1,
         "result": "CustomReportResult1",
@@ -32,6 +35,9 @@
       {
        "id": 2,
        "variation": "CustomReportVariation2",
+       "description": "Description2",
+       "classification": "BENIGN",
+       "zygosity": "HOMOZYGOUS_REFERENCE",
        "custom_report_result": {
         "id": 2,
         "result": "CustomReportResult2",
