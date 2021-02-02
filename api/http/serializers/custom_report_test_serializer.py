@@ -1,6 +1,6 @@
 import pydash
 
-from rest_framework.fields import ReadOnlyField, CharField
+from rest_framework.fields import ReadOnlyField, CharField, ChoiceField
 
 from api.http.serializers.base_model_serializer import BaseModelSerializer
 from api.http.serializers.custom_report_gene_serializer import CustomReportGeneSerializer
@@ -17,7 +17,7 @@ class CustomReportTestSerializer(BaseModelSerializer):
 
     id = ReadOnlyField()
     name = CharField()
-    type = CharField()
+    type = ChoiceField(choices=CustomReportTest.Type.choices)
     method = CharField(required=False)
     disclaimer = CharField(required=False)
 

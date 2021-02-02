@@ -55,6 +55,9 @@
     "pk": 1,
     "fields": {
       "variation": "CustomReportVariation1",
+      "description": "Description1",
+      "classification": "BENIGN",
+      "zygosity": "HOMOZYGOUS_REFERENCE",
       "custom_report_gene_id": 1
     }
   },
@@ -63,6 +66,9 @@
     "pk": 2,
     "fields": {
       "variation": "CustomReportVariation2",
+      "description": "Description2",
+      "classification": "BENIGN",
+      "zygosity": "HOMOZYGOUS_REFERENCE",
       "custom_report_gene_id": 1
     }
   },
