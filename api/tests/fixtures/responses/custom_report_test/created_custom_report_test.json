@@ -8,6 +8,8 @@
   {
    "id": 4,
    "name": "CustomReportGene2",
+   "summary": "Summary2",
+   "transcript": "Transcript2",
    "custom_report_variations": [
     {
      "id": 3,

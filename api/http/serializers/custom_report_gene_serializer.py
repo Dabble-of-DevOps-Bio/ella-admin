@@ -10,11 +10,13 @@ class CustomReportGeneSerializer(BaseModelSerializer):
     class Meta:
         model = CustomReportGene
         fields = (
-            'id', 'name', 'custom_report_variations'
+            'id', 'name', 'summary', 'transcript', 'custom_report_variations'
         )
 
     id = IntegerField(required=False, validators=[ExistsValidator(queryset=CustomReportGene.objects.all())])
     name = CharField()
+    summary = CharField(required=False)
+    transcript = CharField(required=False)
     custom_report_variations = CustomReportVariationSerializer(source='customreportvariation_set', required=False, many=True)
 
     def create(self, validated_data):
