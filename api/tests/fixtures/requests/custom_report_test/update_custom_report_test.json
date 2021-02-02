@@ -12,6 +12,8 @@
   {
    "id": 1,
    "name": "Updated CustomReportGene1",
+   "summary": "Updated Summary1",
+   "transcript": "Updated  Transcript1",
    "custom_report_variations": [
     {
      "id": 1,

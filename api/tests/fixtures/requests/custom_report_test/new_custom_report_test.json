@@ -10,6 +10,8 @@
   "custom_report_genes": [
     {
       "name": "CustomReportGene2",
+      "summary": "Summary2",
+      "transcript": "Transcript2",
       "custom_report_variations": [
         {
           "variation": "CustomReportVariation3",
