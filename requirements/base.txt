@@ -21,7 +21,7 @@ requests-mock===1.7.0
 # Django REST Framework
 # ------------------------------------------------------------------------------
 djangorestframework==3.11.1  # https://github.com/encode/django-rest-framework
-djangorestframework-simplejwt==4.4.0
+djangorestframework-simplejwt==4.6.0
 django-cors-headers==3.5.0 # https://github.com/adamchainz/django-cors-headers
 drf-flex-fields==0.8.6
 django-rest-passwordreset==1.1.0
