@@ -77,15 +77,8 @@
     "pk": 1,
     "fields": {
       "result": "CustomReportResult1",
-      "custom_report_variation_id": 1
-    }
-  },
-  {
-    "model": "api.customreportresult",
-    "pk": 2,
-    "fields": {
-      "result": "CustomReportResult2",
-      "custom_report_variation_id": 2
+      "finding": "POSITIVE",
+      "custom_report_test_id": 1
     }
   },
   {
@@ -93,15 +86,7 @@
     "pk": 1,
     "fields": {
       "interpretations": "CustomReportInterpretation1",
-      "custom_report_result_id": 1
-    }
-  },
-  {
-    "model": "api.customreportinterpretation",
-    "pk": 2,
-    "fields": {
-      "interpretations": "CustomReportInterpretation2",
-      "custom_report_result_id": 2
+      "custom_report_test_id": 1
     }
   },
   {

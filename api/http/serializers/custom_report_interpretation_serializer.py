@@ -12,6 +12,5 @@ class CustomReportInterpretationSerializer(BaseModelSerializer):
         )
 
     id = IntegerField(required=False, validators=[ExistsValidator(queryset=CustomReportInterpretation.objects.all())])
+
     interpretations = CharField()
-
-

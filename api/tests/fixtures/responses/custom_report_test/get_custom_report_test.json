@@ -16,30 +16,14 @@
      "variation": "CustomReportVariation1",
      "description": "Description1",
      "classification": "BENIGN",
-     "zygosity": "HOMOZYGOUS_REFERENCE",
-     "custom_report_result": {
-      "id": 1,
-      "result": "CustomReportResult1",
-      "custom_report_interpretation": {
-       "id": 1,
-       "interpretations": "CustomReportInterpretation1"
-      }
-     }
+     "zygosity": "HOMOZYGOUS_REFERENCE"
     },
     {
      "id": 2,
      "variation": "CustomReportVariation2",
      "description": "Description2",
      "classification": "BENIGN",
-     "zygosity": "HOMOZYGOUS_REFERENCE",
-     "custom_report_result": {
-      "id": 2,
-      "result": "CustomReportResult2",
-      "custom_report_interpretation": {
-       "id": 2,
-       "interpretations": "CustomReportInterpretation2"
-      }
-     }
+     "zygosity": "HOMOZYGOUS_REFERENCE"
     }
    ]
   },
@@ -51,6 +35,15 @@
    "custom_report_variations": []
   }
  ],
+ "custom_report_result": {
+  "id": 1,
+  "result": "CustomReportResult1",
+  "finding": "POSITIVE"
+ },
+ "custom_report_interpretation": {
+  "id": 1,
+  "interpretations": "CustomReportInterpretation1"
+ },
  "custom_report_full_report": {
   "id": 1,
   "patient_id": 101,
