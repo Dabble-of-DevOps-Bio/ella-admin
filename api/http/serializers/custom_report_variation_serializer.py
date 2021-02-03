@@ -11,7 +11,7 @@ class CustomReportVariationSerializer(BaseModelSerializer):
     class Meta:
         model = CustomReportVariation
         fields = (
-            'id', 'variation', 'description', 'classification', 'zygosity', 'custom_report_result'
+            'id', 'variation', 'description', 'classification', 'zygosity', 'custom_report_result',
         )
 
     id = IntegerField(required=False, validators=[ExistsValidator(queryset=CustomReportVariation.objects.all())])

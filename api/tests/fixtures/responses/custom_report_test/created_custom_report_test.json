@@ -16,19 +16,20 @@
      "variation": "CustomReportVariation3",
      "description": "Description3",
      "classification": "LIKELY_BENIGN",
-     "zygosity": "HETEROZYGOUS",
-     "custom_report_result": {
-      "id": 3,
-      "result": "CustomReportResult3",
-      "custom_report_interpretation": {
-       "id": 3,
-       "interpretations": "CustomReportInterpretation3"
-      }
-     }
+     "zygosity": "HETEROZYGOUS"
     }
    ]
   }
  ],
+ "custom_report_result": {
+  "id": 2,
+  "result": "CustomReportResult3",
+  "finding": "POSITIVE"
+ },
+ "custom_report_interpretation": {
+  "id": 2,
+  "interpretations": "CustomReportInterpretation3"
+ },
  "custom_report_full_report": {
   "id": 2,
   "patient_id": 100,

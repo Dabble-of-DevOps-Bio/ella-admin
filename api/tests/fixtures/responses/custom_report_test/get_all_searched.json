@@ -11,6 +11,8 @@
    "method": "method",
    "disclaimer": "disclaimer",
    "custom_report_genes": [],
+   "custom_report_result": null,
+   "custom_report_interpretation": null,
    "custom_report_full_report": null
   }
  ]

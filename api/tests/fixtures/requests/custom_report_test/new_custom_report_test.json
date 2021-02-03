@@ -3,6 +3,13 @@
   "type": "MLPA",
   "method": "method",
   "disclaimer": "disclaimer",
+  "custom_report_result": {
+    "result": "CustomReportResult3",
+    "finding": "POSITIVE"
+  },
+  "custom_report_interpretation": {
+    "interpretations": "CustomReportInterpretation3"
+  },
   "custom_report_full_report": {
     "patient_id": 100,
     "report_text": "Report"
@@ -17,13 +24,7 @@
           "variation": "CustomReportVariation3",
           "description": "Description3",
           "classification": "LIKELY_BENIGN",
-          "zygosity": "HETEROZYGOUS",
-          "custom_report_result": {
-            "result": "CustomReportResult3",
-            "custom_report_interpretation": {
-              "interpretations": "CustomReportInterpretation3"
-            }
-          }
+          "zygosity": "HETEROZYGOUS"
         }
       ]
     }

@@ -8,4 +8,4 @@ class CustomReportInterpretation(models.Model):
 
     interpretations = models.TextField()
 
-    custom_report_result = OneToOneField('CustomReportResult', on_delete=models.CASCADE)
+    custom_report_test = OneToOneField('CustomReportTest', on_delete=models.CASCADE)
