@@ -8,12 +8,12 @@
    "id": 2,
    "name": "CustomReportTest2",
    "type": "MLPA",
-   "method": "method",
-   "disclaimer": "disclaimer",
+   "methodology": "",
+   "limitations": "",
+   "references": "",
    "custom_report_genes": [],
    "custom_report_result": null,
-   "custom_report_interpretation": null,
-   "custom_report_full_report": null
+   "custom_report_interpretation": null
   }
  ]
 }

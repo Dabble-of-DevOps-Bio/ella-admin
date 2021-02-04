@@ -21,9 +21,10 @@ class CustomReportVariation(models.Model):
         db_table = 'custom_report_variation'
 
     variation = models.CharField(max_length=255)
+
     description = models.TextField(blank=True)
 
-    classification = models.CharField(max_length=255, choices=Classification.choices, default=Classification.UNKNOWN.value)
-    zygosity = models.CharField(max_length=255, choices=Zygosity.choices, default=Zygosity.HOMOZYGOUS_REFERENCE.value)
+    classification = models.CharField(max_length=255, choices=Classification.choices, default=Classification.UNKNOWN.value, blank=True)
+    zygosity = models.CharField(max_length=255, choices=Zygosity.choices, default=Zygosity.HOMOZYGOUS_REFERENCE.value, blank=True)
 
     custom_report_gene = ForeignKey('CustomReportGene', on_delete=models.CASCADE)

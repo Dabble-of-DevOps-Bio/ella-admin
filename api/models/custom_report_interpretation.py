@@ -6,6 +6,6 @@ class CustomReportInterpretation(models.Model):
     class Meta:
         db_table = 'custom_report_interpretation'
 
-    interpretations = models.TextField()
+    interpretation = models.TextField()
 
     custom_report_test = OneToOneField('CustomReportTest', on_delete=models.CASCADE)

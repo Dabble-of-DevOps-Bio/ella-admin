@@ -8,9 +8,9 @@ class CustomReportInterpretationSerializer(BaseModelSerializer):
     class Meta:
         model = CustomReportInterpretation
         fields = (
-            'id', 'interpretations',
+            'id', 'interpretation',
         )
 
     id = IntegerField(required=False, validators=[ExistsValidator(queryset=CustomReportInterpretation.objects.all())])
 
-    interpretations = CharField()
+    interpretation = CharField()
