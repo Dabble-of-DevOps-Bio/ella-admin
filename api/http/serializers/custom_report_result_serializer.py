@@ -13,5 +13,6 @@ class CustomReportResultSerializer(BaseModelSerializer):
         )
 
     id = IntegerField(required=False, validators=[ExistsValidator(queryset=CustomReportResult.objects.all())])
+
     result = CharField()
-    finding = ChoiceField(choices=CustomReportResult.Finding.choices)
+    finding = ChoiceField(choices=CustomReportResult.Finding.choices, required=False)

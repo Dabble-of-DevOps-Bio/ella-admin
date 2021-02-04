@@ -1,8 +1,9 @@
 {
   "name": "Updated CustomReportTest1",
   "type": "NGS",
-  "method": "Updated method",
-  "disclaimer": "Updated disclaimer",
+  "methodology": "Updated Methodology",
+  "limitations": "Updated Limitations",
+  "references": "Updated References",
   "custom_report_full_report": {
     "id": 1,
     "patient_id": 101,
@@ -10,12 +11,7 @@
   },
   "custom_report_interpretation": {
     "id": 1,
-    "interpretations": "Updated CustomReportInterpretation1"
-  },
-  "custom_report_result": {
-    "id": 1,
-    "result": "Updated CustomReportResult1",
-    "finding": "NEGATIVE"
+    "interpretation": "Updated CustomReportInterpretation1"
   },
   "custom_report_genes": [
     {

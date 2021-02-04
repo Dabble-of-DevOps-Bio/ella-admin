@@ -13,6 +13,6 @@ class CustomReportResult(models.Model):
         db_table = 'custom_report_result'
 
     result = models.TextField()
-    finding = models.CharField(max_length=255, choices=Finding.choices, default=Finding.POSITIVE.value)
+    finding = models.CharField(max_length=255, choices=Finding.choices, default=Finding.POSITIVE.value, blank=True)
 
     custom_report_test = OneToOneField('CustomReportTest', on_delete=models.CASCADE)

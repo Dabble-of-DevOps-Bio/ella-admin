@@ -1,6 +1,5 @@
 from .analysis_serializer import AnalysisSerializer
 from .base_model_serializer import BaseModelSerializer
-from .custom_report_full_report_serializer import CustomReportFullReportSerializer
 from .custom_report_gene_serializer import CustomReportGeneSerializer
 from .custom_report_interpretation_serializer import CustomReportInterpretationSerializer
 from .custom_report_result_serializer import CustomReportResultSerializer

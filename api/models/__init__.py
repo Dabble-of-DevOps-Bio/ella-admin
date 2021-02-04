@@ -6,7 +6,6 @@ from .custom_report_interpretation import CustomReportInterpretation
 from .custom_report_result import CustomReportResult
 from .custom_report_test import CustomReportTest
 from .custom_report_variation import CustomReportVariation
-from .custom_report_full_report import CustomReportFullReport
 from .gene_panel import GenePanel
 from .user import User
 from .user_group import UserGroup

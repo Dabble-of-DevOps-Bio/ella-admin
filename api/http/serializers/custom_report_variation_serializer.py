@@ -15,10 +15,12 @@ class CustomReportVariationSerializer(BaseModelSerializer):
         )
 
     id = IntegerField(required=False, validators=[ExistsValidator(queryset=CustomReportVariation.objects.all())])
+
     variation = CharField()
-    description = CharField()
-    classification = ChoiceField(choices=CustomReportVariation.Classification.choices)
-    zygosity = ChoiceField(choices=CustomReportVariation.Zygosity.choices)
+    description = CharField(required=False)
+    classification = ChoiceField(choices=CustomReportVariation.Classification.choices, required=False)
+    zygosity = ChoiceField(choices=CustomReportVariation.Zygosity.choices, required=False)
+
     custom_report_result = CustomReportResultSerializer(source='customreportresult', required=False)
 
     def create(self, validated_data):

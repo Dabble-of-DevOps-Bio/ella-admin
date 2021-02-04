@@ -1,8 +1,10 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from api.models.base_model import BaseModel
 
-class CustomReportTest(models.Model):
+
+class CustomReportTest(BaseModel):
     class Type(models.TextChoices):
         MLPA = "MLPA", _('MLPA')
         SEQ = "SEQ", _('SEQ')
@@ -14,5 +16,6 @@ class CustomReportTest(models.Model):
     name = models.CharField(max_length=255)
     type = models.CharField(max_length=255, choices=Type.choices, default=Type.MLPA.value)
 
-    method = models.TextField(blank=True)
-    disclaimer = models.TextField(blank=True)
+    methodology = models.TextField(blank=True)
+    limitations = models.TextField(blank=True)
+    references = models.TextField(blank=True)
