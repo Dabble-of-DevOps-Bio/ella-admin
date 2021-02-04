@@ -11,7 +11,7 @@ class CustomTestGeneSerializer(BaseModelSerializer):
         model = CustomTestGene
         fields = (
             'id', 'name', 'transcript', 'custom_test_variations',
-        ),
+        )
 
     id = IntegerField(required=False, validators=[ExistsValidator(queryset=CustomTestGene.objects.all())])
 

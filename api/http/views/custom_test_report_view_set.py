@@ -2,7 +2,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
 from api.http.filters import CustomTestReportFilter
-from api.http.serializers import CustomTestReportSerializer
+from api.http.serializers.custom_test_report_serializer import CustomTestReportSerializer
 from api.http.views.view import BaseViewSet
 from api.models import CustomTestReport
 from api.permissions import IsSuperuser
