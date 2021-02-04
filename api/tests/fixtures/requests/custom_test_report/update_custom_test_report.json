@@ -1,0 +1,27 @@
+{
+  "options": "Updated Options",
+  "custom_test_report_interpretation": {
+    "id": 1,
+    "interpretation": "Updated CustomReportInterpretation1"
+  },
+  "custom_test_report_genes": [
+    {
+      "id": 1,
+      "summary": "Updated Summary1"
+    },
+    {
+      "name": "New CustomReportGene2",
+      "custom_test_gene": 2
+    }
+  ],
+  "custom_test_report_variations": [
+    {
+      "id": 1,
+      "description": "Updated description3"
+    },
+    {
+      "description": "Description2",
+      "custom_test_variation": 2
+    }
+  ]
+}

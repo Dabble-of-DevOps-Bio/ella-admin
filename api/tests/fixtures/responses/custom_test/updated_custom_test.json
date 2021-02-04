@@ -1,0 +1,35 @@
+{
+ "id": 1,
+ "name": "Updated CustomReportTest1",
+ "type": "NGS",
+ "methodology": "Updated Methodology",
+ "limitations": "Updated Limitations",
+ "references": "Updated References",
+ "custom_test_genes": [
+  {
+   "id": 1,
+   "name": "Updated CustomReportGene1",
+   "transcript": "Updated  Transcript1",
+   "custom_test_variations": [
+    {
+     "id": 1,
+     "variation": "Updated CustomReportVariation1",
+     "classification": "VARIANT_UNCERTAIN_SIGNIFICANCE",
+     "zygosity": "HOMOZYGOUS_ALTERNATE"
+    },
+    {
+     "id": 4,
+     "variation": "New CustomReportVariation2",
+     "classification": "LIKELY_PATHOGENIC",
+     "zygosity": "HOMOZYGOUS_ALTERNATE"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "name": "New CustomReportGene2",
+   "transcript": "",
+   "custom_test_variations": []
+  }
+ ]
+}

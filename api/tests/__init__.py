@@ -1,5 +1,6 @@
 from .analysis import AnalysisTest
-from .custom_report_test import CustomReportTest
+from .custom_test import CustomTest
+from .custom_test_report import CustomTestReport
 from .gene_panel import GenePanelTest
 from .user import UserTest
 from .user_group import UserGroupTest
