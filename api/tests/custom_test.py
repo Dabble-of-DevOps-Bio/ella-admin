@@ -14,7 +14,7 @@ class CustomTest(TestCase):
         response = self.client.post('/api/custom-tests/', new_custom_tests)
 
         self.assertEquals(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqualsFixture(response.data, '/custom_test/created_custom_test.json', export=True)
+        self.assertEqualsFixture(response.data, '/custom_test/created_custom_test.json')
 
     def test_update(self):
         update_data = self.load_fixture('/custom_test/update_custom_test.json')
@@ -23,7 +23,7 @@ class CustomTest(TestCase):
         response = self.client.put('/api/custom-tests/1/', update_data)
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEqualsFixture(response.data, '/custom_test/updated_custom_test.json', export=True)
+        self.assertEqualsFixture(response.data, '/custom_test/updated_custom_test.json')
 
     def test_delete(self):
         self.force_login_user(1)
@@ -38,7 +38,7 @@ class CustomTest(TestCase):
         response = self.client.get('/api/custom-tests/1/')
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEqualsFixture(response.data, '/custom_test/get_custom_test.json', export=True)
+        self.assertEqualsFixture(response.data, '/custom_test/get_custom_test.json')
 
     def get_filters_for_user_search(self):
         return (
@@ -66,4 +66,4 @@ class CustomTest(TestCase):
         response = self.client.get('/api/custom-tests/', filters)
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEqualsFixture(response.data, fixture, export=True)
+        self.assertEqualsFixture(response.data, fixture)

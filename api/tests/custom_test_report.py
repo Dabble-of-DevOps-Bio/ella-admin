@@ -14,7 +14,7 @@ class CustomTestReport(TestCase):
         response = self.client.post('/api/custom-test-reports/', new_custom_test_report)
 
         self.assertEquals(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqualsFixture(response.data, '/custom_test_report/created_custom_test_report.json', export=True)
+        self.assertEqualsFixture(response.data, '/custom_test_report/created_custom_test_report.json')
 
     def test_update(self):
         update_data = self.load_fixture('/custom_test_report/update_custom_test_report.json')
@@ -23,7 +23,7 @@ class CustomTestReport(TestCase):
         response = self.client.put('/api/custom-test-reports/1/', update_data)
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEqualsFixture(response.data, '/custom_test_report/updated_custom_test_report.json', export=True)
+        self.assertEqualsFixture(response.data, '/custom_test_report/updated_custom_test_report.json')
 
     def test_delete(self):
         self.force_login_user(1)
@@ -38,7 +38,7 @@ class CustomTestReport(TestCase):
         response = self.client.get('/api/custom-test-reports/1/')
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEqualsFixture(response.data, '/custom_test_report/get_custom_test_report.json', export=True)
+        self.assertEqualsFixture(response.data, '/custom_test_report/get_custom_test_report.json')
 
     def get_filters_for_user_search(self):
         return (
@@ -54,4 +54,4 @@ class CustomTestReport(TestCase):
         response = self.client.get('/api/custom-test-reports/', filters)
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEqualsFixture(response.data, fixture, export=True)
+        self.assertEqualsFixture(response.data, fixture)
