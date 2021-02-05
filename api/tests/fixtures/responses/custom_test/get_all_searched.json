@@ -8,6 +8,7 @@
    "id": 2,
    "name": "CustomReportTest2",
    "type": "MLPA",
+   "finding": "POSITIVE",
    "methodology": "",
    "limitations": "",
    "references": "",

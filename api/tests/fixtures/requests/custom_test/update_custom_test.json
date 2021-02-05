@@ -1,6 +1,7 @@
 {
   "name": "Updated CustomReportTest1",
   "type": "NGS",
+  "finding": "INCONCLUSIVE",
   "methodology": "Updated Methodology",
   "limitations": "Updated Limitations",
   "references": "Updated References",

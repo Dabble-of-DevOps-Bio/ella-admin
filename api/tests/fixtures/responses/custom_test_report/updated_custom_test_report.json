@@ -1,6 +1,8 @@
 {
  "id": 1,
- "comments": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain.",
+ "interpretation": "Updated Interpretation",
+ "result": "Updated Result",
+ "comments": "Updated Options",
  "custom_test": 1,
  "custom_test_report_genes": [
   {
@@ -29,16 +31,5 @@
    "custom_test_variation": 2,
    "custom_test_report": 1
   }
- ],
- "custom_test_report_result": {
-  "id": 1,
-  "result": "One Pathogenic variant identified in RAD50. RAD50 is associated with autosomal dominant hereditary breast cancer and autosomal recessive Nijmegen breakage syndrome-like disorder. Additional Variant(s) of Uncertain Significance identified.",
-  "finding": "POSITIVE",
-  "custom_test_report": 1
- },
- "custom_test_report_interpretation": {
-  "id": 1,
-  "interpretation": "This result is consistent with a predisposition to, or diagnosis of, autosomal dominant RAD50-related conditions.",
-  "custom_test_report": 1
- }
+ ]
 }

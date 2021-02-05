@@ -1,0 +1,18 @@
+{
+  "custom_test": 1,
+  "comments": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was.",
+  "result": "CustomReportResult3",
+  "interpretation": "CustomReportInterpretation3",
+  "custom_test_report_genes": [
+    {
+      "summary": "Summary2",
+      "custom_test_gene": 1
+    }
+  ],
+  "custom_test_report_variations": [
+    {
+      "description": "Description3",
+      "custom_test_variation": 1
+    }
+  ]
+}

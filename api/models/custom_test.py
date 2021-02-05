@@ -10,11 +10,18 @@ class CustomTest(BaseModel):
         SEQ = "SEQ", _('SEQ')
         NGS = "NGS", _('NGS')
 
+    class Finding(models.TextChoices):
+        POSITIVE = "POSITIVE", _('Positive')
+        NEGATIVE = "NEGATIVE", _('Negative')
+        INCONCLUSIVE = "INCONCLUSIVE", _('Inconclusive')
+
     class Meta:
         db_table = 'custom_test'
 
     name = models.CharField(max_length=255)
+
     type = models.CharField(max_length=255, choices=Type.choices, default=Type.MLPA.value)
+    finding = models.CharField(max_length=255, choices=Finding.choices, default=Finding.POSITIVE.value)
 
     methodology = models.TextField(blank=True)
     limitations = models.TextField(blank=True)
