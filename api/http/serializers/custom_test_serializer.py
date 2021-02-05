@@ -9,13 +9,16 @@ class CustomTestSerializer(BaseModelSerializer):
     class Meta:
         model = CustomTest
         fields = (
-            'id', 'name', 'type', 'methodology', 'limitations', 'references', 'custom_test_genes',
+            'id', 'name', 'type', 'finding', 'methodology', 'limitations', 'references', 'custom_test_genes',
         )
 
     id = ReadOnlyField()
 
     name = CharField()
+
     type = ChoiceField(choices=CustomTest.Type.choices)
+    finding = ChoiceField(choices=CustomTest.Finding.choices)
+
     methodology = CharField(required=False)
     limitations = CharField(required=False)
     references = CharField(required=False)

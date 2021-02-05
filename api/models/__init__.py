@@ -5,9 +5,7 @@ from .custom_test import CustomTest
 from .custom_test_gene import CustomTestGene
 from .custom_test_report import CustomTestReport
 from .custom_test_report_gene import CustomTestReportGene
-from .custom_test_report_result import CustomTestReportResult
 from .custom_test_report_variation import CustomTestReportVariation
-from .custom_test_report_interpretation import CustomTestReportInterpretation
 from .custom_test_variation import CustomTestVariation
 from .gene_panel import GenePanel
 from .user import User

@@ -1,9 +1,7 @@
 {
-  "options": "Updated Options",
-  "custom_test_report_interpretation": {
-    "id": 1,
-    "interpretation": "Updated CustomReportInterpretation1"
-  },
+  "comments": "Updated Options",
+  "interpretation": "Updated Interpretation",
+  "result": "Updated Result",
   "custom_test_report_genes": [
     {
       "id": 1,
