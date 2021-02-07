@@ -3,19 +3,32 @@
  "name": "CustomReportTest3",
  "type": "MLPA",
  "finding": "POSITIVE",
- "methodology": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.",
- "limitations": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.",
- "references": "Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.",
+ "methodology": "Genomic DNA obtained from the submitted sample is enriched for coding regions and splice junctions of the genes on this test using a hybridization-based protocol. The targeted regions are sequenced simultaneously by massively parallel (NextGen) sequencing on the Illumina platform with paired-end reads. Bi-directional sequence is assembled, aligned to reference gene sequences based on human genome build GRCh37/UCSC hg19, and analyzed for sequence variants.\nExonic deletions and duplications are called using an in-house algorithm that determines copy number at each target by comparing the read depth for each target in the proband sequence with both mean read-depth and read-depth distribution, obtained from a set of clinical samples. All clinically significant observations are confirmed by orthogonal technologies, except individually validated variants and variants previously confirmed in a first-degree relative. Confirmation technologies include any of the following: Sanger sequencing, MLPA, and Oxford nanopore.\nSequence and copy number variants were reported according to the Human Genome Variation Society (HGVS) nomenclature or the International System for Human Cytogenetic Nomenclature (ISCN) guidelines, respectively. Reportable variants include pathogenic variants, likely pathogenic variants and variants of uncertain significance. Likely benign and benign variants are not routinely reported but available upon request.",
+ "limitations": "Genetic testing using the methods applied at NRL is expected to be highly accurate. Normal findings do not rule out the diagnosis of a genetic disorder since some genetic abnormalities may be undetectable with this test. Certain types of variants, such as chromosomal aberrations, and/or mosaicism cannot be reliably detected. Some genes have inherent sequence properties (e.g. homology, or pseudogene regions, high GC content, rare polymorphisms) that may result in suboptimal data, and variants in those regions may not be reliably identified. False negative results may also occur in the setting of bone marrow transplantation, recent blood transfusion, or suboptimal DNA quality. The chance of false positive or false negative result due to laboratory errors incurred during any phase of testing cannot be completely excluded. Interpretations are made with the assumption that any information provided on family relationship is accurate. Consultation with a genetic professional is recommended for interpretation of results.",
+ "references": "Heikkinen K, Karppinen SM, Soini Y, M\u00e4kinen M, Winqvist R. Mutation screening of Mre11 complex genes: indication of RAD50 involvement in breast and ovarian cancer susceptibility. J Med Genet. 2003 Dec;40(12):e131.\u00a0\n\nBorg A, Haile RW, Malone KE, Capanu M, Diep A, T\u00f6rngren T, Teraoka S, Begg CB, Thomas DC, Concannon P, Mellemkjaer L, Bernstein L, Tellhed L, Xue S, Olson ER, Liang X, Dolle J, B\u00f8rresen-Dale AL, Bernstein JL. Characterization of BRCA1 and BRCA2 deleterious mutations and variants of unknown clinical significance in unilateral and bilateral breast cancer: the WECARE study. Hum Mutat. 2010 Mar;31(3):E1200-40. doi: 10.1002/humu.21202. PMID: 20104584; PMCID: PMC2928257.Heikkinen K, Karppinen SM, Soini Y, \n\nM\u00e4kinen M, Winqvist R. Mutation screening of Mre11 complex genes: indication of RAD50 involvement in breast and ovarian cancer susceptibility. J Med Genet. 2003 Dec;40(12):e131.\u00a0\n\nBorg A, Haile RW, Malone KE, Capanu M, Diep A, T\u00f6rngren T, Teraoka S, Begg CB, Thomas DC, Concannon P, Mellemkjaer L, Bernstein L, Tellhed L, Xue S, Olson ER, Liang X, Dolle J, B\u00f8rresen-Dale AL, Bernstein JL. Characterization of BRCA1 and BRCA2 deleterious mutations and variants of unknown clinical significance in unilateral and bilateral breast cancer: the WECARE study. Hum Mutat. 2010 Mar;31(3):E1200-40. doi: 10.1002/humu.21202. PMID: 20104584; PMCID: PMC2928257.",
  "custom_test_genes": [
   {
    "id": 4,
-   "name": "CustomReportGene2",
-   "transcript": "Transcript2",
+   "name": "RAD50",
+   "transcript": "NM_007294.3",
    "custom_test_variations": [
     {
      "id": 3,
-     "variation": "CustomReportVariation3",
+     "variation": "c.1237C>T (p.Gln413Ter)",
      "classification": "LIKELY_BENIGN",
+     "zygosity": "HOMOZYGOUS_REFERENCE"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "name": "BRCA2",
+   "transcript": "NM_000059.3",
+   "custom_test_variations": [
+    {
+     "id": 4,
+     "variation": "c10G>T",
+     "classification": "PATHOGENIC",
      "zygosity": "HETEROZYGOUS"
     }
    ]

@@ -19,7 +19,7 @@
      "zygosity": "HOMOZYGOUS_ALTERNATE"
     },
     {
-     "id": 4,
+     "id": 5,
      "variation": "New CustomReportVariation2",
      "classification": "LIKELY_PATHOGENIC",
      "zygosity": "HOMOZYGOUS_ALTERNATE"
@@ -27,7 +27,7 @@
    ]
   },
   {
-   "id": 5,
+   "id": 6,
    "name": "New CustomReportGene2",
    "transcript": "",
    "custom_test_variations": []
