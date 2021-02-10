@@ -31,6 +31,8 @@ urlpatterns = [
     path('analysis/<int:analysis_pk>/patient-data/', AnalysisViewSet.as_view({'get': 'get_patient_data'}),
          name='analysis_patient_data'),
 
+    path('custom-test-reports/<int:custom_test_report_pk>/pdf/', CustomTestReportViewSet.as_view({'get': 'generate_pdf'}), name='custom_test_reports_generate_pdf'),
+
     url(r'^', include(router.urls)),
     path('password-reset/', include('django_rest_passwordreset.urls', namespace='user')),
 ]

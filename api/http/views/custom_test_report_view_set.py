@@ -1,5 +1,10 @@
+import pendulum
+
+from django.core.files.base import ContentFile
+from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
+from wkhtmltopdf.views import PDFTemplateResponse
 
 from api.http.filters import CustomTestReportFilter
 from api.http.serializers.custom_test_report_serializer import CustomTestReportSerializer
@@ -16,9 +21,43 @@ class CustomTestReportViewSet(BaseViewSet, ModelViewSet):
         'retrieve': (IsAuthenticated, IsSuperuser),
         'list': (IsAuthenticated, IsSuperuser),
         'destroy': (IsAuthenticated, IsSuperuser),
+        'generate_pdf': (IsAuthenticated, IsSuperuser)
     }
 
     serializer_class = CustomTestReportSerializer
     queryset = CustomTestReport.objects.all()
     filterset_class = CustomTestReportFilter
     search_fields = []
+
+    @action(detail=False, methods=['GET'])
+    def generate_pdf(self, request, *args, **kwargs):
+        custom_test_report_pk = self.kwargs['custom_test_report_pk']
+        custom_test_report = CustomTestReport.objects.get(pk=custom_test_report_pk)
+
+        file_name = self.__get_pdf_report_file_name(custom_test_report)
+
+        custom_test_report_serializer = CustomTestReportSerializer(custom_test_report)
+
+        pdf_response = PDFTemplateResponse(
+            request=request,
+            template='pdf/tasks_report.html',
+            context={
+                'custom_test_report': custom_test_report_serializer.data,
+            },
+            filename=('%s.pdf' % file_name),
+            show_content_in_browser=False,
+            cmd_options={
+                'orientation': 'landscape'
+            }
+        )
+
+        pdf_file = ContentFile(pdf_response.rendered_content)
+        pdf_file.name = 'file.pdf'
+
+        return pdf_response
+
+    def __get_pdf_report_file_name(self, custom_test_report: CustomTestReport):
+        custom_test_name = custom_test_report.custom_test.name
+        current_date = pendulum.now().to_datetime_string().replace(' ', '_')
+
+        return '%s-%s' % (custom_test_name, current_date)

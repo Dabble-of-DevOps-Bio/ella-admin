@@ -2,6 +2,7 @@ from rest_framework import serializers
 from rest_framework.fields import ReadOnlyField, CharField
 
 from api.http.serializers.base_model_serializer import BaseModelSerializer
+from api.http.serializers.custom_test_serializer import CustomTestSerializer
 from api.http.serializers.custom_test_report_gene_serializer import CustomTestReportGeneSerializer
 from api.http.serializers.custom_test_report_variation_serializer import CustomTestReportVariationSerializer
 from api.models import CustomTestReport, CustomTest
@@ -13,6 +14,11 @@ class CustomTestReportSerializer(BaseModelSerializer):
         fields = (
             'id', 'interpretation', 'result', 'comments', 'custom_test', 'custom_test_report_genes', 'custom_test_report_variations',
         )
+        expandable_fields = {
+            'custom_test': (CustomTestSerializer, {'source': 'custom_test'}),
+            'custom_test_report_genes': (CustomTestReportGeneSerializer, {'source': 'customtestreportgene_set', 'many': True}),
+            'custom_test_report_variations': (CustomTestReportVariationSerializer, {'source': 'customtestreportvariation_set', 'many': True})
+        }
 
     id = ReadOnlyField()
 
