@@ -7,6 +7,7 @@ freezegun==1.0.0
 pendulum==2.1.2
 bcrypt==3.2.0
 cached-property==1.5.2
+wkhtmltopdf==0.2
 
 # Django
 # ------------------------------------------------------------------------------
@@ -17,6 +18,7 @@ django-filter==2.3.0
 django-composite-foreignkey==1.1.0
 pandas==1.1.5
 requests-mock===1.7.0
+django-wkhtmltopdf==3.3.0
 
 # Django REST Framework
 # ------------------------------------------------------------------------------

@@ -65,7 +65,9 @@ class CustomTestReport(TestCase):
 
     def test_get(self):
         self.force_login_user(1)
-        response = self.client.get('/api/custom-test-reports/1/')
+        response = self.client.get('/api/custom-test-reports/1/', {'expand': ['custom_test',
+                                                                              'custom_test_report_genes.custom_test_gene',
+                                                                              'custom_test_report_variations.custom_test_variation']})
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
         self.assertEqualsFixture(response.data, '/custom_test_report/get_custom_test_report.json')

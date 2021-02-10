@@ -3,18 +3,77 @@
  "interpretation": "This result is consistent with a predisposition to, or diagnosis of, autosomal dominant RAD50-related conditions.",
  "result": "One Pathogenic variant identified in RAD50. RAD50 is associated with autosomal dominant hereditary breast cancer and autosomal recessive Nijmegen breakage syndrome-like disorder. Additional Variant(s) of Uncertain Significance identified.",
  "comments": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain.",
- "custom_test": 1,
+ "custom_test": {
+  "id": 1,
+  "name": "CustomReportTest1",
+  "type": "MLPA",
+  "finding": "POSITIVE",
+  "methodology": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.",
+  "limitations": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.",
+  "references": "Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.",
+  "patient": null,
+  "custom_test_genes": [
+   {
+    "id": 1,
+    "name": "BRCA1",
+    "transcript": "NM_007294.3",
+    "custom_test_variations": [
+     {
+      "id": 1,
+      "variation": "c.1237C>T (p.Gln413Ter)",
+      "classification": "BENIGN",
+      "zygosity": "HOMOZYGOUS_REFERENCE"
+     },
+     {
+      "id": 2,
+      "variation": "c10G>T",
+      "classification": "BENIGN",
+      "zygosity": "HOMOZYGOUS_REFERENCE"
+     }
+    ]
+   },
+   {
+    "id": 2,
+    "name": "BRCA2",
+    "transcript": "Transcript",
+    "custom_test_variations": []
+   }
+  ]
+ },
  "custom_test_report_genes": [
   {
    "id": 1,
    "summary": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.",
-   "custom_test_gene": 1,
+   "custom_test_gene": {
+    "id": 1,
+    "name": "BRCA1",
+    "transcript": "NM_007294.3",
+    "custom_test_variations": [
+     {
+      "id": 1,
+      "variation": "c.1237C>T (p.Gln413Ter)",
+      "classification": "BENIGN",
+      "zygosity": "HOMOZYGOUS_REFERENCE"
+     },
+     {
+      "id": 2,
+      "variation": "c10G>T",
+      "classification": "BENIGN",
+      "zygosity": "HOMOZYGOUS_REFERENCE"
+     }
+    ]
+   },
    "custom_test_report": 1
   },
   {
    "id": 2,
    "summary": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account.",
-   "custom_test_gene": 2,
+   "custom_test_gene": {
+    "id": 2,
+    "name": "BRCA2",
+    "transcript": "Transcript",
+    "custom_test_variations": []
+   },
    "custom_test_report": 1
   }
  ],
@@ -22,13 +81,23 @@
   {
    "id": 1,
    "description": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.",
-   "custom_test_variation": 1,
+   "custom_test_variation": {
+    "id": 1,
+    "variation": "c.1237C>T (p.Gln413Ter)",
+    "classification": "BENIGN",
+    "zygosity": "HOMOZYGOUS_REFERENCE"
+   },
    "custom_test_report": 1
   },
   {
    "id": 2,
    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account.",
-   "custom_test_variation": 2,
+   "custom_test_variation": {
+    "id": 2,
+    "variation": "c10G>T",
+    "classification": "BENIGN",
+    "zygosity": "HOMOZYGOUS_REFERENCE"
+   },
    "custom_test_report": 1
   }
  ]

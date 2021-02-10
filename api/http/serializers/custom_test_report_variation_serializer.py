@@ -2,6 +2,7 @@ from rest_framework import serializers
 from rest_framework.fields import IntegerField, CharField
 
 from api.http.serializers.base_model_serializer import BaseModelSerializer
+from api.http.serializers.custom_test_variation_serializer import CustomTestVariationSerializer
 from api.http.validators import ExistsValidator
 from api.models import CustomTestReport, CustomTestVariation, CustomTestReportVariation
 
@@ -12,6 +13,9 @@ class CustomTestReportVariationSerializer(BaseModelSerializer):
         fields = (
             'id', 'description', 'custom_test_variation', 'custom_test_report',
         )
+        expandable_fields = {
+            'custom_test_variation': (CustomTestVariationSerializer, {'source': 'custom_test_variation'})
+        }
 
     id = IntegerField(required=False, validators=[ExistsValidator(queryset=CustomTestReportVariation.objects.all())])
 

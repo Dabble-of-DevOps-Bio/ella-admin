@@ -2,6 +2,7 @@ from rest_framework import serializers
 from rest_framework.fields import IntegerField, CharField
 
 from api.http.serializers.base_model_serializer import BaseModelSerializer
+from api.http.serializers.custom_test_gene_serializer import CustomTestGeneSerializer
 from api.http.validators import ExistsValidator
 from api.models import CustomTestReportGene, CustomTestReport, CustomTestGene
 
@@ -12,6 +13,9 @@ class CustomTestReportGeneSerializer(BaseModelSerializer):
         fields = (
             'id', 'summary', 'custom_test_gene', 'custom_test_report',
         )
+        expandable_fields = {
+            'custom_test_gene': (CustomTestGeneSerializer, {'source': 'custom_test_gene'})
+        }
 
     id = IntegerField(required=False, validators=[ExistsValidator(queryset=CustomTestReportGene.objects.all())])
 
