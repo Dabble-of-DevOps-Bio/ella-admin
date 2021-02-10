@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import OneToOneField
 from django.utils.translation import gettext_lazy as _
 
 from api.models.base_model import BaseModel
@@ -26,3 +27,5 @@ class CustomTest(BaseModel):
     methodology = models.TextField(blank=True)
     limitations = models.TextField(blank=True)
     references = models.TextField(blank=True)
+
+    patient = OneToOneField('Patient', on_delete=models.CASCADE, null=True)

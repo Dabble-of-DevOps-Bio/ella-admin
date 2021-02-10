@@ -7,7 +7,7 @@
  "limitations": "Updated Limitations",
  "references": "Updated References",
  "patient": {
-  "id": 3,
+  "id": 1,
   "name": "Updated name",
   "birthday": "2001-01-01",
   "gender": "FEMALE",
@@ -34,7 +34,7 @@
      "zygosity": "HOMOZYGOUS_ALTERNATE"
     },
     {
-     "id": 6,
+     "id": 9,
      "variation": "New CustomReportVariation2",
      "classification": "LIKELY_PATHOGENIC",
      "zygosity": "HOMOZYGOUS_ALTERNATE"
@@ -42,7 +42,7 @@
    ]
   },
   {
-   "id": 7,
+   "id": 10,
    "name": "New CustomReportGene2",
    "transcript": "",
    "custom_test_variations": []
