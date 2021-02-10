@@ -46,59 +46,46 @@
     }
   },
   {
-    "model": "api.customtestgene",
-    "pk": 1,
-    "fields": {
-      "name": "BRCA1",
-      "transcript": "NM_007294.3",
-      "custom_test_id": 1
-    }
-  },
-  {
-    "model": "api.customtestvariation",
-    "pk": 1,
-    "fields": {
-      "variation": "c.1237C>T (p.Gln413Ter)",
-      "classification": "BENIGN",
-      "zygosity": "HOMOZYGOUS_REFERENCE",
-      "custom_test_gene_id": 1
-    }
-  },
-  {
-    "model": "api.customtestvariation",
-    "pk": 2,
-    "fields": {
-      "variation": "c10G>T",
-      "classification": "BENIGN",
-      "zygosity": "HOMOZYGOUS_REFERENCE",
-      "custom_test_gene_id": 1
-    }
-  },
-  {
-    "model": "api.customtestgene",
-    "pk": 3,
-    "fields": {
-      "name": "BRCA2",
-      "transcript": "Transcript",
-      "custom_test_id": 1
-    }
-  },
-  {
-    "model": "api.customtest",
-    "pk": 2,
-    "fields": {
-      "name": "CustomReportTest2",
-      "type": "MLPA",
-      "finding": "POSITIVE",
-      "created_at": "2020-07-30T12:21:16.129Z",
-      "updated_at": "2020-07-30T12:21:16.129Z"
-    }
-  },
-  {
     "model": "api.patient",
     "pk": 1,
     "fields": {
       "name": "Todd Smith",
+      "birthday": "2020-07-30",
+      "gender": "MALE",
+      "sample_type": "Blood",
+      "sample_id": "1234567",
+      "test_accession": "BRCA123456",
+      "test_ordered": "BRCA2 Sequencing & Deletion/Duplication Analysis",
+      "test_code": "ABCD",
+      "ordered_by": "Dr. Who",
+      "sample_collection_date": "2020-07-30T12:21:16.129Z",
+      "sample_accession_date": "2020-07-30T12:21:16.129Z",
+      "report_date": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.patient",
+    "pk": 2,
+    "fields": {
+      "name": "Zaynab Barker",
+      "birthday": "2020-07-30",
+      "gender": "MALE",
+      "sample_type": "Blood",
+      "sample_id": "1234567",
+      "test_accession": "BRCA123456",
+      "test_ordered": "BRCA2 Sequencing & Deletion/Duplication Analysis",
+      "test_code": "ABCD",
+      "ordered_by": "Dr. Who",
+      "sample_collection_date": "2020-07-30T12:21:16.129Z",
+      "sample_accession_date": "2020-07-30T12:21:16.129Z",
+      "report_date": "2020-07-30T12:21:16.129Z"
+    }
+  },
+  {
+    "model": "api.patient",
+    "pk": 3,
+    "fields": {
+      "name": "Debra Ortega",
       "birthday": "2020-07-30",
       "gender": "MALE",
       "sample_type": "Blood",

@@ -1,0 +1,53 @@
+{
+ "total_items": 3,
+ "previous_page": null,
+ "next_page": null,
+ "last_page": 1,
+ "items": [
+  {
+   "id": 1,
+   "name": "Todd Smith",
+   "birthday": "2020-07-30",
+   "gender": "MALE",
+   "sample_type": "Blood",
+   "sample_id": "1234567",
+   "test_accession": "BRCA123456",
+   "test_ordered": "BRCA2 Sequencing & Deletion/Duplication Analysis",
+   "test_code": "ABCD",
+   "ordered_by": "Dr. Who",
+   "sample_collection_date": "2020-07-30T12:21:16.129000Z",
+   "sample_accession_date": "2020-07-30T12:21:16.129000Z",
+   "report_date": "2020-07-30T12:21:16.129000Z"
+  },
+  {
+   "id": 2,
+   "name": "Zaynab Barker",
+   "birthday": "2020-07-30",
+   "gender": "MALE",
+   "sample_type": "Blood",
+   "sample_id": "1234567",
+   "test_accession": "BRCA123456",
+   "test_ordered": "BRCA2 Sequencing & Deletion/Duplication Analysis",
+   "test_code": "ABCD",
+   "ordered_by": "Dr. Who",
+   "sample_collection_date": "2020-07-30T12:21:16.129000Z",
+   "sample_accession_date": "2020-07-30T12:21:16.129000Z",
+   "report_date": "2020-07-30T12:21:16.129000Z"
+  },
+  {
+   "id": 3,
+   "name": "Debra Ortega",
+   "birthday": "2020-07-30",
+   "gender": "MALE",
+   "sample_type": "Blood",
+   "sample_id": "1234567",
+   "test_accession": "BRCA123456",
+   "test_ordered": "BRCA2 Sequencing & Deletion/Duplication Analysis",
+   "test_code": "ABCD",
+   "ordered_by": "Dr. Who",
+   "sample_collection_date": "2020-07-30T12:21:16.129000Z",
+   "sample_accession_date": "2020-07-30T12:21:16.129000Z",
+   "report_date": "2020-07-30T12:21:16.129000Z"
+  }
+ ]
+}

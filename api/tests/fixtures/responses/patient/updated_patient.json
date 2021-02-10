@@ -1,0 +1,15 @@
+{
+ "id": 1,
+ "name": "Updated name",
+ "birthday": "2001-01-01",
+ "gender": "FEMALE",
+ "sample_type": "Updated sample type",
+ "sample_id": "Updated saple id",
+ "test_accession": "Updated test accession",
+ "test_ordered": "Updatedtest ordered",
+ "test_code": "Updated",
+ "ordered_by": "Updated",
+ "sample_collection_date": "2011-01-01T09:01:01.100000Z",
+ "sample_accession_date": "2111-01-01T10:02:02.200000Z",
+ "report_date": "2112-01-01T11:03:03.300000Z"
+}

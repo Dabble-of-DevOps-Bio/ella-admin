@@ -1,5 +1,5 @@
 {
- "id": 3,
+ "id": 4,
  "name": "CustomReportTest3",
  "type": "MLPA",
  "finding": "POSITIVE",
@@ -7,7 +7,7 @@
  "limitations": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.",
  "references": "Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.",
  "patient": {
-  "id": 2,
+  "id": 1,
   "name": "New name",
   "birthday": "2001-01-01",
   "gender": "FEMALE",
@@ -23,12 +23,12 @@
  },
  "custom_test_genes": [
   {
-   "id": 4,
+   "id": 5,
    "name": "CustomReportGene2",
    "transcript": "Transcript2",
    "custom_test_variations": [
     {
-     "id": 3,
+     "id": 4,
      "variation": "CustomReportVariation3",
      "classification": "LIKELY_BENIGN",
      "zygosity": "HETEROZYGOUS"

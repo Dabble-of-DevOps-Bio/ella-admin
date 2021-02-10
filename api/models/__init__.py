@@ -8,6 +8,7 @@ from .custom_test_report_gene import CustomTestReportGene
 from .custom_test_report_variation import CustomTestReportVariation
 from .custom_test_variation import CustomTestVariation
 from .gene_panel import GenePanel
+from .patient import Patient
 from .user import User
 from .user_group import UserGroup
 from .user_group_gene_panel import UserGroupGenePanel

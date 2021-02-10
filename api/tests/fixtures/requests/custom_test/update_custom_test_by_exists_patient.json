@@ -6,6 +6,7 @@
   "limitations": "Updated Limitations",
   "references": "Updated References",
   "patient": {
+   "id": 1,
    "name": "Updated name",
    "birthday": "2001-01-01",
    "gender": "FEMALE",

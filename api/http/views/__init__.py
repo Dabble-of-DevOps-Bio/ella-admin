@@ -7,4 +7,5 @@ from .profile_view_set import ProfileViewSet
 from .staff_app_login_view import StaffAppLoginView
 from .user_group_view_set import UserGroupViewSet
 from .user_view_set import UserViewSet
+from .patient_view_set import PatientViewSet
 from .variant_report_view_set import VariantReportViewSet
