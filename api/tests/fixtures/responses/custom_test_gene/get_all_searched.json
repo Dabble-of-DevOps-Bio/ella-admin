@@ -1,0 +1,15 @@
+{
+ "total_items": 1,
+ "previous_page": null,
+ "next_page": null,
+ "last_page": 1,
+ "items": [
+  {
+   "id": 3,
+   "name": "BRCA2",
+   "transcript": "Transcript",
+   "custom_test": 1,
+   "custom_test_variations": []
+  }
+ ]
+}
