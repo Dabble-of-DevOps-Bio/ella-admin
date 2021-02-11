@@ -1,3 +1,4 @@
+from rest_framework import serializers
 from rest_framework.fields import IntegerField, CharField, ChoiceField
 
 from api.http.serializers.base_model_serializer import BaseModelSerializer
@@ -9,7 +10,7 @@ class CustomTestVariationSerializer(BaseModelSerializer):
     class Meta:
         model = CustomTestVariation
         fields = (
-            'id', 'variation', 'classification', 'zygosity'
+            'id', 'variation', 'classification', 'zygosity', 'custom_test_gene',
         )
 
     id = IntegerField(required=False, validators=[ExistsValidator(queryset=CustomTestVariation.objects.all())])
@@ -17,6 +18,8 @@ class CustomTestVariationSerializer(BaseModelSerializer):
     variation = CharField()
     classification = ChoiceField(choices=CustomTestVariation.Classification.choices, required=False)
     zygosity = ChoiceField(choices=CustomTestVariation.Zygosity.choices, required=False)
+
+    custom_test_gene = serializers.PrimaryKeyRelatedField(queryset=CustomTestGene.objects.all(), required=False)
 
     def bulk_create(self, custom_report_variations: list, custom_test_gene: CustomTestGene) -> None:
         variations = self.__add_variations_to_gene(custom_report_variations, custom_test_gene)

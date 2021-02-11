@@ -1,6 +1,7 @@
 from .analisys_view_set import AnalysisViewSet
 from .custom_test_gene_view_set import CustomTestGeneViewSet
 from .custom_test_report_view_set import CustomTestReportViewSet
+from .custom_test_variation_view_set import CustomTestVariationViewSet
 from .custom_test_view_set import CustomTestViewSet
 from .gene_panel_view_set import GenePanelViewSet
 from .logout_view import LogoutView

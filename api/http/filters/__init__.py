@@ -2,6 +2,7 @@ from .analysis_filter import AnalysisFilter
 from .custom_test_filter import CustomTestFilter
 from .custom_test_gene_filter import CustomTestGeneFilter
 from .custom_test_report_filter import CustomTestReportFilter
+from .custom_test_variation_filter import CustomTestVariationFilter
 from .gene_panel_filter import GenePanelFilter
 from .patient_filter import PatientFilter
 from .user_filter import UserFilter
