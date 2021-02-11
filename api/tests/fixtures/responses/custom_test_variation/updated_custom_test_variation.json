@@ -1,0 +1,7 @@
+{
+ "id": 1,
+ "variation": "New CustomReportVariation2",
+ "classification": "LIKELY_PATHOGENIC",
+ "zygosity": "HOMOZYGOUS_ALTERNATE",
+ "custom_test_gene": 1
+}

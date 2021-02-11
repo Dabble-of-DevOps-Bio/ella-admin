@@ -8,13 +8,15 @@
    "id": 1,
    "variation": "Updated CustomReportVariation1",
    "classification": "VARIANT_UNCERTAIN_SIGNIFICANCE",
-   "zygosity": "HOMOZYGOUS_ALTERNATE"
+   "zygosity": "HOMOZYGOUS_ALTERNATE",
+   "custom_test_gene": 1
   },
   {
    "id": 4,
    "variation": "New CustomReportVariation2",
    "classification": "LIKELY_PATHOGENIC",
-   "zygosity": "HOMOZYGOUS_ALTERNATE"
+   "zygosity": "HOMOZYGOUS_ALTERNATE",
+   "custom_test_gene": 1
   }
  ]
 }

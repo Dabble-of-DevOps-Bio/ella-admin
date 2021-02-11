@@ -1,0 +1,7 @@
+{
+ "id": 3,
+ "variation": "CustomReportVariation3",
+ "classification": "LIKELY_BENIGN",
+ "zygosity": "HETEROZYGOUS",
+ "custom_test_gene": 1
+}
