@@ -1,3 +1,4 @@
+from rest_framework import serializers
 from rest_framework.fields import IntegerField, CharField
 
 from api.http.serializers.base_model_serializer import BaseModelSerializer
@@ -10,7 +11,7 @@ class CustomTestGeneSerializer(BaseModelSerializer):
     class Meta:
         model = CustomTestGene
         fields = (
-            'id', 'name', 'transcript', 'custom_test_variations',
+            'id', 'name', 'transcript', 'custom_test', 'custom_test_variations',
         )
 
     id = IntegerField(required=False, validators=[ExistsValidator(queryset=CustomTestGene.objects.all())])
@@ -18,6 +19,7 @@ class CustomTestGeneSerializer(BaseModelSerializer):
     name = CharField()
     transcript = CharField(required=False)
 
+    custom_test = serializers.PrimaryKeyRelatedField(queryset=CustomTest.objects.all(), required=False)
     custom_test_variations = CustomTestVariationSerializer(source='customtestvariation_set', required=False, many=True)
 
     def create(self, validated_data):

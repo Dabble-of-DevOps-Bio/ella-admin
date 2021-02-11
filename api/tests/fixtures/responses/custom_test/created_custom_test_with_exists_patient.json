@@ -26,6 +26,7 @@
    "id": 5,
    "name": "CustomReportGene2",
    "transcript": "Transcript2",
+   "custom_test": 4,
    "custom_test_variations": [
     {
      "id": 4,

@@ -1,5 +1,6 @@
 from .analysis import AnalysisTest
 from .custom_test import CustomTest
+from .custom_test_gene import CustomTestGene
 from .custom_test_report import CustomTestReport
 from .gene_panel import GenePanelTest
 from .patient import PatientTest

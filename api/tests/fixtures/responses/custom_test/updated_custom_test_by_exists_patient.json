@@ -26,6 +26,7 @@
    "id": 1,
    "name": "Updated CustomReportGene1",
    "transcript": "Updated  Transcript1",
+   "custom_test": 1,
    "custom_test_variations": [
     {
      "id": 1,
@@ -45,6 +46,7 @@
    "id": 10,
    "name": "New CustomReportGene2",
    "transcript": "",
+   "custom_test": 1,
    "custom_test_variations": []
   }
  ]

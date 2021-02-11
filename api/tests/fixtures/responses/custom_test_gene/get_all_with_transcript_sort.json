@@ -1,0 +1,35 @@
+{
+ "total_items": 2,
+ "previous_page": null,
+ "next_page": null,
+ "last_page": 1,
+ "items": [
+  {
+   "id": 1,
+   "name": "BRCA1",
+   "transcript": "NM_007294.3",
+   "custom_test": 1,
+   "custom_test_variations": [
+    {
+     "id": 1,
+     "variation": "c.1237C>T (p.Gln413Ter)",
+     "classification": "BENIGN",
+     "zygosity": "HOMOZYGOUS_REFERENCE"
+    },
+    {
+     "id": 2,
+     "variation": "c10G>T",
+     "classification": "BENIGN",
+     "zygosity": "HOMOZYGOUS_REFERENCE"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "name": "BRCA2",
+   "transcript": "Transcript",
+   "custom_test": 1,
+   "custom_test_variations": []
+  }
+ ]
+}
