@@ -12,6 +12,9 @@ class CustomTestSerializer(BaseModelSerializer):
         fields = (
             'id', 'name', 'type', 'finding', 'methodology', 'limitations', 'references', 'patient', 'custom_test_genes',
         )
+        expandable_fields = {
+            'patient': (PatientSerializer,),
+        }
 
     id = ReadOnlyField()
 
