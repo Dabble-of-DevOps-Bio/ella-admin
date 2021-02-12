@@ -16,7 +16,8 @@ INSTALLED_APPS = [
     'django_cron',
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
-    'drf_yasg'
+    'drf_yasg',
+    'wkhtmltopdf',
 ]
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -136,3 +137,9 @@ DJANGO_REST_PASSWORDRESET_NO_INFORMATION_LEAKAGE = True
 PASSWORD = {
     'live_time_days': 90
 }
+
+WKHTMLTOPDF_CMD_OPTIONS = {
+    'quiet': True,
+}
+
+WKHTMLTOPDF_CMD = '/usr/local/bin/wkhtmltopdf'
