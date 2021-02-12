@@ -11,7 +11,21 @@
   "methodology": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.",
   "limitations": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.",
   "references": "Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.",
-  "patient": null,
+  "patient": {
+   "id": 1,
+   "name": "Todd Smith",
+   "birthday": "2020-07-30",
+   "gender": "MALE",
+   "sample_type": "Blood",
+   "sample_id": "1234567",
+   "test_accession": "BRCA123456",
+   "test_ordered": "BRCA2 Sequencing & Deletion/Duplication Analysis",
+   "test_code": "ABCD",
+   "ordered_by": "Dr. Who",
+   "sample_collection_date": "2020-07-30T12:21:16.129000Z",
+   "sample_accession_date": "2020-07-30T12:21:16.129000Z",
+   "report_date": "2020-07-30T12:21:16.129000Z"
+  },
   "custom_test_genes": [
    {
     "id": 1,
