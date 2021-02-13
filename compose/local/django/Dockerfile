@@ -18,6 +18,14 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && \
+    apt-get install wget && \
+    apt --fix-broken install && \
+    apt-get install xfonts-75dpi && \
+    apt --fix-broken install && \
+    apt-get install xfonts-base && \
+    wget http://ftp.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg62-turbo_1.5.1-2_amd64.deb && \
+    apt --fix-broken install && \
+    apt-get install ./libjpeg62-turbo_1.5.1-2_amd64.deb && \
     wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb && \
     dpkg -i wkhtmltox_0.12.6-1.buster_amd64.deb || apt-get install -f -y && \
     apt-get clean && \
