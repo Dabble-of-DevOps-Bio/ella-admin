@@ -1,4 +1,5 @@
-FROM python:3.8
+#FROM python:3.8-slim-buster
+FROM dabbleofdevops/ella:1.11.1
 
 USER root
 
