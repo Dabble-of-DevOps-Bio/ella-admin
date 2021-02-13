@@ -1,15 +1,223 @@
+{% load custom_test_finding %}
 {% load static %}
 
 <!doctype html>
 <html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Mbuild</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-</head>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-<body>
+      <style>
+          html, body {
+              font-size: 11px;
+              font-family: "Roboto", Arial, sans-serif;
+          }
 
-Test
+          body {
+              padding: 2px;
+              position: relative;
+          }
 
-</body>
+          table {
+            width: 100%;
+            margin: 20px 0;
+          }
 
+          td {
+              padding: 5px;
+              vertical-align: top;
+          }
+
+          h1, h2 {
+              margin: 0;
+              font-weight: normal;
+          }
+
+          h1 {
+              font-weight: bold;
+          }
+
+          .patient-field-name {
+            font-weight: bold;
+            margin-right: 15px;
+          }
+
+          .gene-table {
+            width: 50%;
+          }
+
+          .gene-table table, th, td {
+              border: 1px solid black;
+              border-collapse: collapse;
+            }
+      </style>
+  </head>
+  <body>
+    <h1>{{ custom_test_report.custom_test.name }}</h1>
+
+    <table cellpadding="0" cellspacing="0" border="0" class="invoice-header" style="table-layout:fixed; word-break: break-word;">
+        <tr>
+          <td>
+            <span class="patient-field-name">Patient Name:</span> custom_test_report.custom_test.patient.name
+          </td>
+          <td>
+            <span class="patient-field-name">Ordered by:</span> custom_test_report.custom_test.patient.ordered_by
+          </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="patient-field-name">Date of Birth:</span> custom_test_report.custom_test.patient.birthday
+            </td>
+            <td>
+              <span class="patient-field-name">Sample Collection Date:</span> custom_test_report.custom_test.patient.sample_collection_date
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="patient-field-name">Gender:</span> custom_test_report.custom_test.patient.gender
+            </td>
+            <td>
+              <span class="patient-field-name">Sample Accession date:</span> custom_test_report.custom_test.patient.sample_accession_date
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="patient-field-name">Sample Type:</span> custom_test_report.custom_test.patient.sample_type
+            </td>
+            <td>
+              <span class="patient-field-name">Report Date:</span> custom_test_report.custom_test.patient.report_date
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="patient-field-name">Test Accession:</span> custom_test_report.custom_test.patient.test_accession
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+              <span class="patient-field-name">Test Ordered:</span> custom_test_report.custom_test.patient.test_ordered]
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+              <span class="patient-field-name">Test Code:</span> custom_test_report.custom_test.patient.test_code
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+    <h2> Result: {{ custom_test_report.custom_test.finding }}</h2>
+    <p>
+      {{ custom_test_report.result }}
+    </p>
+
+  <table cellpadding="0" cellspacing="0" border="0" class="invoice-header" style="table-layout:fixed; word-break: break-word;">
+      <tr>
+        <td>
+          Gene
+        </td>
+        <td>
+          Variant
+        </td>
+        <td>
+          Zygosity
+        </td>
+        <td>
+          Variant Classfication
+        </td>
+      </tr>
+      {% for gene in custom_test_report.custom_test.custom_test_genes %}
+        {%  for variaton in gene.custom_test_variations %}
+          <tr>
+              <td>
+                  {{ gene.name }}
+              </td>
+              <td>
+                  {{ variaton.variation }}
+              </td>
+              <td>
+                  {{ variaton.classification }}
+              </td>
+              <td>
+                  {{ variaton.zygosity }}
+              </td>
+          </tr>
+        {% endfor %}
+      {% endfor %}
+  </table>
+
+  {%  for gene in custom_test_report.custom_test_report_genes %}
+    <h2>{{ gene.custom_test_gene.name }}</h2>
+    <p>
+      {{ gene.summary }}
+    </p>
+  {% endfor %}
+
+  {%  for variation in custom_test_report.custom_test_report_variations %}
+    <h2>{{ variation.custom_test_variation.variation }}</h2>
+    <p>
+      {{ variation.description }}
+    </p>
+  {% endfor %}
+
+  <h2>
+    Genes analyzed
+  </h2>
+  <p>
+    This table represents a complete list of genes analyzed for this individual, including the relevant gene transcript(s).
+  </p>
+
+  <table class="gene-table" cellpadding="0" cellspacing="0" border="0" class="invoice-header" style="table-layout:fixed; word-break: break-word;">
+      <tr>
+        <td>
+          #
+        </td>
+        <td>
+          Genes
+        </td>
+        <td>
+          Transcript
+        </td>
+      </tr>
+      {% for gene in custom_test_report.custom_test.custom_test_genes %}
+        <tr>
+          <td>
+              {{ forloop.counter }}
+          </td>
+          <td>
+              {{ gene.name }}
+          </td>
+          <td>
+              {{ gene.transcript }}
+          </td>
+        </tr>
+      {% endfor %}
+  </table>
+
+  <h2>
+    Methodology
+  </h2>
+  <p>
+    {{ custom_test_report.custom_test.methodology }}
+  </p>
+
+  <h2>
+    Limitations
+  </h2>
+  <p>
+    {{ custom_test_report.custom_test.limitations }}
+  </p>
+
+  <h2>
+    References
+  </h2>
+  <p>
+    {{ custom_test_report.custom_test.references }}
+  </p>
+  </body>
 </html>

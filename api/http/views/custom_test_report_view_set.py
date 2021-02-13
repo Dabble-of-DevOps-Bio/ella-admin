@@ -36,7 +36,10 @@ class CustomTestReportViewSet(BaseViewSet, ModelViewSet):
 
         file_name = self.__get_pdf_report_file_name(custom_test_report)
 
-        custom_test_report_serializer = CustomTestReportSerializer(custom_test_report, expand=['custom_test.patient'])
+        custom_test_report_serializer = CustomTestReportSerializer(custom_test_report, expand=[
+            'custom_test.patient', 'custom_test.custom_test_genes',
+            'custom_test_report_genes.custom_test_gene', 'custom_test_report_variations.custom_test_variation'
+        ])
 
         pdf_response = PDFTemplateResponse(
             request=request,
