@@ -1,4 +1,6 @@
-{% load custom_test_finding %}
+{% load get_custom_test_finding %}
+{% load get_variation_classification %}
+{% load get_variation_zygosity %}
 {% load static %}
 
 <!doctype html>
@@ -21,203 +23,236 @@
               position: relative;
           }
 
-          table {
+          table, th, td {
             width: 100%;
-            margin: 20px 0;
+            border: 1px solid black;
+            border-collapse: collapse;
           }
 
           td {
-              padding: 5px;
-              vertical-align: top;
+            padding: 5px;
+            vertical-align: top;
           }
 
           h1, h2 {
-              margin: 0;
-              font-weight: normal;
+            margin: 0;
+            font-weight: normal;
           }
 
           h1 {
-              font-weight: bold;
+            font-weight: bold;
           }
 
           .patient-field-name {
             font-weight: bold;
-            margin-right: 15px;
           }
 
           .gene-table {
             width: 50%;
           }
 
-          .gene-table table, th, td {
-              border: 1px solid black;
-              border-collapse: collapse;
-            }
+          .section {
+            padding: 15px 0;
+          }
       </style>
   </head>
   <body>
     <h1>{{ custom_test_report.custom_test.name }}</h1>
 
-    <table cellpadding="0" cellspacing="0" border="0" class="invoice-header" style="table-layout:fixed; word-break: break-word;">
+    <div class="section">
+      <table cellpadding="0" cellspacing="0" border="0" class="invoice-header" style="table-layout:fixed; word-break: break-word;">
         <tr>
           <td>
-            <span class="patient-field-name">Patient Name:</span> custom_test_report.custom_test.patient.name
+            <span class="patient-field-name">Patient Name:</span> {{ custom_test_report.custom_test.patient.name }}
           </td>
           <td>
-            <span class="patient-field-name">Ordered by:</span> custom_test_report.custom_test.patient.ordered_by
+            <span class="patient-field-name">Ordered by:</span> {{ custom_test_report.custom_test.patient.ordered_by }}
           </td>
         </tr>
         <tr>
             <td>
-              <span class="patient-field-name">Date of Birth:</span> custom_test_report.custom_test.patient.birthday
+              <span class="patient-field-name">Date of Birth:</span> {{ custom_test_report.custom_test.patient.birthday }}
             </td>
             <td>
-              <span class="patient-field-name">Sample Collection Date:</span> custom_test_report.custom_test.patient.sample_collection_date
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="patient-field-name">Gender:</span> custom_test_report.custom_test.patient.gender
-            </td>
-            <td>
-              <span class="patient-field-name">Sample Accession date:</span> custom_test_report.custom_test.patient.sample_accession_date
+              <span class="patient-field-name">Sample Collection Date:</span> {{ custom_test_report.custom_test.patient.sample_collection_date }}
             </td>
         </tr>
         <tr>
             <td>
-              <span class="patient-field-name">Sample Type:</span> custom_test_report.custom_test.patient.sample_type
+              <span class="patient-field-name">Gender:</span> {{ custom_test_report.custom_test.patient.gender }}
             </td>
             <td>
-              <span class="patient-field-name">Report Date:</span> custom_test_report.custom_test.patient.report_date
+              <span class="patient-field-name">Sample Accession date:</span> {{ custom_test_report.custom_test.patient.sample_accession_date }}
             </td>
         </tr>
         <tr>
             <td>
-              <span class="patient-field-name">Test Accession:</span> custom_test_report.custom_test.patient.test_accession
+              <span class="patient-field-name">Sample Type:</span> {{ custom_test_report.custom_test.patient.sample_type }}
+            </td>
+            <td>
+              <span class="patient-field-name">Report Date:</span> {{ custom_test_report.custom_test.patient.report_date }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="patient-field-name">Test Accession:</span> {{ custom_test_report.custom_test.patient.test_accession }}
             </td>
             <td></td>
         </tr>
         <tr>
             <td>
-              <span class="patient-field-name">Test Ordered:</span> custom_test_report.custom_test.patient.test_ordered]
+              <span class="patient-field-name">Test Ordered:</span> {{ custom_test_report.custom_test.patient.test_ordered }}
             </td>
             <td></td>
         </tr>
         <tr>
             <td>
-              <span class="patient-field-name">Test Code:</span> custom_test_report.custom_test.patient.test_code
+              <span class="patient-field-name">Test Code:</span> {{ custom_test_report.custom_test.patient.test_code }}
             </td>
             <td></td>
         </tr>
-    </table>
+      </table>
+    </div>
 
-    <h2> Result: {{ custom_test_report.custom_test.finding }}</h2>
+    <div class="section">
+      <table cellpadding="0" cellspacing="0" border="0" class="invoice-header" style="table-layout:fixed; word-break: break-word;">
+        <tr>
+          <td>
+            Gene
+          </td>
+          <td>
+            Variant
+          </td>
+          <td>
+            Zygosity
+          </td>
+          <td>
+            Variant Classfication
+          </td>
+        </tr>
+        {% for gene in custom_test_report.custom_test.custom_test_genes %}
+          {%  for variaton in gene.custom_test_variations %}
+            <tr>
+                <td>
+                    {{ gene.name }}
+                </td>
+                <td>
+                    {{ variaton.variation }}
+                </td>
+                <td>
+                  {{ variaton.zygosity|get_variation_zygosity }}
+                </td>
+                <td>
+                  {{ variaton.classification|get_variation_classification }}
+                </td>
+            </tr>
+          {% endfor %}
+        {% endfor %}
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Result: {{ custom_test_report.custom_test.finding|get_custom_test_finding }}</h2>
     <p>
       {{ custom_test_report.result }}
     </p>
+    </div>
 
-  <table cellpadding="0" cellspacing="0" border="0" class="invoice-header" style="table-layout:fixed; word-break: break-word;">
-      <tr>
-        <td>
-          Gene
-        </td>
-        <td>
-          Variant
-        </td>
-        <td>
-          Zygosity
-        </td>
-        <td>
-          Variant Classfication
-        </td>
-      </tr>
-      {% for gene in custom_test_report.custom_test.custom_test_genes %}
-        {%  for variaton in gene.custom_test_variations %}
-          <tr>
-              <td>
-                  {{ gene.name }}
-              </td>
-              <td>
-                  {{ variaton.variation }}
-              </td>
-              <td>
-                  {{ variaton.classification }}
-              </td>
-              <td>
-                  {{ variaton.zygosity }}
-              </td>
-          </tr>
-        {% endfor %}
+    <div class="section">
+      <h2>Interpretation</h2>
+      <p>
+        {{ custom_test_report.interpretation }}
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Additional Comments</h2>
+      <p>
+        {{ custom_test_report.comments }}
+      </p>
+    </div>
+
+    <div class="section">
+      {% for gene in custom_test_report.custom_test_report_genes %}
+        <h2>{{ gene.custom_test_gene.name }}</h2>
+        <p>
+          {{ gene.summary }}
+        </p>
       {% endfor %}
-  </table>
+    </div>
 
-  {%  for gene in custom_test_report.custom_test_report_genes %}
-    <h2>{{ gene.custom_test_gene.name }}</h2>
-    <p>
-      {{ gene.summary }}
-    </p>
-  {% endfor %}
+    <div class="section">
+      {%  for variation in custom_test_report.custom_test_report_variations %}
+        <h2>{{ variation.custom_test_variation.variation }}</h2>
+        <p>
+          {{ variation.description }}
+        </p>
+      {% endfor %}
+    </div>
 
-  {%  for variation in custom_test_report.custom_test_report_variations %}
-    <h2>{{ variation.custom_test_variation.variation }}</h2>
-    <p>
-      {{ variation.description }}
-    </p>
-  {% endfor %}
+    <div class="section">
+      <h2>
+        Genes analyzed
+      </h2>
+      <p>
+        This table represents a complete list of genes analyzed for this individual, including the relevant gene transcript(s).
+      </p>
+    </div>
 
-  <h2>
-    Genes analyzed
-  </h2>
-  <p>
-    This table represents a complete list of genes analyzed for this individual, including the relevant gene transcript(s).
-  </p>
-
-  <table class="gene-table" cellpadding="0" cellspacing="0" border="0" class="invoice-header" style="table-layout:fixed; word-break: break-word;">
-      <tr>
-        <td>
-          #
-        </td>
-        <td>
-          Genes
-        </td>
-        <td>
-          Transcript
-        </td>
-      </tr>
-      {% for gene in custom_test_report.custom_test.custom_test_genes %}
+    <div class="section">
+      <table class="gene-table" cellpadding="0" cellspacing="0" border="0" class="invoice-header" style="table-layout:fixed; word-break: break-word;">
         <tr>
           <td>
-              {{ forloop.counter }}
+            #
           </td>
           <td>
-              {{ gene.name }}
+            Genes
           </td>
           <td>
-              {{ gene.transcript }}
+            Transcript
           </td>
         </tr>
-      {% endfor %}
-  </table>
+        {% for gene in custom_test_report.custom_test.custom_test_genes %}
+          <tr>
+            <td>
+                {{ forloop.counter }}
+            </td>
+            <td>
+                {{ gene.name }}
+            </td>
+            <td>
+                {{ gene.transcript }}
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
 
-  <h2>
-    Methodology
-  </h2>
-  <p>
-    {{ custom_test_report.custom_test.methodology }}
-  </p>
+    <div class="section">
+      <h2>
+        Methodology
+      </h2>
+      <p>
+        {{ custom_test_report.custom_test.methodology }}
+      </p>
+    </div>
 
-  <h2>
-    Limitations
-  </h2>
-  <p>
-    {{ custom_test_report.custom_test.limitations }}
-  </p>
+    <div class="section">
+      <h2>
+        Limitations
+      </h2>
+      <p>
+        {{ custom_test_report.custom_test.limitations }}
+      </p>
+    </div>
 
-  <h2>
-    References
-  </h2>
-  <p>
-    {{ custom_test_report.custom_test.references }}
-  </p>
+    <div class="section">
+      <h2>
+        References
+      </h2>
+      <p>
+        {{ custom_test_report.custom_test.references }}
+      </p>
+    </div>
   </body>
 </html>
