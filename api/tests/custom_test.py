@@ -92,6 +92,10 @@ class CustomTest(TestCase):
                 '/custom_test/get_all.json'
             ),
             (
+                {'all': True, 'expand': ['custom_test_reports']},
+                '/custom_test/get_all.json'
+            ),
+            (
                 {'sort': ['name']},
                 '/custom_test/get_all_with_name_sort.json'
             ),
@@ -111,4 +115,4 @@ class CustomTest(TestCase):
         response = self.client.get('/api/custom-tests/', filters)
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEqualsFixture(response.data, fixture)
+        self.assertEqualsFixture(response.data, fixture, export=True )
