@@ -14,6 +14,7 @@ class CustomTestSerializer(BaseModelSerializer):
         )
         expandable_fields = {
             'patient': (PatientSerializer,),
+            'custom_test_reports': ('api.http.serializers.CustomTestReportSerializer', {'source': 'customtestreport_set', 'many': True}),
         }
 
     id = ReadOnlyField()
