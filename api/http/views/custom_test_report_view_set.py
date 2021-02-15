@@ -48,10 +48,7 @@ class CustomTestReportViewSet(BaseViewSet, ModelViewSet):
                 'custom_test_report': custom_test_report_serializer.data,
             },
             filename=('%s.pdf' % file_name),
-            show_content_in_browser=False,
-            cmd_options={
-                'orientation': 'landscape'
-            }
+            show_content_in_browser=False
         )
 
         pdf_file = ContentFile(pdf_response.rendered_content)
