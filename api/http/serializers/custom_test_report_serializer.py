@@ -32,11 +32,11 @@ class CustomTestReportSerializer(BaseModelSerializer):
     custom_test_report_variations = CustomTestReportVariationSerializer(source='customtestreportvariation_set', required=False, many=True)
 
     def create(self, validated_data):
-        custom_test_report_genes = []
+        custom_test_report_genes = None
         if 'customtestreportgene_set' in validated_data:
             custom_test_report_genes = validated_data.pop('customtestreportgene_set')
 
-        custom_test_report_variations = []
+        custom_test_report_variations = None
         if 'customtestreportvariation_set' in validated_data:
             custom_test_report_variations = validated_data.pop('customtestreportvariation_set')
 
@@ -53,11 +53,11 @@ class CustomTestReportSerializer(BaseModelSerializer):
         return custom_test_report
 
     def update(self, instance: CustomTestReport, validated_data):
-        custom_test_report_genes = []
+        custom_test_report_genes = None
         if 'customtestreportgene_set' in validated_data:
             custom_test_report_genes = validated_data.pop('customtestreportgene_set')
 
-        custom_test_report_variations = []
+        custom_test_report_variations = None
         if 'customtestreportvariation_set' in validated_data:
             custom_test_report_variations = validated_data.pop('customtestreportvariation_set')
 

@@ -1,4 +1,6 @@
-{% load custom_test_finding %}
+{% load get_custom_test_finding %}
+{% load get_variation_classification %}
+{% load get_variation_zygosity %}
 {% load static %}
 
 <!doctype html>
@@ -61,51 +63,51 @@
       <table cellpadding="0" cellspacing="0" border="0" class="invoice-header" style="table-layout:fixed; word-break: break-word;">
         <tr>
           <td>
-            <span class="patient-field-name">Patient Name:</span> custom_test_report.custom_test.patient.name
+            <span class="patient-field-name">Patient Name:</span> {{ custom_test_report.custom_test.patient.name }}
           </td>
           <td>
-            <span class="patient-field-name">Ordered by:</span> custom_test_report.custom_test.patient.ordered_by
+            <span class="patient-field-name">Ordered by:</span> {{ custom_test_report.custom_test.patient.ordered_by }}
           </td>
         </tr>
         <tr>
             <td>
-              <span class="patient-field-name">Date of Birth:</span> custom_test_report.custom_test.patient.birthday
+              <span class="patient-field-name">Date of Birth:</span> {{ custom_test_report.custom_test.patient.birthday }}
             </td>
             <td>
-              <span class="patient-field-name">Sample Collection Date:</span> custom_test_report.custom_test.patient.sample_collection_date
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="patient-field-name">Gender:</span> custom_test_report.custom_test.patient.gender
-            </td>
-            <td>
-              <span class="patient-field-name">Sample Accession date:</span> custom_test_report.custom_test.patient.sample_accession_date
+              <span class="patient-field-name">Sample Collection Date:</span> {{ custom_test_report.custom_test.patient.sample_collection_date }}
             </td>
         </tr>
         <tr>
             <td>
-              <span class="patient-field-name">Sample Type:</span> custom_test_report.custom_test.patient.sample_type
+              <span class="patient-field-name">Gender:</span> {{ custom_test_report.custom_test.patient.gender }}
             </td>
             <td>
-              <span class="patient-field-name">Report Date:</span> custom_test_report.custom_test.patient.report_date
+              <span class="patient-field-name">Sample Accession date:</span> {{ custom_test_report.custom_test.patient.sample_accession_date }}
             </td>
         </tr>
         <tr>
             <td>
-              <span class="patient-field-name">Test Accession:</span> custom_test_report.custom_test.patient.test_accession
+              <span class="patient-field-name">Sample Type:</span> {{ custom_test_report.custom_test.patient.sample_type }}
+            </td>
+            <td>
+              <span class="patient-field-name">Report Date:</span> {{ custom_test_report.custom_test.patient.report_date }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="patient-field-name">Test Accession:</span> {{ custom_test_report.custom_test.patient.test_accession }}
             </td>
             <td></td>
         </tr>
         <tr>
             <td>
-              <span class="patient-field-name">Test Ordered:</span> custom_test_report.custom_test.patient.test_ordered]
+              <span class="patient-field-name">Test Ordered:</span> {{ custom_test_report.custom_test.patient.test_ordered }}
             </td>
             <td></td>
         </tr>
         <tr>
             <td>
-              <span class="patient-field-name">Test Code:</span> custom_test_report.custom_test.patient.test_code
+              <span class="patient-field-name">Test Code:</span> {{ custom_test_report.custom_test.patient.test_code }}
             </td>
             <td></td>
         </tr>
@@ -138,10 +140,10 @@
                     {{ variaton.variation }}
                 </td>
                 <td>
-                    {{ variaton.classification }}
+                  {{ variaton.zygosity|get_variation_zygosity }}
                 </td>
                 <td>
-                    {{ variaton.zygosity }}
+                  {{ variaton.classification|get_variation_classification }}
                 </td>
             </tr>
           {% endfor %}
@@ -150,7 +152,7 @@
     </div>
 
     <div class="section">
-      <h2>Result: {{ custom_test_report.custom_test.finding|custom_test_finding }}</h2>
+      <h2>Result: {{ custom_test_report.custom_test.finding|get_custom_test_finding }}</h2>
     <p>
       {{ custom_test_report.result }}
     </p>

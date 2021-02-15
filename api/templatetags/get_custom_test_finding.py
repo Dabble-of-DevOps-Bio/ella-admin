@@ -3,5 +3,5 @@ from api.models import CustomTest
 
 
 @register.filter
-def custom_test_finding(finding: CustomTest.Finding):
-    return finding.title()
+def get_custom_test_finding(value: str):
+    return CustomTest.Finding(value).label

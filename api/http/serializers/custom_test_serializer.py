@@ -32,7 +32,7 @@ class CustomTestSerializer(BaseModelSerializer):
     custom_test_genes = CustomTestGeneSerializer(source='customtestgene_set', required=False, many=True)
 
     def create(self, validated_data):
-        custom_test_genes = []
+        custom_test_genes = None
         if 'customtestgene_set' in validated_data:
             custom_test_genes = validated_data.pop('customtestgene_set')
 
@@ -47,7 +47,7 @@ class CustomTestSerializer(BaseModelSerializer):
         return custom_test
 
     def update(self, instance: CustomTest, validated_data):
-        custom_test_genes = []
+        custom_test_genes = None
         if 'customtestgene_set' in validated_data:
             custom_test_genes = validated_data.pop('customtestgene_set')
 
