@@ -12,6 +12,9 @@ class CustomTestVariationSerializer(BaseModelSerializer):
         fields = (
             'id', 'variation', 'classification', 'zygosity', 'custom_test_gene',
         )
+        expandable_fields = {
+            'custom_test_gene': ('api.http.serializers.CustomTestGeneSerializer',)
+        }
 
     id = IntegerField(required=False, validators=[ExistsValidator(queryset=CustomTestVariation.objects.all())])
 
