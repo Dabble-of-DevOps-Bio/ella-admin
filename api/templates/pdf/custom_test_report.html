@@ -7,7 +7,7 @@
 <html lang="en">
   <head>
       <meta charset="utf-8">
-      <title>Mbuild</title>
+      <title>Ella admin</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -183,7 +183,7 @@
 
     <div class="section">
       {%  for variation in custom_test_report.custom_test_report_variations %}
-        <h2>{{ variation.custom_test_variation.variation }}</h2>
+        <h2>{{ variation.custom_test_variation.custom_test_gene.name }}: {{ variation.custom_test_variation.variation }}</h2>
         <p>
           {{ variation.description }}
         </p>

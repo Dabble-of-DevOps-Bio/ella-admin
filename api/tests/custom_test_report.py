@@ -72,6 +72,12 @@ class CustomTestReport(TestCase):
         self.assertEquals(response.status_code, status.HTTP_200_OK)
         self.assertEqualsFixture(response.data, '/custom_test_report/get_custom_test_report.json')
 
+    def test_pdf(self):
+        self.force_login_user(1)
+        response = self.client.get('/api/custom-test-reports/1/pdf/')
+
+        self.assertEquals(response.status_code, status.HTTP_200_OK)
+
     def get_data_for_test_search(self):
         return (
             (
