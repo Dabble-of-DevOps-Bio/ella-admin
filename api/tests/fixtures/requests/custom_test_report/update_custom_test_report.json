@@ -8,7 +8,7 @@
       "summary": "Updated Summary1"
     },
     {
-      "name": "New CustomReportGene2",
+      "summary": "New Summary2",
       "custom_test_gene": 2
     }
   ],
