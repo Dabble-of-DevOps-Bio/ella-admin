@@ -97,7 +97,7 @@ class CustomTestReportSerializer(BaseModelSerializer):
 
     def __sync_custom_test_report_variations(self, custom_test_report_variations: list, custom_test_report: CustomTestReport) -> None:
         if custom_test_report_variations is not None:
-            self.__remove_not_existed_genes(custom_test_report_variations, custom_test_report)
+            self.__remove_not_existed_variations(custom_test_report_variations, custom_test_report)
 
             new_genes, existed_genes = self._divide_data(custom_test_report_variations)
 
@@ -108,3 +108,8 @@ class CustomTestReportSerializer(BaseModelSerializer):
         existing_ids = [entity['id'] for entity in custom_test_report_genes if 'id' in entity]
 
         custom_test_report.customtestreportgene_set.exclude(pk__in=existing_ids).delete()
+
+    def __remove_not_existed_variations(self, custom_test_report_variations: list, custom_test_report: CustomTestReport):
+        existing_ids = [entity['id'] for entity in custom_test_report_variations if 'id' in entity]
+
+        custom_test_report.customtestreportvariation_set.exclude(pk__in=existing_ids).delete()
