@@ -12,7 +12,7 @@
    "custom_test_report": 1
   },
   {
-   "id": 3,
+   "id": 4,
    "summary": "New Summary2",
    "custom_test_gene": 2,
    "custom_test_report": 1
@@ -26,7 +26,7 @@
    "custom_test_report": 1
   },
   {
-   "id": 3,
+   "id": 4,
    "description": "Description2",
    "custom_test_variation": 2,
    "custom_test_report": 1
