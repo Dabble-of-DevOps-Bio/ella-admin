@@ -58,6 +58,8 @@
      "custom_test_variations": []
     }
    ],
+   "created_at": "2020-07-30T12:21:16.129000Z",
+   "updated_at": "2020-07-30T12:21:16.129000Z",
    "custom_test_reports": [
     {
      "id": 1,
@@ -80,7 +82,9 @@
        "custom_test_variation": 1,
        "custom_test_report": 1
       }
-     ]
+     ],
+     "created_at": "2020-07-30T12:21:16.129000Z",
+     "updated_at": "2020-07-30T12:21:16.129000Z"
     }
    ]
   },
@@ -94,6 +98,8 @@
    "references": "",
    "patient": null,
    "custom_test_genes": [],
+   "created_at": "2020-07-30T12:21:16.129000Z",
+   "updated_at": "2020-07-30T12:21:16.129000Z",
    "custom_test_reports": []
   }
  ]

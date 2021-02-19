@@ -1,10 +1,11 @@
 from rest_framework import serializers
-from rest_framework.fields import ReadOnlyField, CharField
+from rest_framework.fields import CharField
+from rest_framework.fields import ReadOnlyField
 
 from api.http.serializers.base_model_serializer import BaseModelSerializer
-from api.http.serializers.custom_test_serializer import CustomTestSerializer
 from api.http.serializers.custom_test_report_gene_serializer import CustomTestReportGeneSerializer
 from api.http.serializers.custom_test_report_variation_serializer import CustomTestReportVariationSerializer
+from api.http.serializers.custom_test_serializer import CustomTestSerializer
 from api.models import CustomTestReport, CustomTest
 
 
@@ -12,7 +13,9 @@ class CustomTestReportSerializer(BaseModelSerializer):
     class Meta:
         model = CustomTestReport
         fields = (
-            'id', 'interpretation', 'result', 'comments', 'custom_test', 'custom_test_report_genes', 'custom_test_report_variations',
+            'id', 'interpretation', 'result', 'comments',
+            'custom_test', 'custom_test_report_genes', 'custom_test_report_variations',
+            'created_at', 'updated_at',
         )
         expandable_fields = {
             'custom_test': (CustomTestSerializer, {'source': 'custom_test'}),

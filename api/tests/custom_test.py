@@ -115,4 +115,4 @@ class CustomTest(TestCase):
         response = self.client.get('/api/custom-tests/', filters)
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEqualsFixture(response.data, fixture, export=True )
+        self.assertEqualsFixture(response.data, fixture )

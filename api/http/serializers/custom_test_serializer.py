@@ -10,7 +10,8 @@ class CustomTestSerializer(BaseModelSerializer):
     class Meta:
         model = CustomTest
         fields = (
-            'id', 'name', 'type', 'finding', 'methodology', 'limitations', 'references', 'patient', 'custom_test_genes',
+            'id', 'name', 'type', 'finding', 'methodology', 'limitations', 'references', 'patient',
+            'custom_test_genes', 'created_at', 'updated_at',
         )
         expandable_fields = {
             'patient': (PatientSerializer,),
